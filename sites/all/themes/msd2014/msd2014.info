@@ -1,0 +1,34 @@
+name = MSD 2014
+description = Theme for MSD 2014
+package = Unimelb
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/common-custom.css
+stylesheets[all][] = css/custom.css
+stylesheets[all][] = css/r-mobile-portrait-layout.css
+
+
+stylesheets[(min-width: 479px)][] = css/r-mobile-landscape-layout.css
+stylesheets[(min-width: 768px)][] = css/r-tablet-layout.css
+stylesheets[all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)][] = css/r-screen-layout.css
+
+scripts[] = js/jquery.drupal.megamenu.js
+scripts[] = js/custom.js
+
+regions[byline]			= Site or Page Byline
+regions[banner]    		= Home Page Banner
+regions[content]        = Content
+regions[navigation]		= Navigation
+regions[aside]  		= Aside
+
+; Disable unneeded features
+features[] = logo
+features[] = name
+;features[] = slogan
+;features[] = node_user_picture
+;features[] = comment_user_picture
+;features[] = comment_user_verification
+features[] = favicon
+;features[] = main_menu
+;features[] = secondary_menu
