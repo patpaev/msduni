@@ -1,3 +1,7 @@
+<div class="content-black-wrap"><!--black wrap start-->
+
+<div class="content-banner"></div> 
+
 <div class="content-left-wrap">
 	
 	<?php 
@@ -90,3 +94,13 @@ $subpage_items = array_slice($subpage_items, 0, 3);
 <? } ?>
 
 </div>
+
+   <div style="clear:both"></div>
+  
+  </div>
+
+<script type="text/javascript">
+jQuery(function($) {
+	$( "#tabs" ).tabs();
+});
+</script>

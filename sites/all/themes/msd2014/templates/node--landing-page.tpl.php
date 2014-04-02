@@ -1,3 +1,7 @@
+<div class="content-black-wrap"><!--black wrap start-->
+
+<div class="content-banner"></div>
+
 <div class="content-left-wrap">
 
 	<?php 
@@ -106,5 +110,8 @@ $related_items = $content["field_related_items"]["#items"];
     </div>
     
  <? } ?>
-
+ 
+  <div style="clear:both"></div>
+  
+</div>
   
