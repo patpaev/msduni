@@ -48,6 +48,15 @@ function msd2014_preprocess_html(&$vars) {
 }
 
 /**
+ * Preprocessor for node.tpl.php template file.
+ */
+function msd2014_preprocess_node(&$vars) {
+	if ($vars["is_front"]) {
+		$vars["theme_hook_suggestions"][] = "node__front";
+	}
+}
+
+/**
  * Preprocessor for page.tpl.php template file.
  */
 function msd2014_preprocess_page(&$vars, $hook) {

@@ -1,39 +1,3 @@
-
-<script type="text/javascript">
-jQuery(function($){
-	$.supersized({
-		slides : [ {image : '/<? echo path_to_theme(); ?>/images/bg1.jpg', title : ''} ]
-	});
-});
-</script>
-
-	<div class="bg-pattern-rpt"></div>
-
-
-  <div class="wrapper-main">
-
-	
-  <div class="main-header">
-  
-  <a href="/"><img src="/<? echo path_to_theme(); ?>/images/msd-logo.png" width="440" height="110" alt="msd logo" /></a>
-  
-  <div class="navigation">
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">SHOWCASE</a></li>
-        <li><a href="#">PROGRAMS</a></li>
-        <li><a href="#">RESEARCH</a></li>
-        <li><a href="#">PARTNERSHIPS</a></li>
-        <li><a href="#">NEW BUILDING</a></li>
-        <li><a href="#">EVENTS</a></li>
-        <li><a href="#">LIBRARY</a></li>
-        <li><a href="#">OUR PEOPLE</a></li>
-      </ul>
-    </div>
-    
-    <div style="clear:both"></div>
-  </div>
-  
 <div id="newsbanner-wrapper">
 <?php
 $block = block_load('views', 'home_slider-block');
@@ -170,24 +134,10 @@ consec tetur adipisicing more</a></li></ul>
 
 </ul>
 
-
-
 </div>
-
-
-
-
-    
-    
-    
     
   </div>
   
   <div style="clear:both"></div>
   
-  
-  </div>
-  
-  <div style="clear:both"></div>
 
-  <?php print render($page['footer']); ?>
