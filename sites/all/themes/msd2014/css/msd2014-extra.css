@@ -87,4 +87,8 @@ div.view-home-slider {
 
 .content-black-wrap .thecrumb a:hover {
 	text-decoration:none;
-}	
+}
+
+div.messages {
+    margin: 6px 32px;
+}

@@ -38,6 +38,10 @@ jQuery(function($){
   
     <div style="clear:both"></div>
   </div>
+  
+  	<?php if ($logged_in) : ?>		
+     	<?php print $messages; ?>
+	<?php endif; ?>
  
   <?php print render($page['content']); ?>
   

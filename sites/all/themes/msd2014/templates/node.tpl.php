@@ -36,15 +36,6 @@ if ($breadcrumb): ?>
 	</div>
 <?php endif; ?>
   
-  	<?php if ($logged_in) : ?>
-			<div class="tabs">
-				<?php print "<ul>" . drupal_render($tabs['#primary']) . "</ul>"; ?>
-                <?php print "<ul>" . drupal_render($tabs['#secondary']) . "</ul>"; ?>
-            </div>
-
-     	<?php print $messages; ?>
-     <?php endif; ?>
-  
   <?php if ($title): ?>
       <h1><?php print $title; ?></h1>
   <?php endif; ?>
