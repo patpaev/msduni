@@ -1,0 +1,90 @@
+/*
+Various fixes and alterations to provided CSS to make compatible with Drupal implentation.
+*/
+
+#footernav {
+	top:0em !important;
+}
+
+body .main-block, body.headingblock .main-block {
+	padding:0px;
+}
+
+.wrapper {
+    padding: 0px;
+    width:1024px
+}
+
+div.tabs {
+    float:right;
+}
+
+body > div.tabs {
+    margin:10px 10px 0px 0px;
+}
+
+ul.nice-menu li {
+	background: #000000;
+}
+
+ul.nice-menu-down li.menuparent,
+ul.nice-menu-down li li.menuparent {
+  background: #000;
+}
+
+ul.nice-menu-down li.menuparent:hover,
+ul.nice-menu-down li li.menuparent:hover {
+  background: #000;
+}
+
+ul.nice-menu-down > li > a {
+	text-transform:uppercase;
+}
+
+ul.nice-menu-down li {
+	border: none;
+}
+
+ul.nice-menu,
+ul.nice-menu ul {
+	border: none;
+}
+
+a {
+    color: #4C5E71;
+}
+
+div.view-home-slider {
+	padding:0px;
+}
+
+.thecrumb {
+	margin-top:14px;
+	margin-bottom:10px;
+}
+
+.content-white-wrap .thecrumb a {
+	color:#3CA9C2;
+	text-decoration:none;
+}
+
+.content-white-wrap .thecrumb span {
+	color:#79797A;
+}
+
+.content-black-wrap .thecrumb {
+	color:#B2B2B2;
+}
+
+.content-black-wrap .thecrumb a {
+	color:#3CA9C2;
+	text-decoration:none;
+}
+
+.content-black-wrap .thecrumb span {
+	color:#B2B2B2;
+}
+
+.content-black-wrap .thecrumb a:hover {
+	text-decoration:none;
+}	

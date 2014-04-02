@@ -21,6 +21,7 @@ regions[banner]    		= Home Page Banner
 regions[content]        = Content
 regions[navigation]		= Navigation
 regions[aside]  		= Aside
+regions[footer]			= Footer
 
 ; Disable unneeded features
 features[] = logo

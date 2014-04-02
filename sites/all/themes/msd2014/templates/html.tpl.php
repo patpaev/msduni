@@ -104,23 +104,12 @@ $site_name = variable_get('site_name', '');
   <?php print $styles; ?>
   <?php print $scripts; ?>
   
-	<script type="text/javascript">
-		jQuery(function($){
-			$.supersized({
-				slides : [ {image : '/<? echo path_to_theme(); ?>/images/bg1.jpg', title : ''} ]
-			});
-	    });
-	</script>
-  
-<?
-/*  
 <script type="text/javascript" src="//use.typekit.net/iws4gen.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-*/
-?>
   
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>

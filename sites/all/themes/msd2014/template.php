@@ -5,14 +5,18 @@
  */
 function msd2014_preprocess_html(&$vars) {
 	
-    drupal_add_css('http://brand.unimelb.edu.au/web-templates/1-0/css/complete.css', 'external');
+    drupal_add_css('http://brand.unimelb.edu.au/web-templates/1-1-0/css/complete.css', 'external');
     drupal_add_css(path_to_theme() . '/css/msd2014.css');
+    drupal_add_css(path_to_theme() . '/css/msd2014-extra.css');
     drupal_add_css(path_to_theme() . '/css/supersized.core.css');
+    drupal_add_css(path_to_theme() . '/css/jquery-ui.css');
     
     drupal_add_js('http://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
     drupal_add_js(path_to_theme() . '/js/supersized.core.3.2.1.min.js');
+    drupal_add_js(path_to_theme() . '/js/jquery-ui.js');
     
     drupal_add_js(path_to_theme() . '/js/navigation.js');
+    drupal_add_js(path_to_theme() . '/js/newsbanner.js');
     
     switch (theme_get_setting('unimelb_banner_type')) {
         case 'newsbanner':
@@ -40,6 +44,7 @@ function msd2014_preprocess_html(&$vars) {
 
     $vars['classes_array'][] = $background_class;
     $vars['classes_array'][] = "home";
+    $vars['classes_array'][] = "heading-block";
 }
 
 /**
