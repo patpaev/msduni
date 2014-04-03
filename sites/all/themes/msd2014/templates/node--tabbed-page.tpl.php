@@ -27,7 +27,8 @@
 
 
 <div class="content-right-wrap">
-  <div class="share"> <a href="#"><img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/fb-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo drupal_get_path('theme', 'msd2014'); ?>/images/tw-sm.gif" width="26" height="26" alt="twitter"></a><a href="#"><img src="/<? echo drupal_get_path('theme', 'msd2014'); ?>/images/prnt-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo drupal_get_path('theme', 'msd2014'); ?>/images/email-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo drupal_get_path('theme', 'msd2014'); ?>/images/plus-sm.gif" width="26" height="26" alt="email"></a>
+
+  <div class="share"> <a href="#"><img src="/<?php echo path_to_theme(); ?>/images/fb-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/tw-sm.gif" width="26" height="26" alt="twitter"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/prnt-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/email-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/plus-sm.gif" width="26" height="26" alt="email"></a>
     
     <p>Share this page</p>
     </div>

@@ -23,17 +23,9 @@ jQuery(function($){
   <img src="/<? echo path_to_theme(); ?>/images/msd-logo.png" width="440" height="110" alt="msd logo" /></a>
   
     <div class="navigation">
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">SHOWCASE</a></li>
-        <li><a href="#">PROGRAMS</a></li>
-        <li><a href="#">RESEARCH</a></li>
-        <li><a href="#">PARTNERSHIPS</a></li>
-        <li><a href="#">NEW BUILDING</a></li>
-        <li><a href="#">EVENTS</a></li>
-        <li><a href="#">LIBRARY</a></li>
-        <li><a href="#">OUR PEOPLE</a></li>
-      </ul>
+	    <div id='cssmenu'>
+		<? print render($main_menu_expanded); ?>
+  	    </div>
     </div>
   
     <div style="clear:both"></div>

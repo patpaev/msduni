@@ -7,6 +7,7 @@ function msd2014_preprocess_html(&$vars) {
 	
     drupal_add_css('http://brand.unimelb.edu.au/web-templates/1-1-0/css/complete.css', 'external');
     drupal_add_css(path_to_theme() . '/css/msd2014.css');
+    drupal_add_css(path_to_theme() . '/css/nav-style.css');
     drupal_add_css(path_to_theme() . '/css/msd2014-extra.css');
     drupal_add_css(path_to_theme() . '/css/supersized.core.css');
     drupal_add_css(path_to_theme() . '/css/jquery-ui.css');
@@ -155,6 +156,24 @@ function msd2014_preprocess_page(&$vars, $hook) {
     if (isset($vars['node']->type)) { 
     	$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type; 
     }
+    
+    // Get the entire main menu tree
+    $main_menu_tree = menu_tree_all_data('main-menu');
+    
+    // Add the rendered output to the $main_menu_expanded variable
+    $vars['main_menu_expanded'] = menu_tree_output($main_menu_tree);
+}
+
+function msd2014_menu_link__main_menu(array $variables) {
+	$element = $variables['element'];
+	$sub_menu = '';
+
+	if ($element['#below']) {
+		$sub_menu = drupal_render($element['#below']);
+		$element['#attributes']['class'][] = "has-sub";
+	}
+	$output = l($element['#title'], $element['#href'], $element['#localized_options']);
+	return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
 function _unimelb_menu_tree($region, $menu_name, $max_depth = null) {

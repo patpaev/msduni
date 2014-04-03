@@ -8,8 +8,25 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
 <div class="main-module-wrap">
 
 
-  <div class="module-wrap">
-    <img src="images/home-thmb1.png" width="238" height="160" alt="thmb1">
+<? for($i=1; $i<=6; $i++) { ?>
+
+    <div class="module-wrap">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb1.png" width="238" height="160" alt="thmb1">
+    <h2>SHOWCASE</h2>
+    <ul>
+    <li><a href="#">Staff</a></li>
+    <li><a href="#">Students</a></li>
+    <li><a href="#">Alumni</a></li>
+    <li><a href="#">Studios</a></li>
+    </ul>
+    </div>
+    
+<? } ?>
+
+<?
+/*
+    <div class="module-wrap">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb1.png" width="238" height="160" alt="thmb1">
     <h2>SHOWCASE</h2>
     <ul>
     <li><a href="#">Staff</a></li>
@@ -20,7 +37,7 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
     </div>
     
     <div class="module-wrap">
-    <img src="images/home-thmb2.png" width="238" height="160" alt="thmb1">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb2.png" width="238" height="160" alt="thmb1">
     <h2>PROGRAMS</h2>
     <ul>
     <li><a href="#">Undergraduate</a></li>
@@ -30,7 +47,7 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
     </div>
     
     <div class="module-wrap">
-    <img src="images/home-thmb3.png" width="238" height="160" alt="thmb1">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb3.png" width="238" height="160" alt="thmb1">
     <h2>RESEARCH</h2>
     <ul>
     <li><a href="#">Our Research Strengths</a></li>
@@ -41,7 +58,7 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
     
     
     <div class="module-wrap">
-    <img src="images/home-thmb4.png" width="238" height="160" alt="thmb1">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb4.png" width="238" height="160" alt="thmb1">
     <h2>PARTNERSHIP</h2>
     <ul>
     <li><a href="#">Connect with MSD</a></li>
@@ -50,7 +67,7 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
     </div>
     
     <div class="module-wrap">
-    <img src="images/home-thmb5.png" width="238" height="160" alt="thmb1">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb5.png" width="238" height="160" alt="thmb1">
     <h2>EXHIBITIONS</h2>
     <ul>
     <li><a href="#">Exhibition One</a></li>
@@ -60,7 +77,7 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
     </div>
     
     <div class="module-wrap">
-    <img src="images/home-thmb6.png" width="238" height="160" alt="thmb1">
+    <img src="/<?php echo drupal_get_path('theme', 'msd2014'); ?>/images/home-thmb6.png" width="238" height="160" alt="thmb1">
     <h2>NEW BUILDING</h2>
     <ul>
     <li><a href="#">Our Research Strengths</a></li>
@@ -68,7 +85,8 @@ print drupal_render(_block_get_renderable_array(_block_render_blocks(array($bloc
     <li><a href="#">Funded Projects</a></li>
     </ul>
     </div>
-    
+*/
+?>
     
 </div>
 <div class="right-column-wrap">

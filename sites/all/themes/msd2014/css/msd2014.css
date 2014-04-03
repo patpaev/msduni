@@ -135,17 +135,17 @@ a:hover {
 	width: 100%;
 }
 
-.navigation ul {
+.navigation {
 	display:block;
-	width:993px;
-	margin-left:-26px;
+	margin-top:28px;
+	margin-bottom:28px;
 	
 	
 	
 	}
 
 
-.navigation li {
+.navigation ul li {
 	display:block;
 	float:left;
 	list-style:none;

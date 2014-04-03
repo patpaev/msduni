@@ -92,3 +92,7 @@ div.view-home-slider {
 div.messages {
     margin: 6px 32px;
 }
+
+#cssmenu > ul > li > a {
+    text-transform: uppercase;
+}
