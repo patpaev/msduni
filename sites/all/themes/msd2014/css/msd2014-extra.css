@@ -96,3 +96,7 @@ div.messages {
 #cssmenu > ul > li > a {
     text-transform: uppercase;
 }
+
+div.module-wrap h2 {
+    text-transform: uppercase;
+}
