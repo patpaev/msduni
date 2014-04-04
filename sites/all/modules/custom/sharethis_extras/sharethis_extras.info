@@ -1,0 +1,5 @@
+name = ShareThis extras
+description = Adds some extra functionality to ShareThis plugin - Print icon and some extra markup.
+core = 7.x
+package = MSD Custom
+dependencies[] = sharethis

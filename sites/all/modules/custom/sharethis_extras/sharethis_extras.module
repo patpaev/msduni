@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * Implements hook_init().
+ */
+function sharethis_extras_init() {
+	drupal_add_js(drupal_get_path('module', 'sharethis_extras') . '/js/sharethis-print.js');
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function sharethis_extras_block_info() {
+	$blocks['sharethis_extras_block'] = array(
+		'info' => t('ShareThis Extras'),
+	);
+	return $blocks;
+}
+
+/**
+ * Implements of hook_block_view().
+ */
+function sharethis_extras_block_view($delta='') {
+	
+	$block = array();
+	switch ($delta) {
+		case 'sharethis_extras_block':
+			
+			$current_path = current_path();
+			if(
+				$current_path == "node/18" ||
+				$current_path == "node/19"
+			) {
+				$block['content'] = "";
+				break;
+			}
+			
+			$content = "<div class='share'>";
+			
+			$block = module_invoke('sharethis', 'block_view', 'sharethis_block');
+			$content .= render($block['content']);
+			$content .= "<p>Share this page</p>";
+		    $content .= "</div>";
+		    
+		    $block['content'] = $content;
+		    
+			break;
+	}
+	return $block;
+}

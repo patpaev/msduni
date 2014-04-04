@@ -45,10 +45,10 @@ if ($breadcrumb): ?>
 </div>
 
 <div class="content-right-wrap">
-  <div class="share"> <a href="#"><img src="/<? echo path_to_theme(); ?>/images/fb-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/tw-sm.gif" width="26" height="26" alt="twitter"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/prnt-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/email-sm.gif" width="26" height="26" alt="email"></a><a href="#"><img src="/<? echo path_to_theme(); ?>/images/plus-sm.gif" width="26" height="26" alt="email"></a>
-    
-    <p>Share this page</p>
-    </div>
+	<?php
+	$block = module_invoke('sharethis_extras', 'block_view', 'sharethis_extras_block');
+	print render($block['content']);
+	?>
     
     <div class="side-module">
     <h2>MASTER OF<br>ARCHITECTURE</h2>

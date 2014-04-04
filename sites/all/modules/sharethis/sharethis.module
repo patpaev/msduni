@@ -117,7 +117,8 @@ function sharethis_configuration_form($form, &$form_state) {
       'stbc_' => t("Small Chicklets"),
       'stbc_button' => t("Classic Buttons"),
       'stbc_vcount' => t("Vertical Counters"),
-      'stbc_hcount' => t("Horizontal Counters")
+      'stbc_hcount' => t("Horizontal Counters"),
+      'stbc_custom' => t('Custom Buttons via CSS'),
     ),
     '#default_value' => $button_choice,
     '#title' => t("Choose a button style:"),

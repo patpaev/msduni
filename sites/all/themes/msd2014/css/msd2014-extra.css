@@ -100,3 +100,45 @@ div.messages {
 div.module-wrap h2 {
     text-transform: uppercase;
 }
+
+div.sharethis-wrapper {
+	height:35px;
+}
+
+.st_facebook_custom,
+.st_twitter_custom,
+.st_print_custom,
+.st_email_custom,
+.st_sharethis_custom 
+{
+	padding:0px 28px 28px 0;
+}
+
+.st_facebook_custom {
+	background: url("/sites/all/themes/msd2014/images/fb-sm.gif") no-repeat scroll left top transparent;
+}
+
+.st_twitter_custom {
+	background: url("/sites/all/themes/msd2014/images/tw-sm.gif") no-repeat scroll left top transparent;
+}
+
+.st_print_custom {
+	background: url("/sites/all/themes/msd2014/images/prnt-sm.gif") no-repeat scroll left top transparent;
+}
+
+.st_email_custom {
+	background: url("/sites/all/themes/msd2014/images/email-sm.gif") no-repeat scroll left top transparent;
+}
+
+.st_sharethis_custom {
+	background: url("/sites/all/themes/msd2014/images/plus-sm.gif") no-repeat scroll left top transparent;
+}
+
+.share span {
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+.share span:hover {
+	opacity: 1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}	
