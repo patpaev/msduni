@@ -98,7 +98,8 @@
 	<div class="text-bottom">
 	<?php
 	$block = block_load('views', 'home_slider-block_1');
-	print drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+	$build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	print drupal_render($build);
 	?>
     </div>
 	

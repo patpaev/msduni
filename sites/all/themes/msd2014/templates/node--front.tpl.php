@@ -1,14 +1,16 @@
 <div id="newsbanner-wrapper">
 <?php
 $block = block_load('views', 'home_slider-block');
-print drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+$build = _block_get_renderable_array(_block_render_blocks(array($block)));
+print drupal_render($build);
 ?>
 </div>
 
 <div class="main-module-wrap">
 <?php
 $block = block_load('views', 'home_features_display-block');
-print drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+$build = _block_get_renderable_array(_block_render_blocks(array($block)));
+print drupal_render($build);
 ?>
 </div>
 

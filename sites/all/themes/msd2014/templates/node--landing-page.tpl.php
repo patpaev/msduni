@@ -43,20 +43,11 @@
 </div>
   
 <div class="programs-content-right">
-  
-	<img src="images/katelin-butler239.jpg" width="239" height="218" alt="Katelin Butler">
-  
-	<blockquote><p>"I have a bird's eye view of what’s happening around Australia in all sorts of practices"</p></blockquote>
-
-	<div>
-
-		<h4>MASTER ARCHITECTURE</h4>
-		<h5>Katelin Butler</h5>
-		
-		<p>Architecture 2007 Editor of Houses Magazine and key contributor to contemporary Architectural discourse</p>
-		
-	</div>
-
+	<?
+  	$item = field_get_items('node', $node, 'field_right_column');
+  	$body = field_view_value('node', $node, 'field_right_column', $item[0]);
+  	echo render($body);
+  	?>
 </div>
   
   <div style="clear:both"></div>
