@@ -150,3 +150,8 @@ div.sharethis-wrapper {
 .programs-content-right p {
     margin-bottom: 0px;
 }
+
+div.text-bottom-item {
+    height: 44px;
+    overflow: hidden;
+}

@@ -84,7 +84,7 @@ jQuery(function($) {
   
   // show the first bottom text item on page load
   $("div.text-bottom-item").hide();
-  $("div.text-bottom-item:eq(1)").show();
+  $("div.text-bottom-item:eq(0)").show();
   
   $(".banner-nav .bleft").click(function(e) {
 	  var prev = $("#newsbanner ol li.selected").prev();
