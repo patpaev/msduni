@@ -87,11 +87,13 @@ $related_items = $content["field_related_items"]["#items"];
 	  	?>
 	    </p>
         
+		<div class='read-more-wrapper'>
         <?
 	  	$item = field_get_items('node', $node, 'field_link');
 	  	$link = field_view_value('node', $node, 'field_link', $item[0]);
 	  	echo render($link);
 	  	?>
+		</div>
 	  	
     </div>
     
