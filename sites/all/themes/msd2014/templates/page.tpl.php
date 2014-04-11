@@ -1,8 +1,22 @@
+<?
+// Use a custom background image for homepage or node type
+if($is_front) {
+	$uri = "public://images/backgrounds/home.jpg";
+} else {
+	$uri = "public://images/backgrounds/" . $node->type . ".jpg";
+}
+
+// Fallback to using homepage background if a custom one doesn't exists
+// for this content type
+if (!file_exists($uri)) {
+	$uri = "public://images/backgrounds/home.jpg";
+}
+?>
 
 <script type="text/javascript">
 jQuery(function($){
 	$.supersized({
-		slides : [ {image : '/<? echo path_to_theme(); ?>/images/bg1.jpg', title : ''} ]
+		slides : [ {image : '<? echo file_create_url($uri); ?>', title : ''} ]
 	});
 });
 </script>
