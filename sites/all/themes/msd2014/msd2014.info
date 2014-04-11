@@ -22,6 +22,7 @@ regions[content]        = Content
 regions[navigation]		= Navigation
 regions[aside]  		= Aside
 regions[footer]			= Footer
+regions[rightcolumn]	= Right Column
 
 ; Disable unneeded features
 features[] = logo

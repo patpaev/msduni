@@ -16,38 +16,13 @@ body .main-block, body.headingblock .main-block {
 }
 
 div.tabs {
-    float:right;
+	margin-right: 20px;
+	position: absolute;
+	right: 0;
 }
 
 body > div.tabs {
     margin:10px 10px 0px 0px;
-}
-
-ul.nice-menu li {
-	background: #000000;
-}
-
-ul.nice-menu-down li.menuparent,
-ul.nice-menu-down li li.menuparent {
-  background: #000;
-}
-
-ul.nice-menu-down li.menuparent:hover,
-ul.nice-menu-down li li.menuparent:hover {
-  background: #000;
-}
-
-ul.nice-menu-down > li > a {
-	text-transform:uppercase;
-}
-
-ul.nice-menu-down li {
-	border: none;
-}
-
-ul.nice-menu,
-ul.nice-menu ul {
-	border: none;
 }
 
 a {
@@ -188,4 +163,9 @@ div.read-more-wrapper {
 
 .programs-content-right li p {
     display: inline;
+}
+
+h2, h3, h4, .pullquote, .content-black-wrap h2 {
+    color: #3DAAC3;
+    font-family: "ff-din-web",sans-serif;
 }

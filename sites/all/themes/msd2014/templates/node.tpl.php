@@ -50,21 +50,10 @@ if ($breadcrumb): ?>
 	print render($block['content']);
 	?>
     
-    <div class="side-module">
-    <h2>MASTER OF<br>ARCHITECTURE</h2>
-    <img src="images/katelin-butler.jpg" width="215" height="196" alt="Katelin Butler">
-<blockquote>
-  <p>“I have a bird’s eye view of what’s happening around Australia in all sorts of practices”</p></blockquote>
-
-
-<div><h5>Katelin Butler</h5>
-
-<p>Architecture 2007<br>
-Editor of Houses Magazine<br>
-and key contributor to<br>
-contemporary<br>
-Architectural discourse</p></div>
-
+    <div class='right-column'>
+    <?
+    print render($rightcolumn);
+    ?>
     </div>
      
 </div>

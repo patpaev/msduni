@@ -55,6 +55,9 @@ function msd2014_preprocess_node(&$vars) {
 	if ($vars["is_front"]) {
 		$vars["theme_hook_suggestions"][] = "node__front";
 	}
+	if ($blocks = block_get_blocks_by_region('rightcolumn')) {
+		$vars['rightcolumn'] = $blocks;
+	}
 }
 
 /**
