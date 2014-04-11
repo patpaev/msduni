@@ -102,4 +102,10 @@ $related_items = $content["field_related_items"]["#items"];
   <div style="clear:both"></div>
   
 </div>
-  
+
+<script type="text/javascript">
+jQuery(function($) {
+    $('.programs-content-left, .programs-content-right').matchHeight();
+    $('.programs-module').matchHeight();
+});
+</script>

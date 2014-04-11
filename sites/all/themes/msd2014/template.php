@@ -15,6 +15,7 @@ function msd2014_preprocess_html(&$vars) {
     drupal_add_js('http://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
     drupal_add_js(path_to_theme() . '/js/supersized.core.3.2.1.min.js');
     drupal_add_js(path_to_theme() . '/js/jquery-ui.js');
+    drupal_add_js(path_to_theme() . '/js/jquery.matchHeight-min.js');
     
     drupal_add_js(path_to_theme() . '/js/navigation.js');
     drupal_add_js(path_to_theme() . '/js/newsbanner.js');

@@ -136,9 +136,9 @@ div.text-bottom-item {
 }
 
 .programs-module {
-	height:550px;
 	min-height:0;
 	position:relative;
+	padding-bottom:45px;
 }
 
 div.read-more-wrapper {
@@ -150,7 +150,7 @@ div.read-more-wrapper {
 	font-size: 1.24em;
 }
 
-.programs-content-left {
+.programs-content-left, .programs-content-right {
 	min-height:0;
 }
 
