@@ -1,5 +1,6 @@
 <?
 // Use a custom background image for homepage or node type
+$uri = "";
 if($is_front) {
 	$uri = "public://images/backgrounds/home.jpg";
 } else if(isset($node)) {
