@@ -2,7 +2,7 @@
 // Use a custom background image for homepage or node type
 if($is_front) {
 	$uri = "public://images/backgrounds/home.jpg";
-} else {
+} else if(isset($node)) {
 	$uri = "public://images/backgrounds/" . $node->type . ".jpg";
 }
 
