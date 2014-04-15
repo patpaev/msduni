@@ -177,3 +177,37 @@ h2, h3, h4, .pullquote, .content-black-wrap h2 {
 #cssmenu a {
 	padding-left:38px;
 }
+
+table.tab-content-wrapper td.tabbed-content-left-wrap {
+	width:100%;
+}
+
+table.tab-content-wrapper td.tabbed-content-left-wrap > div {
+	position:relative;
+}
+
+.tabbed-content-right-wrap {
+	margin-right:0px;
+	margin-left:20px;
+	width:214px;
+}
+
+table.tab-content-wrapper td {
+	padding:0px;
+}
+
+table.tab-content-wrapper {
+	border-collapse: separate;
+	border:none;
+	width:100%;
+}
+
+table.tab-content-wrapper {
+	border-collapse: separate;
+	border:none;
+}
+
+table.tab-content-wrapper tbody tr,
+table.tab-content-wrapper tbody tr td {
+	background:none;
+}

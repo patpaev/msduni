@@ -46,10 +46,10 @@ $subpage_items = array_slice($subpage_items, 0, 3);
 <? foreach($subpage_items as $key => $subpage) { ?>
 
 	<?
-	$node = $subpage["entity"];
+	$subpage_node = $subpage["entity"];
 	
-	$item = field_get_items('node', $node, 'field_image');
-	$image = field_view_value('node', $node, 'field_image', $item[0], 
+	$item = field_get_items('node', $subpage_node, 'field_image');
+	$image = field_view_value('node', $subpage_node, 'field_image', $item[0], 
 		array(
         	'type' => 'image',
 	        'settings' => array(
@@ -70,25 +70,66 @@ $subpage_items = array_slice($subpage_items, 0, 3);
 
 <? foreach($subpage_items as $key => $subpage) { 
 
-	$node = $subpage["entity"];
+	$subpage_node = $subpage["entity"];
 	?>
 
 <div id="tabs-<? echo ($key+1); ?>">
+
+	<table class='tab-content-wrapper'>
+	<tr>
+	<td class='tabbed-content-left-wrap'>
+	
+	<div>
 	
 	<?php if ($logged_in) : ?>
 	
 	<div class="tabs">
-		<?php print "<ul><li><a href='/node/".$node->nid."/edit'>Edit</a></li></ul>"; ?>
+		<?php print "<ul><li><a href='/node/".$subpage_node->nid."/edit'>Edit</a></li></ul>"; ?>
 	</div>
 	
 	<?php endif; ?>
 	
 	<?
-	$item = field_get_items('node', $node, 'body');
-	$body = field_view_value('node', $node, 'body', $item[0]);
+	$item = field_get_items('node', $subpage_node, 'body');
+	$body = field_view_value('node', $subpage_node, 'body', $item[0]);
 	echo render($body);
 	?>
 
+	</div>
+	
+	</td>
+	
+	<?
+	$right_column = "";
+	
+	// First determine if these is a right column on this specific subpage node
+	$item = field_get_items('node', $subpage_node, 'field_right_column');
+	if($item) {
+		$right_column = field_view_value('node', $subpage_node, 'field_right_column', $item[0]);
+	} else {
+	
+		// Otherwise use the global right column for this tabbed page if one exists
+		$item = field_get_items('node', $node, 'field_right_column');
+		if($item) {
+			$right_column = field_view_value('node', $node, 'field_right_column', $item[0]);
+		}
+	
+	}
+	
+	if(is_array($right_column)) {
+	?>
+	<td>
+		<div class='tabbed-content-right-wrap'>
+			<div class='side-module'>
+			<? echo render($right_column); ?>
+			</div>
+		</div>
+	</td>
+	<? } ?>
+	
+	</tr>
+	</table>
+	
 </div>
 
 <? } ?>
