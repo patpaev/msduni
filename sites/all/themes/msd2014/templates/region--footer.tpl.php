@@ -1,17 +1,13 @@
 
   <div style="background-color:#1F1F1F">
-  <div class="social-media-wrap">
-  
-  <ul>
-  <li><a href="#" class="facebook">Like us on Facebook</a></li>
-  <li><a href="#" class="twitter">Follow us on Twitter</a></li>
-  <li><a href="#" class="youtube">Watch MSD TV on Youtube</a></li>
-  <li><a href="#" class="pinterest">Pin us on Pinterest</a></li>
-  </ul>
-  
-  
-  
-  </div>
+	  <div class="social-media-wrap">
+		  <ul>
+		  <li><a href="http://www.facebook.com/msdunimelb" class="facebook">Like us on Facebook</a></li>
+		  <li><a href="http://www.twitter.com/msdsocial" class="twitter">Follow us on Twitter</a></li>
+		  <li><a href="http://www.youtube.com/user/ABPUnimelb" class="youtube">Watch MSD TV on Youtube</a></li>
+		  <li><a href="http://pinterest.com/msdsocial/" class="pinterest">Pin us on Pinterest</a></li>
+		  </ul>
+	  </div>
   </div>
   
   
@@ -19,73 +15,48 @@
   <div class="footer-links-wrap">
     <div class="double-clmn">
     
+	    <div style="min-height:190px; margin-top:36px">
+	      <?php
+	      $block = block_load('msd2014', 'footer_left_column');
+	      $build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	      print drupal_render($build);
+	      ?>
+	    </div>
+	      
+	    <div class="fine-txt">
+	    	Authoriser: Executive Manager, Faculty of Architecture, Building and Planning<br>
+	    	Maintainer: Web Officer, Faculty of Architecture, Building and Planning
+	    </div>
+     
+    </div>
     
-    <div style="min-height:190px; margin-top:36px">
-    
-      <h2>Faculty of Architecture, Building and Planning</h2>
-      <ul>
-      <li><a href="#">Architecture</a></li>
-      <li><a href="#">Construction</a></li>
-      <li><a href="#">Landscape Arachitecture</a></li>
-      <li><a href="#">Property</a></li>
-      <li><a href="#">Urban and Cultural Heritage</a></li>
-      <li><a href="#">Urban Design</a></li>
-      <li><a href="#">Urban Planning</a></li>
-      </ul>
-      
-      
-      
-       </div>
-      
-      <div class="fine-txt">Authoriser: Executive Manager, Faculty of Architecture, Building and Planning<br>
-      Maintainer: Web Officer, Faculty of Architecture, Building and Planning</div>
-     
-     
-    
-     
-     
-     </div>
     <div class="single-clmn">
     
-    <div style="min-height:190px; margin-top:36px">
-    
-    <h2>Contact Us</h2>
-    
-    <ul class="cl2-links">
-    <li><a href="#">Current Students</a></li>
-    <li><a href="#">Staff Intranet</a></li>
-    </ul>
+	    <div style="min-height:190px; margin-top:36px">
+	      <?php
+	      $block = block_load('msd2014', 'footer_center_column');
+	      $build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	      print drupal_render($build);
+	      ?>
+	    </div>
+	    
+		<div class="fine-txt">
+			We acknowledge that the Parkville campus<br>
+	  		is located on Wurundjeri land.
+	  	</div>
     
     </div>
     
-<div class="fine-txt">We acknowledge that the Parkville campus<br>
-  is located on Wurundjeri land.</div>
-    
+    <div class="single-clmn">
+    <div class="box">
+	    <?php
+	    $block = block_load('msd2014', 'footer_right_column');
+	    $build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	    print drupal_render($build);
+	    ?> 
+	</div>
     </div>
-     
-     
-      <div class="single-clmn">
-      <div class="box">
-      
-    <h2>Future Students</h2>
-<ul><li><a href="#">Information Sessions</a></li>
-	<li><a href="#">Meet Us</a></li>
-    <li><a href="#">Key Dates</a></li>
-    <li><a href="#">Apply</a>
-    <li>
-</ul>    
-    <br><br>
 
-Future student inquiries email:<br>
-<a href="mailto:msd-info@unimelb.edu.au">msd-info@unimelb.edu.au</a> </div>
-    </div>
-     
-  
-    
-  
-  
-  
-  
   
   </div> 
   
