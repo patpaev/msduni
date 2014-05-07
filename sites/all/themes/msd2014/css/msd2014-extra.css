@@ -192,6 +192,10 @@ table.tab-content-wrapper td.tabbed-content-left-wrap > div {
 	width:214px;
 }
 
+.right-column .side-module {
+	margin-bottom:10px;
+}
+
 table.tab-content-wrapper td {
 	padding:0px;
 }
@@ -210,4 +214,30 @@ table.tab-content-wrapper {
 table.tab-content-wrapper tbody tr,
 table.tab-content-wrapper tbody tr td {
 	background:none;
+}
+
+.upcoming-events-wrap li .date {
+	font-size:1.1em;
+	margin-top:0px;
+}
+
+#block-msd2014-footer-center-column li {
+	display:block;
+	list-style:none;
+	color:#999;
+	margin-right: 40px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666;
+	margin-bottom: 12px;
+	padding-bottom: 12px;
+}
+
+#block-msd2014-footer-center-column li a {
+	color:#999;
+	display:block;
+}
+	
+#block-msd2014-footer-center-column li a:hover {
+	color:#FFF;
 }
