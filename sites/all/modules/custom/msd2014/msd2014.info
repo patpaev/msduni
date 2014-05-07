@@ -1,0 +1,4 @@
+name = MSD 2014 customisations
+description = Add some customisations for MSD 2014 Drupal theme
+core = 7.x
+package = MSD Custom
