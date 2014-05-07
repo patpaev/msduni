@@ -120,9 +120,7 @@ $subpage_items = array_slice($subpage_items, 0, 3);
 	?>
 	<td>
 		<div class='tabbed-content-right-wrap'>
-			<div class='side-module'>
 			<? echo render($right_column); ?>
-			</div>
 		</div>
 	</td>
 	<? } ?>
