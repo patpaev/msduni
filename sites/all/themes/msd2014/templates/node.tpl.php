@@ -45,17 +45,31 @@ if ($breadcrumb): ?>
 </div>
 
 <div class="content-right-wrap">
+	
 	<?php
 	$block = module_invoke('sharethis_extras', 'block_view', 'sharethis_extras_block');
 	print render($block['content']);
 	?>
+	
+	<?
+	$item = field_get_items('node', $node, 'field_right_column');
+	if(is_array($item)) {
+	
+		$field_right_column = field_view_value('node', $node, 'field_right_column', $item[0]);
+		if($field_right_column && is_array($field_right_column)) { ?>
+			<div class='right-column'>
+				<? print render($field_right_column); ?>
+			</div>
+	    <? } ?>
     
-    <div class='right-column'>
-    <?
-    print render($rightcolumn);
-    ?>
-    </div>
-     
+    <? } ?>
+    
+	<? if(isset($rightcolumn) && is_array($rightcolumn)) { ?>
+	    <div class='right-column'>
+	    <? print render($rightcolumn); ?>
+	    </div>
+    <? } ?>
+	
 </div>
 <div style="clear:both"></div>
   
