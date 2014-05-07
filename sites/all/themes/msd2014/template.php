@@ -161,6 +161,15 @@ function msd2014_preprocess_page(&$vars, $hook) {
     	$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type; 
     }
     
+    // For pages which aren't a node (except for the front page),
+    // use a page template with a white wrap.
+    if(
+    	!$vars['is_front'] && 
+    	(!isset($vars['node']) || !is_object($vars['node']))
+    ) {
+    	$vars['theme_hook_suggestions'][] = 'page__white_wrap';
+    }
+    
     // Get the entire main menu tree
     $main_menu_tree = menu_tree_all_data('main-menu');
     
