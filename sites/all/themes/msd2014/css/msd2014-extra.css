@@ -221,7 +221,7 @@ table.tab-content-wrapper tbody tr td {
 	margin-top:0px;
 }
 
-#block-msd2014-footer-center-column li {
+#block-msd2014-footer-center-column div.content li {
 	display:block;
 	list-style:none;
 	color:#999;
@@ -233,11 +233,20 @@ table.tab-content-wrapper tbody tr td {
 	padding-bottom: 12px;
 }
 
-#block-msd2014-footer-center-column li a {
+#block-msd2014-footer-center-column div.content li a {
 	color:#999;
 	display:block;
 }
-	
-#block-msd2014-footer-center-column li a:hover {
+
+#block-msd2014-footer-center-column div.content li a:hover {
 	color:#FFF;
 }
+
+div.contextual-links-wrapper li {
+	border:none !important;
+}
+
+div.contextual-links-wrapper li a {
+    background-image:none !important;
+}
+
