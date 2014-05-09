@@ -55,6 +55,18 @@ function msd2014_block_view($delta = '') {
 	return $block;
 }
 
+function msd2014_preprocess_block(&$variables) {
+	if($variables['block']->delta == 'footer_left_column') {
+		$variables['classes_array'][] = "footer_left_column";
+	}
+	if($variables['block']->delta == 'footer_center_column') {
+		$variables['classes_array'][] = "footer_center_column";
+	}
+	if($variables['block']->delta == 'footer_right_column') {
+		$variables['classes_array'][] = "footer_right_column";
+	}
+}
+
 function msd2014_block_save($delta = '',$edit = array()) {
 	if ($delta == 'footer_left_column') {
 		variable_set('msd2014_footer_left_column', $edit['body']["value"]);
