@@ -59,6 +59,13 @@ function msd2014_preprocess_node(&$vars) {
 	if ($blocks = block_get_blocks_by_region('rightcolumn')) {
 		$vars['rightcolumn'] = $blocks;
 	}
+	// Use custom node template for news
+	if(request_path() == "news") {
+		$vars['theme_hook_suggestions'][] = 'node__news';
+	}
+	if(request_path() == "events") {
+		$vars['theme_hook_suggestions'][] = 'node__events';
+	}
 }
 
 /**
