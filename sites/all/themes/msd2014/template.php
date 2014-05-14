@@ -61,10 +61,10 @@ function msd2014_preprocess_node(&$vars) {
 	}
 	// Use custom node template for news
 	if(request_path() == "news") {
-		$vars['theme_hook_suggestions'][] = 'node__news';
+		$vars['theme_hook_suggestions'][] = 'node__news_list';
 	}
 	if(request_path() == "events") {
-		$vars['theme_hook_suggestions'][] = 'node__events';
+		$vars['theme_hook_suggestions'][] = 'node__events_list';
 	}
 }
 

@@ -254,3 +254,9 @@ div.contextual-links-wrapper li a {
     font-family: arial,sans-serif;
 }
 
+div.view-id-news .item-list ul, .item-list ul a {
+    color: #FFFFFF;
+}
+div.view-id-news .item-list ul {
+    padding: 15px 0 0;
+}
