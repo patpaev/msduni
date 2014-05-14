@@ -26,7 +26,7 @@ print drupal_render($build);
 
 <div class="upcoming-events-wrap">
 <?php
-$block = block_load('views', 'events-block');
+$block = block_load('views', 'events-home_events');
 $build = _block_get_renderable_array(_block_render_blocks(array($block)));
 print drupal_render($build);
 ?>

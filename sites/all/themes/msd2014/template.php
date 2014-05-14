@@ -66,6 +66,9 @@ function msd2014_preprocess_node(&$vars) {
 	if(request_path() == "events") {
 		$vars['theme_hook_suggestions'][] = 'node__events_list';
 	}
+	if(request_path() == "past-events") {
+		$vars['theme_hook_suggestions'][] = 'node__past_events_list';
+	}
 }
 
 /**

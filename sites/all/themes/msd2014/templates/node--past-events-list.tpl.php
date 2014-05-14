@@ -100,7 +100,7 @@ $news_items = array();
  <? } ?>
  
 <?php
-$block = block_load('views', 'events-upcoming_events');
+$block = block_load('views', 'events-past_events');
 $build = _block_get_renderable_array(_block_render_blocks(array($block)));
 print drupal_render($build);
 ?>
