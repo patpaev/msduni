@@ -82,7 +82,7 @@ function msd2014_views_pre_render(&$view) {
 		// Here you can do any php you want to get the title you need for your view.
 		$view->build_info['title'] = "MSD Latest News <span class='view-all'><a href='/news'>View all</a></span>";
 	}
-	if ($view->name == 'events' && $view->current_display == 'block') {
+	if ($view->name == 'events' && $view->current_display == 'home_events') {
 		// Here you can do any php you want to get the title you need for your view.
 		$view->build_info['title'] = "Upcoming Events <span class='view-all'><a href='/events'>View all</a></span>";
 	}
