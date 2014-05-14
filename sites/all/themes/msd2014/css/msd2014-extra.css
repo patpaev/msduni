@@ -260,3 +260,16 @@ div.view-id-news .item-list ul, .item-list ul a {
 div.view-id-news .item-list ul {
     padding: 15px 0 0;
 }
+
+div.right-column-wrap span.view-all {
+	font-size:0.9em;
+	padding-top:14px;
+	padding-bottom:4px;
+	padding-left:6px;
+	display:inline;
+	font-weight:normal;
+}
+
+div.right-column-wrap span.view-all a {
+	color: #3DAAC3;
+}
