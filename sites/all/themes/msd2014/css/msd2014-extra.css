@@ -274,6 +274,7 @@ div.right-column-wrap span.view-all a {
 	color: #3DAAC3;
 }
 
-.programs-module p.post-date {
+.programs-module p.post-date,
+.programs-module p.event-date {
     margin: 14px 20px 0px 20px;
 }

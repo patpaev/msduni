@@ -20,7 +20,6 @@
   	$body = field_view_value('node', $node, 'field_header', $item[0]);
   	echo render($body);
   	?>
-  	Events
   	</blockquote>
   
 </div>
@@ -99,6 +98,12 @@ $news_items = array();
     </div>
     
  <? } ?>
+ 
+<?php
+$block = block_load('views', 'events-block_1');
+$build = _block_get_renderable_array(_block_render_blocks(array($block)));
+print drupal_render($build);
+?>
  
   <div style="clear:both"></div>
   
