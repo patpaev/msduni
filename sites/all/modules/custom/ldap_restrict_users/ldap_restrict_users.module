@@ -1,0 +1,46 @@
+<?
+function ldap_restrict_users_user_allowed($username) {
+	
+	$allowed_users = variable_get('ldap_restrict_users_allowed_users', '');
+	
+	$accesslist = array_filter(explode("\n", $allowed_users));
+	$accesslist = array_map('trim', $accesslist);
+	
+	if(in_array($username, $accesslist)) {
+		return TRUE;
+	}
+	
+	return FALSE;
+	
+}
+
+/**
+ * Implements hook_menu().
+ */
+function ldap_restrict_users_menu() {
+	$items['admin/config/people/ldap_restrict_users'] = array(
+		'title' => 'LDAP Restrict Users',
+		'description' => 'Configure users who can register an account through LDAP.',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('ldap_restrict_users_settings_form'),
+		'access arguments' => array('administer site configuration'),
+	);
+
+	return $items;
+}
+
+/**
+ * Implementation of hook_form_FORM_ID().
+ */
+function ldap_restrict_users_settings_form() {
+	$form['ldap_restrict_users_allowed_users'] = array(
+		'#type' => 'textarea',
+		'#title' => t('Usernames allowed to register an account through LDAP'),
+		'#default_value' => variable_get('ldap_restrict_users_allowed_users', ''),
+		'#description' => t('Enter one username per line. The user should not have an account already.'),
+		'#rows' => 15,
+	);
+
+	return system_settings_form($form);
+}
+

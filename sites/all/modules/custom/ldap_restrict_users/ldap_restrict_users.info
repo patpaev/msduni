@@ -1,0 +1,6 @@
+name = LDAP restrict users
+description = Restrict LDAP users allowed to register accounts
+core = 7.x
+package = MSD Custom
+
+configure = admin/config/ldap_restrict_users
