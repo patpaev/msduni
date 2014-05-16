@@ -87,3 +87,37 @@ function msd2014_views_pre_render(&$view) {
 		$view->build_info['title'] = "Upcoming Events <span class='view-all'><a href='/events'>View all</a></span>";
 	}
 }
+
+function msd2014_form_alter(&$form, &$form_state, $form_id) {
+	
+	global $user;
+	
+	if(
+		$form_id == 'user_register_form' ||
+		$form_id == 'user_profile_form'
+	) {
+		// Add listener for toggling profile fields when we change the users role
+		$form['account']['roles']['#attributes'] = array('onclick' => "Drupal.msd2014.toggleProfile(this)");
+	}
+	
+	// Determine whether they have either the administrator or editor role
+	$findEditorRoles = array_intersect($user->roles, array("administrator", "editor"));
+	
+	// Hide all fields except "Staff Profile"  when a staff member without administrator or editor privileges
+	if(
+		$form_id == "user_profile_form" &&
+		in_array("staff", $user->roles) &&
+		count($findEditorRoles) == 0
+	) {
+		
+		// Hide email and password change fields
+		$form['account']['mail']['#access'] = FALSE;
+		$form['account']['current_pass']['#access'] = FALSE;
+		$form['account']['pass']['#access'] = FALSE;
+		
+		// Hide staff type field, this should only be editable by an admin/editor 
+		$form['field_staff_type']['#access'] = FALSE;
+		
+	}
+	
+}
