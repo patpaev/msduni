@@ -121,3 +121,28 @@ function msd2014_form_alter(&$form, &$form_state, $form_id) {
 	}
 	
 }
+
+function msd2014_menu_alter(&$items) {
+	// Change the title of user profile pages to the user's name.
+	$items['user/%user']['title callback'] = 'msd2014_user_page_title';
+}
+
+function msd2014_user_page_title() {
+	
+	$output = "";
+	
+	if (arg(0) == 'user') {
+		
+		// Load uid from url
+		$user = user_load(arg(1));
+		
+		// Get the full name output, join together title, first name and last name.
+		@$output = $user->field_title[LANGUAGE_NONE][0]['value'];
+		@$output .= " " . $user->field_first_name[LANGUAGE_NONE][0]['value'];
+		@$output .= " " . $user->field_last_name[LANGUAGE_NONE][0]['value'];
+		$output = trim($output);
+		
+	}
+	
+	return $output;
+}
