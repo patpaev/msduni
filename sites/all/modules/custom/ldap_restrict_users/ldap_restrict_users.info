@@ -1,5 +1,5 @@
 name = LDAP restrict users
-description = Restrict LDAP users allowed to register accounts
+description = Restrict LDAP users allowed to login and register accounts
 core = 7.x
 package = MSD Custom
 

@@ -1,6 +1,19 @@
 <?
 function ldap_restrict_users_user_allowed($username) {
 	
+	// Ensure this username has an account already with the staff role assigned.
+	$user = user_load_by_name($username);
+	
+	if(!is_object($user)) {
+		return FALSE;
+	}
+	
+	if(in_array("staff", $user->roles)) {
+		return TRUE;
+	}
+			
+	// Allow users to register to the site using LDAP if they are on the whitelist
+	// of allowed users.
 	$allowed_users = variable_get('ldap_restrict_users_allowed_users', '');
 	
 	$accesslist = array_filter(explode("\n", $allowed_users));
