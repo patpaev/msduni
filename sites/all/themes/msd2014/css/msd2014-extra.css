@@ -154,6 +154,10 @@ div.read-more-wrapper {
 	min-height:0;
 }
 
+.programs-content-left {
+	padding:25px 25px;
+}
+
 .programs-content-right li {
 	list-style-image: url(../images/blt-arrow.png);
 	padding-left: 0px;
