@@ -60,6 +60,11 @@ $related_items = $content["field_related_items"]["#items"];
 <? foreach($related_items as $key => $item) { 
 
 	$node = $item["entity"];
+	
+	$item = field_get_items('node', $node, 'field_link');
+	$link = field_view_value('node', $node, 'field_link', $item[0]);
+	
+	$url = $link["#element"]["url"];
 	?>
 	<div class="programs-module">
 		
@@ -75,9 +80,9 @@ $related_items = $content["field_related_items"]["#items"];
 		);
 		?>
 		
-		<? print render($image); ?>
+		<a href='<? echo $url; ?>'><? print render($image); ?></a>
 		
-		<h2><? echo strtoupper($node->title); ?></h2>
+		<h2><a href='<? echo $url; ?>'><? echo strtoupper($node->title); ?></a></h2>
 		
 	    <p>
 		<?
@@ -89,8 +94,6 @@ $related_items = $content["field_related_items"]["#items"];
         
 		<div class='read-more-wrapper'>
         <?
-	  	$item = field_get_items('node', $node, 'field_link');
-	  	$link = field_view_value('node', $node, 'field_link', $item[0]);
 	  	echo render($link);
 	  	?>
 		</div>
