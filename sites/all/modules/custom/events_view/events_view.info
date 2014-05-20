@@ -4,6 +4,7 @@ package = Features
 dependencies[] = date
 dependencies[] = features
 dependencies[] = image
+dependencies[] = options
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views

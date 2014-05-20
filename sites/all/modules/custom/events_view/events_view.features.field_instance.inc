@@ -50,7 +50,7 @@ function events_view_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
@@ -103,7 +103,7 @@ function events_view_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 32,
+      'weight' => 5,
     ),
   );
 
@@ -184,7 +184,7 @@ function events_view_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 36,
+      'weight' => 7,
     ),
   );
 
@@ -221,7 +221,7 @@ function events_view_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 42,
+      'weight' => 11,
     ),
   );
 
@@ -310,7 +310,7 @@ function events_view_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 38,
+      'weight' => 8,
     ),
   );
 
@@ -318,7 +318,7 @@ function events_view_field_default_field_instances() {
   $field_instances['node-event-field_listing_image'] = array(
     'bundle' => 'event',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Image used on the news and events listing pages. Will be resized to 239 x 225.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -399,7 +399,7 @@ function events_view_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 41,
+      'weight' => 10,
     ),
   );
 
@@ -439,7 +439,7 @@ function events_view_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 1,
     ),
   );
 
@@ -449,6 +449,7 @@ function events_view_field_default_field_instances() {
   t('Dates');
   t('Documents');
   t('Event tags');
+  t('Image used on the news and events listing pages. Will be resized to 239 x 225.');
   t('Images');
   t('Listing image');
   t('Location');
