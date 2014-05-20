@@ -130,7 +130,7 @@ function news_view_views_default_views() {
   $handler->display->display_options['fields']['field_listing_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_listing_image']['settings'] = array(
     'image_style' => 'landing_page_item_image',
-    'image_link' => '',
+    'image_link' => 'content',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -143,7 +143,6 @@ function news_view_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
