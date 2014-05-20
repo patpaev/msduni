@@ -173,11 +173,17 @@ function msd2014_preprocess_page(&$vars, $hook) {
     
     // For pages which aren't a node (except for the front page),
     // use a page template with a white wrap.
-    if(
-    	!$vars['is_front'] && 
-    	(!isset($vars['node']) || !is_object($vars['node']))
-    ) {
-    	$vars['theme_hook_suggestions'][] = 'page__white_wrap';
+	if (
+		!$vars['is_front'] &&
+		(!isset($vars['node']) || !is_object($vars['node']))
+	) {
+		if(preg_match("/user\/[0-9]+/", current_path())) {
+			// Custom page template for the user profile page
+			// TODO: Can we improve how we detect this case?
+			$vars['theme_hook_suggestions'][] = 'page__user_profile';
+		} else { 
+			$vars['theme_hook_suggestions'][] = 'page__white_wrap';
+		}
     }
     
     // Get the entire main menu tree
