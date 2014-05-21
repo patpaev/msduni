@@ -158,3 +158,21 @@ function msd2014_module_implements_alter(&$implementations, $hook) {
 		$implementations['msd2014'] = $group;
 	}
 }
+
+function msd2014_user_view($account, $view_mode, $langcode) {
+	
+	$staff_type = field_get_items("user", $account, "field_staff_type");
+	
+	if(!is_array($staff_type)) {
+		drupal_not_found();
+	}
+	
+	foreach($staff_type as $value) {
+		if($value["value"] == "Academic") {
+			return;
+		}
+	}
+	
+	drupal_not_found();
+	
+}
