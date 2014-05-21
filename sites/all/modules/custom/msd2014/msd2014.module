@@ -97,7 +97,7 @@ function msd2014_form_alter(&$form, &$form_state, $form_id) {
 		$form_id == 'user_profile_form'
 	) {
 		// Add listener for toggling profile fields when we change the users role
-		$form['account']['roles']['#attributes'] = array('onclick' => "Drupal.msd2014.toggleProfile(this)");
+		$form['account']['roles_change']['#attributes'] = array('onclick' => "Drupal.msd2014.toggleProfile(this)");
 	}
 	
 	// Determine whether they have either the administrator or editor role
@@ -145,4 +145,16 @@ function msd2014_user_page_title() {
 	}
 	
 	return $output;
+}
+
+function msd2014_module_implements_alter(&$implementations, $hook) {
+	if ($hook == 'form_alter') {
+		// Move msd2014_form_alter() to the end of the list. module_implements()
+		// iterates through $implementations with a foreach loop which PHP iterates
+		// in the order that the items were added, so to move an item to the end of
+		// the array, we remove it and then add it.
+		$group = $implementations['msd2014'];
+		unset($implementations['msd2014']);
+		$implementations['msd2014'] = $group;
+	}
 }

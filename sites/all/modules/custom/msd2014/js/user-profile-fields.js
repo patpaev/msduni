@@ -18,6 +18,6 @@ Drupal.msd2014 = {
 
 (function ($) {
 	$(document).ready(function() {
-	    Drupal.msd2014.toggleProfile(jQuery('div.form-item-roles #edit-roles-5'));
+	    Drupal.msd2014.toggleProfile(jQuery('div#edit-roles-change #edit-roles-change-5'));
 	});
 })(jQuery);
