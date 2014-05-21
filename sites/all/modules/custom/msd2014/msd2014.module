@@ -168,7 +168,7 @@ function msd2014_user_view($account, $view_mode, $langcode) {
 	}
 	
 	foreach($staff_type as $value) {
-		if($value["value"] == "Academic") {
+		if($value["taxonomy_term"]->name == "Academic") {
 			return;
 		}
 	}
