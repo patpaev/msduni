@@ -286,3 +286,7 @@ div.right-column-wrap span.view-all a {
 .programs-module p.event-date {
     margin: 14px 20px 0px 20px;
 }
+
+body.page-user .content-right-wrap {
+	margin-top:113px;
+}

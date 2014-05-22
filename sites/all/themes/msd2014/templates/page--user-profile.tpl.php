@@ -84,11 +84,6 @@ if ($breadcrumb): ?>
 
 <div class="content-right-wrap">
 	
-	<?php
-	$block = module_invoke('sharethis_extras', 'block_view', 'sharethis_extras_block');
-	print render($block['content']);
-	?>
-	
 	<div class='right-column user-profile'>
        <div class="side-module">
 			<h2><?php print $title; ?></h2>
