@@ -204,7 +204,7 @@ table.tab-content-wrapper td.tabbed-content-left-wrap > div {
 	margin-bottom:10px;
 }
 
-table.tab-content-wrapper td {
+table.tab-content-wrapper > tbody > tr > td {
 	padding:0px;
 }
 
@@ -289,4 +289,26 @@ div.right-column-wrap span.view-all a {
 
 body.page-user .content-right-wrap {
 	margin-top:113px;
+}
+
+/*
+Styling for our people listings
+*/
+div.view-our-people table {
+     width: 100%;
+}
+
+div.view-our-people th.views-field-field-profile-portrait-image, 
+div.view-our-people td.views-field-field-profile-portrait-image {
+     padding: 0px;
+     width: 100px;
+}
+
+div.view-our-people th {
+     padding: 0px;
+}
+
+div.view-our-people th, 
+div.view-our-people td {
+     padding: 3px 0px 3px 4px;
 }
