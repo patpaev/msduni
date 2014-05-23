@@ -110,5 +110,6 @@ $related_items = $content["field_related_items"]["#items"];
 jQuery(function($) {
     $('.programs-content-left, .programs-content-right').matchHeight();
     $('.programs-module').matchHeight();
+    $('.programs-module h2').matchHeight();
 });
 </script>
