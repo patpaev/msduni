@@ -245,6 +245,15 @@ Room: [field_room], [field_building]';
 
   /* Display: Academic Staff */
   $handler = $view->new_display('block', 'Academic Staff', 'academic_staff');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User: Research Direction (field_research_direction) */
+  $handler->display->display_options['arguments']['field_research_direction_tid']['id'] = 'field_research_direction_tid';
+  $handler->display->display_options['arguments']['field_research_direction_tid']['table'] = 'field_data_field_research_direction';
+  $handler->display->display_options['arguments']['field_research_direction_tid']['field'] = 'field_research_direction_tid';
+  $handler->display->display_options['arguments']['field_research_direction_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_research_direction_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_research_direction_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_research_direction_tid']['summary_options']['items_per_page'] = '25';
 
   /* Display: Professional Staff */
   $handler = $view->new_display('block', 'Professional Staff', 'professional_staff');
