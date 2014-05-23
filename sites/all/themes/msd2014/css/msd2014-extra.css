@@ -312,3 +312,7 @@ div.view-our-people th,
 div.view-our-people td {
      padding: 3px 0px 3px 4px;
 }
+
+table tbody tr:nth-child(2n+1) {
+    background: inherit !important;
+}
