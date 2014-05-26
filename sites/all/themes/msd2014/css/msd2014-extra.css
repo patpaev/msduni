@@ -346,3 +346,8 @@ a.icon {
 a.icon:hover, a.icon:focus {
     background: none;
 }
+
+.content-right-wrap a {
+	padding: 0px !important;
+	background:none !important;
+}
