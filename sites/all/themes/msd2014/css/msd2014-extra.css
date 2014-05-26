@@ -316,3 +316,12 @@ div.view-our-people td {
 table tbody tr:nth-child(2n+1) {
     background: inherit !important;
 }
+
+table.white-only tbody tr {
+    background: none repeat scroll 0 0 #fff;
+}
+
+table.white-only tr,
+table.white-only th {
+    border: none;
+}
