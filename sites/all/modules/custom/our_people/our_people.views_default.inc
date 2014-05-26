@@ -254,9 +254,9 @@ Room: [field_room], [field_building]';
   $academic_term = array_shift($values);
   
   if(is_object($academic_term)) {
-	  $handler->display->display_options['filters']['field_staff_type_tid']['value'] = array(
-	    0 => $academic_term->tid,
-	  );
+         $handler->display->display_options['filters']['field_staff_type_tid']['value'] = array(
+           0 => $academic_term->tid,
+         );
   }
   
   $handler->display->display_options['filters']['field_staff_type_tid']['vocabulary'] = 'staff_type';
@@ -272,6 +272,14 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['arguments']['field_research_direction_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_research_direction_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_research_direction_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: User: Discipline (field_discipline) */
+  $handler->display->display_options['arguments']['field_discipline_tid']['id'] = 'field_discipline_tid';
+  $handler->display->display_options['arguments']['field_discipline_tid']['table'] = 'field_data_field_discipline';
+  $handler->display->display_options['arguments']['field_discipline_tid']['field'] = 'field_discipline_tid';
+  $handler->display->display_options['arguments']['field_discipline_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_discipline_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_discipline_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_discipline_tid']['summary_options']['items_per_page'] = '25';
 
   /* Display: Professional Staff */
   $handler = $view->new_display('block', 'Professional Staff', 'professional_staff');
@@ -388,11 +396,11 @@ Room: [field_room], [field_building]';
   $professional_term = array_shift($values);
   
   if(is_object($professional_term)) {
-  	$handler->display->display_options['filters']['field_staff_type_tid']['value'] = array(
-  		0 => $professional_term->tid,
-  	);
+       $handler->display->display_options['filters']['field_staff_type_tid']['value'] = array(
+               0 => $professional_term->tid,
+       );
   }
-
+  
   $handler->display->display_options['filters']['field_staff_type_tid']['vocabulary'] = 'staff_type';
   $export['our_people'] = $view;
 
