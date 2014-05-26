@@ -180,7 +180,9 @@ function msd2014_user_view($account, $view_mode, $langcode) {
 function msd2014_css_alter(&$css) {
 
 	// Alteration to iconizer CSS to output after complete.css and custom msd2014 css files.
-	$css["sites/all/modules/iconizer/files_icons.css"]["every_page"] = FALSE;
-	$css["sites/all/modules/iconizer/files_icons.css"]["weight"] = 100;
+	if(array_key_exists("sites/all/modules/iconizer/files_icons.css", $css)) {
+		$css["sites/all/modules/iconizer/files_icons.css"]["every_page"] = FALSE;
+		$css["sites/all/modules/iconizer/files_icons.css"]["weight"] = 100;
+	}
 	
 }
