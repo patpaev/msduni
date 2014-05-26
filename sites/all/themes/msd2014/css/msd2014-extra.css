@@ -325,3 +325,24 @@ table.white-only tr,
 table.white-only th {
     border: none;
 }
+
+a.document {
+	background: none;
+}
+
+a.icon {
+    background: none;
+    border: none;
+    border-radius: 0px;
+    color: inherit;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+
+a.icon:hover, a.icon:focus {
+    background: none;
+}

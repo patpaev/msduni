@@ -176,3 +176,11 @@ function msd2014_user_view($account, $view_mode, $langcode) {
 	drupal_not_found();
 	
 }
+
+function msd2014_css_alter(&$css) {
+
+	// Alteration to iconizer CSS to output after complete.css and custom msd2014 css files.
+	$css["sites/all/modules/iconizer/files_icons.css"]["every_page"] = FALSE;
+	$css["sites/all/modules/iconizer/files_icons.css"]["weight"] = 100;
+	
+}
