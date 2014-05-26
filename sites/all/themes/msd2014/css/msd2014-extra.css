@@ -183,7 +183,7 @@ h2, h3, h4, .pullquote, .content-black-wrap h2 {
 }
 
 #cssmenu a {
-	padding-left:38px;
+	padding-left:58px;
 }
 
 table.tab-content-wrapper td.tabbed-content-left-wrap {
@@ -350,4 +350,24 @@ a.icon:hover, a.icon:focus {
 .content-right-wrap a {
 	padding: 0px !important;
 	background:none !important;
+}
+
+.content-left-wrap li, .programs-content-left li, .ui-widget-content li, .side-module li {
+	list-style-image: url(../images/blt-arrow.png);
+	padding-left: 0px;
+	list-style-position: inside;
+	list-style-type: none;
+}
+
+.content-black-wrap .side-module h2 {
+	background-color:#6CC;
+	font-family: "ff-din-web",sans-serif;
+	font-style: normal;
+	color:#FFF;
+	padding-left:20px;
+	margin-bottom:0px;
+	font-size:1.1em;
+	line-height:1.1em;
+	padding-top:16px;
+	padding-bottom:16px;	
 }
