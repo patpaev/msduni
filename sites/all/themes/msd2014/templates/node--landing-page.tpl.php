@@ -55,29 +55,53 @@
  <?
 // Load the related items
 $related_items = $content["field_related_items"]["#items"];
-?>
- 
-<? foreach($related_items as $key => $item) { 
+
+foreach($related_items as $key => $item) { 
 
 	$node = $item["entity"];
 	
-	$item = field_get_items('node', $node, 'field_link');
-	$link = field_view_value('node', $node, 'field_link', $item[0]);
-	
-	$url = $link["#element"]["url"];
+	if($node->type == "landing_page_item") {
+		
+		$item = field_get_items('node', $node, 'field_link');
+		$link = field_view_value('node', $node, 'field_link', $item[0]);
+		$url = $link["#element"]["url"];
+		
+	} else if($node->type == "page") {
+		
+		$url = url('node/' . $node->nid, array('absolute' => TRUE));
+		$options = array(
+			'attributes' => array(
+				'class' => array('proj-more'),
+			),
+		);
+		$link = l("Read More", $url, $options);
+		
+	} 
 	?>
 	<div class="programs-module">
 		
 		<?
-		$item = field_get_items('node', $node, 'field_image');
-		$image = field_view_value('node', $node, 'field_image', $item[0],
-			array(
-				'type' => 'image',
-				'settings' => array(
-					'image_style' => 'landing_page_item_image'
+		if($node->type == "landing_page_item") {	
+			$item = field_get_items('node', $node, 'field_image');
+			$image = field_view_value('node', $node, 'field_image', $item[0],
+				array(
+					'type' => 'image',
+					'settings' => array(
+						'image_style' => 'landing_page_item_image'
+					)
 				)
-			)
-		);
+			);
+		} else if($node->type == "page") {
+			$item = field_get_items('node', $node, 'field_listing_image');
+			$image = field_view_value('node', $node, 'field_listing_image', $item[0],
+				array(
+					'type' => 'image',
+					'settings' => array(
+						'image_style' => 'landing_page_item_image'
+					)
+				)
+			);
+		}
 		?>
 		
 		<a href='<? echo $url; ?>'><? print render($image); ?></a>
@@ -86,16 +110,20 @@ $related_items = $content["field_related_items"]["#items"];
 		
 	    <p>
 		<?
-	  	$item = field_get_items('node', $node, 'body');
-	  	$body = field_view_value('node', $node, 'body', $item[0]);
-	  	echo render($body);
+		if($node->type == "landing_page_item") {
+		  	$item = field_get_items('node', $node, 'body');
+		  	$body = field_view_value('node', $node, 'body', $item[0]);
+		  	echo render($body);
+	  	} else if($node->type == "page") {
+		  	$item = field_get_items('node', $node, 'body');
+		  	$teaser = field_view_value('node', $node, 'body', $item[0], 'teaser');
+		  	echo render($teaser);
+	  	}
 	  	?>
 	    </p>
         
 		<div class='read-more-wrapper'>
-        <?
-	  	echo render($link);
-	  	?>
+        <? echo render($link); ?>
 		</div>
 	  	
     </div>
