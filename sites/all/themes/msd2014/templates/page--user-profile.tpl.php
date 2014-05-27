@@ -77,7 +77,8 @@ if ($breadcrumb): ?>
   <?php print render($user_profile["field_related_web_pages"]); ?>
   
   <?php if(array_key_exists("field_find_an_expert", $user_profile)) { ?>
-       For more details visit their <a href='<? print render($user_profile["field_find_an_expert"]); ?>' target='_blank'>Find An Expert profile</a>
+  	<br/>
+    For more details visit their <a href='<? print render($user_profile["field_find_an_expert"]); ?>' target='_blank'>Find An Expert profile</a>
   <?php } ?>
   
 </div>
@@ -106,6 +107,12 @@ if ($breadcrumb): ?>
 				 echo "N/A";
 			   }
                ?></p>
+               <?php 
+               if(array_key_exists("field_institute_center", $user_profile)) { ?>
+               	 <p><strong>Research Centre/Institute:</strong><br />
+               	   <? print render($user_profile["field_institute_center"]); ?>
+                 </p>
+			   <?php } ?>
                <p><strong>Research Direction:</strong><br />
                <?php 
                if(array_key_exists("field_research_direction", $user_profile)) {
