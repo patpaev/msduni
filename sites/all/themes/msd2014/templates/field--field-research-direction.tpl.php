@@ -48,7 +48,7 @@
   <?php 
   print strip_tags(render($item));
   if(($delta+1) < count($items)) {
-  	echo ",";
+  	echo "<br/>";
   }
   ?>
 <?php endforeach; ?>
