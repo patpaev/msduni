@@ -48,8 +48,8 @@ $subpage_items = array_slice($subpage_items, 0, 3);
 	<?
 	$subpage_node = $subpage["entity"];
 	
-	$item = field_get_items('node', $subpage_node, 'field_image');
-	$image = field_view_value('node', $subpage_node, 'field_image', $item[0], 
+	$item = field_get_items('node', $subpage_node, 'field_listing_image');
+	$image = field_view_value('node', $subpage_node, 'field_listing_image', $item[0], 
 		array(
         	'type' => 'image',
 	        'settings' => array(
