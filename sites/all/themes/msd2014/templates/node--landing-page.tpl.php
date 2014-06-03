@@ -66,7 +66,10 @@ foreach($related_items as $key => $item) {
 		$link = field_view_value('node', $node, 'field_link', $item[0]);
 		$url = $link["#element"]["url"];
 		
-	} else if($node->type == "page") {
+	} else if(
+		$node->type == "page" ||
+		$node->type == "event"
+	) {
 		
 		$url = url('node/' . $node->nid, array('absolute' => TRUE));
 		$options = array(
@@ -91,7 +94,10 @@ foreach($related_items as $key => $item) {
 					)
 				)
 			);
-		} else if($node->type == "page") {
+		} else if(
+			$node->type == "page" ||
+			$node->type == "event"
+		) {
 			$item = field_get_items('node', $node, 'field_listing_image');
 			$image = field_view_value('node', $node, 'field_listing_image', $item[0],
 				array(
@@ -114,7 +120,10 @@ foreach($related_items as $key => $item) {
 		  	$item = field_get_items('node', $node, 'body');
 		  	$body = field_view_value('node', $node, 'body', $item[0]);
 		  	echo render($body);
-	  	} else if($node->type == "page") {
+	  	} else if(
+			$node->type == "page" ||
+			$node->type == "event"
+		) {
 		  	$item = field_get_items('node', $node, 'body');
 		  	$teaser = field_view_value('node', $node, 'body', $item[0], 'teaser');
 		  	echo render($teaser);
