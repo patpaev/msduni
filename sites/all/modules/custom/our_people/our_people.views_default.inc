@@ -339,6 +339,7 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['field_staff_team']['field'] = 'field_staff_team';
   $handler->display->display_options['fields']['field_staff_team']['label'] = 'Team';
   $handler->display->display_options['fields']['field_staff_team']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_team']['type'] = 'taxonomy_term_reference_plain';
   /* Field: User: Telephone */
   $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
   $handler->display->display_options['fields']['field_telephone']['table'] = 'field_data_field_telephone';
