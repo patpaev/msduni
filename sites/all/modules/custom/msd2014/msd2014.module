@@ -52,6 +52,11 @@ function msd2014_block_view($delta = '') {
 	} else if($delta == "footer_right_column") {
 		$block['content'] = variable_get('msd2014_footer_right_column', "");
 	}
+	
+	// Apply full html filter to content, ensures aliases etc. and other installed
+	// filters on this content type are correctly applied
+	$block['content'] = check_markup($block['content'], 'full_html');
+	
 	return $block;
 }
 
