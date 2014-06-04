@@ -184,6 +184,7 @@ function our_people_views_default_views() {
   $handler->display->display_options['fields']['field_research_direction']['id'] = 'field_research_direction';
   $handler->display->display_options['fields']['field_research_direction']['table'] = 'field_data_field_research_direction';
   $handler->display->display_options['fields']['field_research_direction']['field'] = 'field_research_direction';
+  $handler->display->display_options['fields']['field_research_direction']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_research_direction']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_research_direction']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_research_direction']['delta_offset'] = '0';
