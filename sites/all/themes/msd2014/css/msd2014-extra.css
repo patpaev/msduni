@@ -154,7 +154,7 @@ div.read-more-wrapper {
 	font-size: 1.28em;
 }
 
-.programs-content-left, .programs-content-right {
+.programs-content-left, .programs-content-right, .news-promoted-header {
 	min-height:0;
 }
 
@@ -380,4 +380,17 @@ div.footer_right_column div.content h2 a {
 div.footer_left_column h2 a,
 div.footer_center_column h2 a {
 	color: #B2B2B2;
+}
+
+div.news-promoted-header {
+	background-color:#E5E5E5;
+	width:912px;
+	float:left;
+	margin-left:1px;
+	padding:40px 25px;
+}
+
+div.content-right-wrap.news {
+    margin-bottom: 10px;
+    margin-top: 60px;
 }

@@ -50,7 +50,7 @@
   	?>
 </div>
   
-  <div style="clear:both"></div>
+<div style="clear:both"></div>
  
  <?
 // Load the related items
