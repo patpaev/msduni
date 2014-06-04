@@ -36,16 +36,21 @@
 </div>
   
 <div style="clear:both"></div>
- 
-<div class="news-promoted-header">
-	<?
-  	$item = field_get_items('node', $node, 'body');
-  	$body = field_view_value('node', $node, 'body', $item[0]);
-  	echo render($body);
-  	?>
-</div>
-  
-<div style="clear:both"></div>
+
+<? 
+$item = field_get_items('node', $node, 'body'); 
+if(is_array($item)) { ?>
+
+	<div class="news-promoted-header">
+		<?
+	  	$body = field_view_value('node', $node, 'body', $item[0]);
+	  	echo render($body);
+	  	?>
+	</div>
+	  
+	<div style="clear:both"></div>
+
+<? } ?>
 
 <?php
 $block = block_load('views', 'news-block_1');
