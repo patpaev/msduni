@@ -191,3 +191,17 @@ function msd2014_css_alter(&$css) {
 	}
 	
 }
+
+function msd2014_path_breadcrumbs_view_alter(&$breadcrumb, &$path_breadcrumb) {
+	
+	// Setting a menu item to "nolink" shouldn't generate a wrapping anchor tag, I'd like
+	// to be able to incercept this check earlier (ie. $link == <nolink>) but can't find
+	// an appropriate hook.
+	foreach($breadcrumb as $key => $value) {
+		if(strpos($value, "nolink") !== false) {
+			$value = strip_tags($value);
+		}
+		$breadcrumb[$key] = $value;
+	}
+	
+}

@@ -68,7 +68,8 @@ div.messages {
     margin: 6px 32px;
 }
 
-#cssmenu > ul > li > a {
+#cssmenu > ul > li > a,
+#cssmenu > ul > li > span {
     text-transform: uppercase;
 }
 
@@ -150,7 +151,8 @@ div.read-more-wrapper {
     position: absolute;
 }
 
-#cssmenu a {
+#cssmenu a,
+#cssmenu span {
 	font-size: 1.28em;
 }
 
@@ -182,8 +184,19 @@ h2, h3, h4, .pullquote, .content-black-wrap h2 {
      padding-left: 24px;
 }
 
-#cssmenu a {
+#cssmenu a,
+#cssmenu span {
 	padding-left:58px;
+}
+
+#cssmenu span {
+	display: inline-block;
+	font-family: "DIN-Regular";
+	font-weight:300;
+	font-size: 1.28em;
+	line-height: 36px;
+	text-decoration: none;
+    color:#FFFFFF;
 }
 
 table.tab-content-wrapper td.tabbed-content-left-wrap {
