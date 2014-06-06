@@ -193,7 +193,6 @@ function our_people_views_default_views() {
   $handler->display->display_options['fields']['field_discipline']['table'] = 'field_data_field_discipline';
   $handler->display->display_options['fields']['field_discipline']['field'] = 'field_discipline';
   $handler->display->display_options['fields']['field_discipline']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_discipline']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_discipline']['delta_offset'] = '0';
   /* Field: User: Telephone */
   $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
