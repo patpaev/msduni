@@ -45,7 +45,6 @@ function disable_node_menu_item_form_node_form_alter(&$form, &$form_state, $form
   if (isset($form['menu']['link'])) {
     // Only add our toggle if this node is of a content type selected in the configuration
     $flag = in_array($form['type']['#value'], $types, $strict = TRUE);
-    print_r($types);
     if ($flag) {
       // Add a checkbox toggle control to the node form
       $form['menu']['link']['link_disabled'] = array(
