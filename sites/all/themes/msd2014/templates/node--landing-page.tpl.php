@@ -68,7 +68,9 @@ foreach($related_items as $key => $item) {
 		
 	} else if(
 		$node->type == "page" ||
-		$node->type == "event"
+		$node->type == "event" ||
+		$node->type == "tabbed_page"
+
 	) {
 		
 		$url = url('node/' . $node->nid, array('absolute' => TRUE));
@@ -96,7 +98,8 @@ foreach($related_items as $key => $item) {
 			);
 		} else if(
 			$node->type == "page" ||
-			$node->type == "event"
+			$node->type == "event" ||
+			$node->type == "tabbed_page"
 		) {
 			$item = field_get_items('node', $node, 'field_listing_image');
 			$image = field_view_value('node', $node, 'field_listing_image', $item[0],
@@ -122,7 +125,8 @@ foreach($related_items as $key => $item) {
 		  	echo render($body);
 	  	} else if(
 			$node->type == "page" ||
-			$node->type == "event"
+			$node->type == "event" ||
+			$node->type == "tabbed_page"
 		) {
 		  	$item = field_get_items('node', $node, 'body');
 		  	$teaser = field_view_value('node', $node, 'body', $item[0], 'teaser');
