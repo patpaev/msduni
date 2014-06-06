@@ -44,11 +44,29 @@
  * @ingroup themeable
  */
 ?>
-<?php foreach ($items as $delta => $item): ?>
-  <?php 
-  print strip_tags(render($item));
+<?php
+foreach ($items as $delta => $item):
+
+  $taxonomy_term = $item["#options"]["entity"];
+
+  $field_link = field_get_items('taxonomy_term', $taxonomy_term, 'field_link');
+
+  if(is_array($field_link)) {
+  
+  	// If we have a custom link for the taxonomy term, display it instead of
+  	// the default link to the taxonomy term.
+  	$link = field_view_value('taxonomy_term', $taxonomy_term, 'field_link', $field_link[0]);
+  	$item["#href"] = $link["#element"]["url"];
+  	print render($item);
+  
+  } else {
+  	// Remove the default link to the taxonomy term.
+  	print strip_tags(render($item));
+  }
+  
   if(($delta+1) < count($items)) {
   	echo "<br/>";
   }
-  ?>
-<?php endforeach; ?>
+
+endforeach;
+?>

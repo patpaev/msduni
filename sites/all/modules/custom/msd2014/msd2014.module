@@ -83,6 +83,7 @@ function msd2014_block_save($delta = '',$edit = array()) {
 }
 
 function msd2014_views_pre_render(&$view) {
+	
 	if ($view->name == 'news' && $view->current_display == 'block') {
 		// Here you can do any php you want to get the title you need for your view.
 		$view->build_info['title'] = "MSD Latest News <span class='view-all'><a href='/news'>View all</a></span>";
@@ -91,6 +92,32 @@ function msd2014_views_pre_render(&$view) {
 		// Here you can do any php you want to get the title you need for your view.
 		$view->build_info['title'] = "Upcoming Events <span class='view-all'><a href='/events'>View all</a></span>";
 	}
+	
+	if($view->name == "our_people" && $view->current_display == "academic_staff") {
+		
+		$result = $view->result[0]->field_field_discipline;
+		
+		foreach ($result as $delta => $item) {
+			
+			$taxonomy_term = $result[$delta]["rendered"]["#options"]["entity"];
+			
+			$field_link = field_get_items('taxonomy_term', $taxonomy_term, 'field_link');
+			
+			if(is_array($field_link)) {
+				// If we have a custom link for the taxonomy term, display it instead of
+				// the default link to the taxonomy term.
+				$link = field_view_value('taxonomy_term', $taxonomy_term, 'field_link', $field_link[0]);
+				$view->result[0]->field_field_discipline[$delta]["rendered"]["#href"] = $link["#element"]["url"];
+			} else {
+				// Remove the default link to the taxonomy term.
+				$view->result[0]->field_field_discipline[$delta]["rendered"]["#type"] = "markup";
+				$view->result[0]->field_field_discipline[$delta]["rendered"]["#markup"] = $view->result[0]->field_field_discipline[$delta]["rendered"]["#title"];
+			}
+			
+		}
+	
+	}
+	
 }
 
 function msd2014_form_alter(&$form, &$form_state, $form_id) {
