@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the New Building Blog feature.
+ */
+
+include_once 'new_building_blog.features.inc';
