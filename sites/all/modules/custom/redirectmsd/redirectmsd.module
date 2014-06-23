@@ -1,238 +1,43 @@
 <?php
 function redirectmsd_menu() {
+	
 	$items['redirect'] = array(
 		'title' => 'Example Page',
-		'page callback' => 'example_page',
+		'page callback' => 'redirectmsd_page',
 		'access arguments' => array('access content'),
+		'file' => 'redirectmsd.page.inc',
 		'type' => MENU_SUGGESTED_ITEM,
 	);
+
+	$items['admin/redirectmsd'] = array(
+		'title' => 'Redirect MSD',
+		'description' => 'Manage Webform / Lightbox redirections',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('redirectmsd_admin_form'),
+		'access callback' => 'user_access',
+		'access arguments' => array('administer site configuration'),
+		'file' => 'redirectmsd.admin.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+		  
+	$items['admin/redirectmsd/delete'] = array(
+		'title' => t('Delete Lightbox Redirect'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('redirectmsd_delete', 2),
+		'access arguments' => array('administer site configuration'),
+		'file' => 'redirectmsd.admin.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+		  
+	$items['admin/redirectmsd/create'] = array(
+		'title' => t('Create Lightbox Redirect'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('redirectmsd_create', 2),
+		'access arguments' => array('administer site configuration'),
+		'file' => 'redirectmsd.admin.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	return $items;
 	
- $items['admin/redirectmsd'] = array(
-    'title' => 'Redirect MSD',
-    'description' => 'Manage Webform / Lightbox redirections',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('redirectmsd_admin_form'),
-    'access callback' => 'user_access',
-    'access arguments' => array('administer site configuration'),
-    'file' => 'redirectmsd.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
-  );
-  
-  $items['admin/redirectmsd/delete'] = array(
-    'title' => t('Delete Lightbox Redirect'),
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('redirectmsd_delete', 2),
-    'access arguments' => array('administer site configuration'),
-    'file' => 'redirectmsd.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
-  );
-  
-    $items['admin/redirectmsd/create'] = array(
-    'title' => t('Create Lightbox Redirect'),
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('redirectmsd_create', 2),
-    'access arguments' => array('administer site configuration'),
-    'file' => 'redirectmsd.admin.inc',
-    'type' => MENU_NORMAL_ITEM,
-  );
-
-  return $items;
 }
-
-function example_page() {
-
-require_once('./Mobile_Detect.php');
-
-	$detect = new Mobile_Detect;
-	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-
-	
-?>
-<html>
-<head>
-<meta charset="utf-8">
-
-<?php
-	if($deviceType=="phone") { ?>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
-<?php		} ?>
-    	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-<?php
-$path = drupal_get_path('module', 'redirectmsd');
-?>
-    	 <script src="<?php print $path; ?>/redirect.js"></script>
-</head>
-
-<body id="rmsd_lightbox">
-<link type="text/css" rel="stylesheet" href="http://msdsandbox.net/profiles/unimelb/themes/unimelb/css/dev.css" media="all" />
-<style type="text/css" media="(max-width: 767px)">@import url("http://msd.unimelb.edu.au/profiles/unimelb/themes/unimelb/css/iPhone4.css");</style>
-<style type="text/css" media="only screen and (min-width : 768px) and (max-width : 1024px)">@import url("http://msd.unimelb.edu.au/profiles/unimelb/themes/unimelb/css/tablet.css");</style>
-
-
-<style>
-body {
-	padding:0;
-	margin:0;
-}
-
-.top-level {
-    background-color: #E6E6E6;
-    margin-bottom: 2px;
-    margin-left: -10px;
-    padding: 5px 0 5px 20px;
-}
-
-#block-block-15 {
-	display:none;
-}
-
-#rmsd_image_holder {
-	margin-left:5px;
-	}
-
-h5,h4,h3,h2,h1 { margin-left:10px; }
-p { margin-left: 10px; }
-input { margin-left:10px;}
-</style>
-
-<?php
-	$id = $_GET['id'];
-
-	if(!is_numeric($id)){
-		return;
-	}
-
-
-	if(is_numeric($id)) { // Validate id
-	
-	
-		// look up numeric code in DB
-
-		$result = db_query('SELECT n.id, n.name, n.caption, n.option1, n.option2, n.redirect1, n.redirect2 FROM {redirectmsd} n WHERE n.id = :id', array(':id' => $id));
-
-		foreach ($result as $record) { //Strip down the results and grab the data. Should only ever return one row.
-			$name = $record->name;
-			$caption = $record->caption;
-			$option1 = $record->option1;
-			$option2 = $record->option2;
-			$redirect1 = $record->redirect1;
-			$redirect2 = $record->redirect2;
-
-		} // End foreach
-		
-	 if(isset($_COOKIE['downloads'])) {
-	      if(isset($_GET['download'])&& $_GET['download']==1) {
-		 
-		 // Grab url for final page from redirect1 string
-		 		 		 
-		 $pos = strpos($redirect1, "&redirecturl=");
-		 $pos = $pos + 13;
-		 $string = substr($redirect1, $pos);
-		 $string = explode("&", $string);
-		 $redirect = $string[0];
-	 
-	  ?>
-	  <script type="text/javascript">
-			location.href="<?php print $redirect; ?>";
-	  </script>
-	  <?php
-	  die();
-	  }
-    }
-		
-
-	//Set up form
-		if($option1!=null&&$option2!=null) { // For most of the forms where there is options to be displayed to the user
-/*
-	if($deviceType=="phone") { */
-		?>
-		<div id="rmsd_image_holder">
-		
-		<div class="content">
-    <p id="msd-logo-white"><a href="/"><img src="/sites/default/files/white_logo.jpg" alt="MSD logo"></a> <a href="#" class="mobile-nav-btn-white"></a></p>
-		</div></div>
-
-<?php
-/*
-$block = module_invoke('block','block_view','15');
-print render($block['content']);
-*/
-
-$block = block_load('block','15');
-print drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
-
-
-/*	} */
-	?>
-
-		    <p id="redirect_caption"><?php print $caption; ?></p>
-			<form action="#" name="myForm" onsubmit="return(validate());">
-            <?php if($option1!=null) { ?> 			
-			<input type="radio" name="option" id="option1" value="<?php print $option1; ?>"><span id="rmsd_opt"><?php print $option1; ?></span><br />
-			<?php } 
-			if($option2!=null) { ?>
-			<input type="radio" name="option" id="option2" value="<?php print $option2; ?>"><span id="rmsd_opt"><?php print $option2; ?></span><br /><br />
-			<?php } ?>
-            <?php if($option1==null&&$option2==null) { ?>
-			<input type="submit" value="Continue" />
-			<?php } else { ?> 
-			<input type="submit" value="Submit" />
-			<?php } ?>
-			</form>
-			
-			<script type="text/javascript">
-function validate()
-{
-	   if(document.getElementById('option1').checked) {
-			location.href="<?php print $redirect1; ?>";
-		}	
-		
-		if(document.getElementById('option2').checked) {
-     		location.href="<?php print $redirect2; ?>";
-		}
-		
-		return false;
-		}
-		</script>
-		</body>
-		</html>
-
-		<?php
-		} elseif($option1==null&&$option2==null&&$caption!=null)  // Primarially for BAA webforms, where there is text that needs to be displayed (the caption) but not option buttons. 
-		{ 
-		?>
-		<div id="rmsd_image_holder">
-		<a href="/"><img src="/sites/default/files/white_logo.jpg" /></a>
-		<a href="#" class="mobile-nav-btn"></a>
-		</div>
-		    <p id="redirect_caption"><?php print $caption; ?></p>
-			<form action="#" name="myForm" onsubmit="return(validate());">
-            <input type="submit" value="Continue" />
-			</form>
-			
-			<script type="text/javascript">
-			function validate()
-			{
-				location.href="<?php print $redirect1; ?>";		
-				return false;
-			}
-		</script>
-		</body>
-		</html>
-
-		<?php
-		}
-		else { //If no options loaded, and no caption (BAA Webforms) redirect immediately to redirect1 (as there is no need to make a choice)
-			?>
-			<script type="text/javascript">
-			location.href="<?php print $redirect1; ?>";
-			</script>
-			</body>
-     		</html>
-		<?php
-		}			
-			
-		} //End form
-
-	} //End page
