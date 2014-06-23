@@ -40,7 +40,7 @@ if ($breadcrumb): ?>
       <h1><?php print $title; ?></h1>
   <?php endif; ?>
 
-  <?php print render($content['body']); ?>
+  <?php print render($content); ?>
   
 </div>
 
