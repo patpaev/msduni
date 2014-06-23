@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ *   MSD Lightbox Redirects module install/schema hooks.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function redirectmsd_schema() {
+  $schema = array();
+  
+  $schema['redirectmsd'] = array(
+    'description' => 'Table for storing MSD Lightbox redirects.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The identifier of a redirect.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'The name of the redirect.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'caption' => array(
+    	'description' => 'The caption text for the redirect.',
+    	'type' => 'text',
+    	'not null' => TRUE,
+      ),
+      'option1' => array(
+    	'description' => 'Option text for first option.',
+    	'type' => 'varchar',
+    	'length' => 255,
+    	'not null' => FALSE,
+	  ),
+	  'option2' => array(
+    	'description' => 'Option text for second option.',
+    	'type' => 'varchar',
+    	'length' => 255,
+    	'not null' => FALSE,
+	  ),
+      'redirect1' => array(
+    	'description' => 'Redirect for first option.',
+    	'type' => 'text',
+    	'not null' => TRUE,
+      ),
+      'redirect2' => array(
+    	'description' => 'Redirect for second option.',
+    	'type' => 'text',
+    	'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  
+  return $schema;
+  
+}

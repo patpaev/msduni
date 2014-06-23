@@ -31,74 +31,70 @@ function redirectmsd_page() { ?>
 
 	<?php
 	$id = $_GET['id'];
-
+	
 	if(!is_numeric($id)){
 		return;
 	}
-
-	if(is_numeric($id)) {
 	
-		$result = db_query('SELECT n.id, n.name, n.caption, n.option1, n.option2, n.redirect1, n.redirect2 FROM {redirectmsd} n WHERE n.id = :id', array(':id' => $id));
-		$record = $result->fetchObject();
+	$result = db_query('SELECT n.id, n.name, n.caption, n.option1, n.option2, n.redirect1, n.redirect2 FROM {redirectmsd} n WHERE n.id = :id', array(':id' => $id));
+	$record = $result->fetchObject();
+	
+	if(strlen($record->option1) > 0) {
+		// For most of the forms where there are options to be displayed to the user
+		?>
 		
-		// Set up form
-		if($record->option1 != null && $record->option2 != null) {
-			// For most of the forms where there is options to be displayed to the user
-			?>
-			
-			<div id="rmsd_image_holder">
-				<div class="content">
-		    		<p id="msd-logo-white"><a href="/"><img src="/sites/default/files/white_logo.jpg" alt="MSD logo"></a> <a href="#" class="mobile-nav-btn-white"></a></p>
-				</div>
+		<div id="rmsd_image_holder">
+			<div class="content">
+	    		<p id="msd-logo-white"><a href="/"><img src="/sites/default/files/white_logo.jpg" alt="MSD logo"></a></p>
 			</div>
-	
-		    <p id="redirect_caption"><?php print $record->caption; ?></p>
-			    
-			<form action="#" name="myForm" onsubmit="return validate();">
+		</div>
+
+	    <p id="redirect_caption"><?php print $record->caption; ?></p>
+		    
+		<form action="#" name="myForm" onsubmit="return validate();">
             
 	            <? if($record->option1 != null) { ?> 			
-					<input type="radio" name="option" id="option1" value="<?php print $record->option1; ?>"><span id="rmsd_opt"><?php print $record->option1; ?></span><br />
-				<? } ?> 
-				
-				<? if($record->option2 != null) { ?>
-					<input type="radio" name="option" id="option2" value="<?php print $record->option2; ?>"><span id="rmsd_opt"><?php print $record->option2; ?></span><br /><br />
-				<? } ?>
-				
-		        <? if($record->option1 == null && $record->option2 == null) { ?>
-					<input type="submit" value="Continue" />
-				<? } else { ?> 
-					<input type="submit" value="Submit" />
-				<? } ?>
-				
-			</form>
+				<input type="radio" name="option" id="option1" value="<?php print $record->option1; ?>"><span id="rmsd_opt"><?php print $record->option1; ?></span><br />
+			<? } ?> 
 			
-			<script type="text/javascript">
-			function validate() {
-				
-			    if(document.getElementById('option1').checked) {
-					location.href="<?php print $record->redirect1; ?>";
-				}	
-				
-				if(document.getElementById('option2').checked) {
-		     		location.href="<?php print $record->redirect2; ?>";
-				}
-				
-				return false;
-				
-			}
-			</script>
-
-		<?
-		} else { 
-			// If no options loaded, and no caption redirect immediately to redirect1
-			?>
-			<script type="text/javascript">
-			location.href="<?php print $record->redirect1; ?>";
-			</script>
-			<?php
-		}
+			<? if($record->option2 != null) { ?>
+				<input type="radio" name="option" id="option2" value="<?php print $record->option2; ?>"><span id="rmsd_opt"><?php print $record->option2; ?></span><br /><br />
+			<? } ?>
+			
+	        <? if($record->option1 == null && $record->option2 == null) { ?>
+				<input type="submit" value="Continue" />
+			<? } else { ?> 
+				<input type="submit" value="Submit" />
+			<? } ?>
+			
+		</form>
 		
+		<script type="text/javascript">
+		function validate() {
+			
+		    if(document.getElementById('option1').checked) {
+				location.href="<?php print $record->redirect1; ?>";
+			}	
+			
+			if(document.getElementById('option2').checked) {
+	     		location.href="<?php print $record->redirect2; ?>";
+			}
+			
+			return false;
+			
+		}
+		</script>
+
+	<?
+	} else { 
+		// If no options exist, immediately go to redirect1
+		?>
+		<script type="text/javascript">
+		location.href="<?php print $record->redirect1; ?>";
+		</script>
+		<?
 	}
+	
 	?>
 	</body>
 	</html>
