@@ -4,3 +4,4 @@ core = 7.x
 files[] = redirectmsd.module
 version = "7.x-1.0"
 package = MSD Custom
+configure = admin/redirectmsd
