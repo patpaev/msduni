@@ -97,30 +97,31 @@ if ($breadcrumb): ?>
 			     <img src='/sites/default/files/silhouette-150x141px.jpg' />
 			   <?php } ?>
                </p>
+               
                <p><strong>Position Title</strong>:<br />
                <?php print render($user_profile["field_position_title"]); ?></p>
-               <p><strong>Discipline:</strong><br/>
-               <?php 
-               if(array_key_exists("field_discipline", $user_profile)) {
-                 print render($user_profile["field_discipline"]);
-               } else {
-				 echo "N/A";
-			   }
-               ?></p>
-               <?php 
-               if(array_key_exists("field_institute_center", $user_profile)) { ?>
-               	 <p><strong>Research Centre/Institute:</strong><br />
-               	   <? print render($user_profile["field_institute_center"]); ?>
+               
+               <? if(array_key_exists("field_discipline", $user_profile)) { ?>
+                 <p>
+	             	<strong>Discipline:</strong><br/>
+	             	<? print render($user_profile["field_discipline"]); ?>
                  </p>
-			   <?php } ?>
-               <p><strong>Research Direction:</strong><br />
-               <?php 
-               if(array_key_exists("field_research_direction", $user_profile)) {
-                 print render($user_profile["field_research_direction"]);
-               } else {
-				 echo "TBA";
-			   }
-               ?></p>
+               <? } ?>
+               
+               <? if(array_key_exists("field_institute_center", $user_profile)) { ?>
+                 <p>
+               	 	<strong>Research Centre/Institute:</strong><br />
+               	 	<? print render($user_profile["field_institute_center"]); ?>
+                 </p>
+			   <? } ?>
+			   
+               <? if(array_key_exists("field_research_direction", $user_profile)) { ?>
+               	 <p>
+               	 	<strong>Research Direction:</strong><br />
+               	 	<? print render($user_profile["field_research_direction"]); ?>
+               	 </p>
+               <? } ?>
+               
                <p><strong>Contact Details:</strong></p>
                <p><img alt="email icon" class="icon-email middle" src="/sites/default/files/emailIcon.gif" /> <?php print render($user_profile["field_email"]); ?></p>
                <p><img alt="phone icon" class="icon-phone middle" src="/sites/default/files/phoneIcon.gif" /> +61 3 <?php print render($user_profile["field_telephone"]); ?></p>
