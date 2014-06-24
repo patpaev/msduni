@@ -1,9 +1,10 @@
 <?php
 function redirectmsd_menu() {
 	
-	$items['redirect'] = array(
-		'title' => 'Example Page',
+	$items['redirect/%'] = array(
+		'title' => 'Redirect',
 		'page callback' => 'redirectmsd_page',
+		'page arguments' => array(1),
 		'access arguments' => array('access content'),
 		'file' => 'redirectmsd.page.inc',
 		'type' => MENU_SUGGESTED_ITEM,
@@ -20,24 +21,33 @@ function redirectmsd_menu() {
 		'type' => MENU_NORMAL_ITEM,
 	);
 		  
-	$items['admin/redirectmsd/delete'] = array(
+	$items['admin/redirectmsd/delete/%'] = array(
 		'title' => t('Delete Lightbox Redirect'),
-		'page callback' => 'drupal_get_form',
-		'page arguments' => array('redirectmsd_delete', 2),
+		'page callback' => 'redirectmsd_delete',
+		'page arguments' => array(3),
 		'access arguments' => array('administer site configuration'),
 		'file' => 'redirectmsd.admin.inc',
 		'type' => MENU_NORMAL_ITEM,
 	);
-		  
-	$items['admin/redirectmsd/create'] = array(
+	
+	$items['admin/redirectmsd/add'] = array(
 		'title' => t('Create Lightbox Redirect'),
 		'page callback' => 'drupal_get_form',
-		'page arguments' => array('redirectmsd_create', 2),
+		'page arguments' => array('redirectmsd_edit'),
 		'access arguments' => array('administer site configuration'),
 		'file' => 'redirectmsd.admin.inc',
 		'type' => MENU_NORMAL_ITEM,
 	);
-
+	
+	$items['admin/redirectmsd/edit/%'] = array(
+		'title' => t('Create Lightbox Redirect'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('redirectmsd_edit', 3),
+		'access arguments' => array('administer site configuration'),
+		'file' => 'redirectmsd.admin.inc',
+		'type' => MENU_NORMAL_ITEM,
+	);
+	
 	return $items;
 	
 }

@@ -424,3 +424,7 @@ Styling for blog posts
 div.view-blog .views-row {
 	padding-bottom: 24px;
 }
+
+#imageData #bottomNav {
+    display: none !important;
+}

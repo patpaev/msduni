@@ -1,5 +1,5 @@
 name = MSD Lightbox Redirects
-description = Ties together the MSD Webforms, Lightbox and Redirect functionality.
+description = Ties together the Lightbox and Redirect functionality.
 core = 7.x
 files[] = redirectmsd.module
 version = "7.x-1.0"

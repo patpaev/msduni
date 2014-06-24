@@ -1,5 +1,4 @@
-<?
-function redirectmsd_page() { ?>
+<? function redirectmsd_page($redirectid) { ?>
 
 	<html>
 	<head>
@@ -30,13 +29,7 @@ function redirectmsd_page() { ?>
 	</style>
 
 	<?php
-	$id = $_GET['id'];
-	
-	if(!is_numeric($id)){
-		return;
-	}
-	
-	$result = db_query('SELECT n.id, n.name, n.caption, n.option1, n.option2, n.redirect1, n.redirect2 FROM {redirectmsd} n WHERE n.id = :id', array(':id' => $id));
+	$result = db_query('SELECT n.id, n.name, n.caption, n.option1, n.option2, n.redirect1, n.redirect2 FROM {redirectmsd} n WHERE n.id = :id', array(':id' => $redirectid));
 	$record = $result->fetchObject();
 	
 	if(strlen($record->option1) > 0) {
