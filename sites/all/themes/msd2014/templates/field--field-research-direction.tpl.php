@@ -45,28 +45,39 @@
  */
 ?>
 <?php
+$links = array();
+
 foreach ($items as $delta => $item):
-
-  $taxonomy_term = $item["#options"]["entity"];
-
-  $field_link = field_get_items('taxonomy_term', $taxonomy_term, 'field_link');
-
-  if(is_array($field_link)) {
   
+  $taxonomy_term = $item["#options"]["entity"];
+  
+  $field_link = field_get_items('taxonomy_term', $taxonomy_term, 'field_link');
+  
+  if(is_array($field_link)) {
   	// If we have a custom link for the taxonomy term, display it instead of
   	// the default link to the taxonomy term.
   	$link = field_view_value('taxonomy_term', $taxonomy_term, 'field_link', $field_link[0]);
   	$item["#href"] = $link["#element"]["url"];
-  	print render($item);
-  
   } else {
   	// Remove the default link to the taxonomy term.
-  	print strip_tags(render($item));
+	unset($item["#type"]);
+	$item["#markup"] = $item["#title"];
   }
   
-  if(($delta+1) < count($items)) {
-  	echo "<br/>";
-  }
+  $links[$item["#title"]] = $item;
+  
+endforeach;
 
+// Sort the links by title and then render them
+ksort($links);
+
+foreach ($links as $delta => $item):
+	
+	print render($item);
+	
+	if(($delta+1) < count($links)) {
+		echo "<br/>";
+	}
+	
 endforeach;
 ?>
