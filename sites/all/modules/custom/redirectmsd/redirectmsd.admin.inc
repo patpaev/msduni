@@ -99,7 +99,7 @@ function redirectmsd_edit($form, &$form_state, $redirectid=NULL) {
 	  '#required' => TRUE,
 	);
 	$form['caption'] = array(
-	  '#type' => 'textarea',
+	  '#type' => 'text_format',
 	  '#title' => t('Caption for the redirects'),
 	  '#default_value' => ($mode == 'edit') ? $record->caption : "",
 	  '#size' => 60,
@@ -178,7 +178,7 @@ function redirectmsd_edit_submit($form, $form_state) {
 		db_update('redirectmsd')->fields(
 			array(
 				'name' => $form_state['values']['name'],
-				'caption' => $form_state['values']['caption'],
+				'caption' => $form_state['values']['caption']['value'],
 				'option1' => $form_state['values']['option1'],
 				'option2' => $form_state['values']['option2'],
 				'redirect1' => $form_state['values']['redirect1'],
@@ -195,7 +195,7 @@ function redirectmsd_edit_submit($form, $form_state) {
 		db_insert('redirectmsd')->fields(
 			array(
 			    'name' => $form_state['values']['name'],
-			    'caption' => $form_state['values']['caption'],
+			    'caption' => $form_state['values']['caption']['value'],
 			    'option1' => $form_state['values']['option1'],
 			    'option2' => $form_state['values']['option2'],
 			    'redirect1' => $form_state['values']['redirect1'],
