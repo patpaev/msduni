@@ -16,7 +16,7 @@ function redirectmsd_menu() {
 		'page callback' => 'drupal_get_form',
 		'page arguments' => array('redirectmsd_admin_form'),
 		'access callback' => 'user_access',
-		'access arguments' => array('administer site configuration'),
+		'access arguments' => array('administer redirectmsd'),
 		'file' => 'redirectmsd.admin.inc',
 		'type' => MENU_NORMAL_ITEM,
 	);
@@ -25,7 +25,7 @@ function redirectmsd_menu() {
 		'title' => t('Delete Lightbox Redirect'),
 		'page callback' => 'redirectmsd_delete',
 		'page arguments' => array(3),
-		'access arguments' => array('administer site configuration'),
+		'access arguments' => array('administer redirectmsd'),
 		'file' => 'redirectmsd.admin.inc',
 		'type' => MENU_NORMAL_ITEM,
 	);
@@ -34,7 +34,7 @@ function redirectmsd_menu() {
 		'title' => t('Create Lightbox Redirect'),
 		'page callback' => 'drupal_get_form',
 		'page arguments' => array('redirectmsd_edit'),
-		'access arguments' => array('administer site configuration'),
+		'access arguments' => array('administer redirectmsd'),
 		'file' => 'redirectmsd.admin.inc',
 		'type' => MENU_NORMAL_ITEM,
 	);
@@ -43,11 +43,23 @@ function redirectmsd_menu() {
 		'title' => t('Create Lightbox Redirect'),
 		'page callback' => 'drupal_get_form',
 		'page arguments' => array('redirectmsd_edit', 3),
-		'access arguments' => array('administer site configuration'),
+		'access arguments' => array('administer redirectmsd'),
 		'file' => 'redirectmsd.admin.inc',
 		'type' => MENU_NORMAL_ITEM,
 	);
 	
 	return $items;
 	
+}
+
+/**
+ * Implements hook_permission().
+ */
+function redirectmsd_permission() {
+	return array(
+	'administer redirectmsd' => array(
+		'title' => t('Administer MSD Lightbox Redirects'),
+		'description' => t('Allow the user to administer MSD Lightbox Redirects'),
+ 	),
+	);
 }
