@@ -428,3 +428,14 @@ div.view-blog .views-row {
 #imageData #bottomNav {
     display: none !important;
 }
+
+#rmsd_lightbox {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    overflow: scroll;
+    padding-left: 10px;
+    padding-right: 7px;
+    width: 560px;
+    min-height:465px !important;
+}
