@@ -32,6 +32,10 @@
 	$result = db_query('SELECT n.id, n.name, n.caption, n.option1, n.option2, n.redirect1, n.redirect2 FROM {redirectmsd} n WHERE n.id = :id', array(':id' => $redirectid));
 	$record = $result->fetchObject();
 	
+	if(!is_object($record)) {
+		return;
+	}
+	
 	if(strlen($record->option1) > 0) {
 		// For most of the forms where there are options to be displayed to the user
 		?>
