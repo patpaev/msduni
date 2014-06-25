@@ -48,6 +48,10 @@
 <?php
 foreach ($items as $delta => $item):
   
+  // Remove the link to the taxonomy term page
+  unset($item["#type"]);
+  $item["#markup"] = $item["#title"];
+
   print render($item);
   
   if(($delta+1) < count($items)) {
