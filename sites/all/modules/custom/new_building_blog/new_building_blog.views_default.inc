@@ -50,7 +50,7 @@ function new_building_blog_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['date_format'] = 'blog_post';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'D, dS F Y';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
