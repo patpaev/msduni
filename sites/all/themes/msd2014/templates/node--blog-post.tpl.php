@@ -11,7 +11,7 @@ if ($breadcrumb): ?>
 <?php endif; ?>
   
   <div class='date-wrapper'>
-  	<?php print format_date($node->created, 'date_only'); ?>
+  	<?php print format_date($node->created, 'blog_post'); ?>
   </div>
   
   <?php if ($title): ?>
