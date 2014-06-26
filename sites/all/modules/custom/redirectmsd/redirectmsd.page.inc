@@ -36,7 +36,7 @@
 		return;
 	}
 	
-	if(strlen($record->option1) > 0) {
+	if(strlen($record->option1) > 0 && strlen($record->option2) > 0) {
 		// For most of the forms where there are options to be displayed to the user
 		?>
 		
