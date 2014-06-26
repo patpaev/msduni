@@ -35,76 +35,62 @@
 	if(!is_object($record)) {
 		return;
 	}
+	?>
 	
-	if(strlen($record->option1) > 0) {
-		// For most of the forms where there are options to be displayed to the user
-		?>
-		
-		<div id="rmsd_image_holder">
-			<div class="content">
-	    		<p id="msd-logo-white"><a href="/"><img src="/sites/default/files/white_logo.jpg" alt="MSD logo"></a></p>
-			</div>
+	<div id="rmsd_image_holder">
+		<div class="content">
+    		<p id="msd-logo-white"><a href="/"><img src="/sites/default/files/white_logo.jpg" alt="MSD logo"></a></p>
 		</div>
+	</div>
 
-	    <p id="redirect_caption"><?php print $record->caption; ?></p>
-		    
-		<form action="#" name="myForm" onsubmit="return validate();">
+    <p id="redirect_caption"><?php print $record->caption; ?></p>
+	    
+	<form action="#" name="myForm" onsubmit="return validate();">
             
-            <? if(strlen($record->option1) > 0 && strlen($record->option2) > 0) { ?> 			
-				<input type="radio" name="option" id="option1" value="<?php print $record->option1; ?>"><span id="rmsd_opt"><?php print $record->option1; ?></span><br />
-			<? } ?> 
-			
-			<? if(strlen($record->option2) > 0) { ?>
-				<input type="radio" name="option" id="option2" value="<?php print $record->option2; ?>"><span id="rmsd_opt"><?php print $record->option2; ?></span><br /><br />
-			<? } ?>
-			
-	        <? if(
+        <? if(strlen($record->option1) > 0 && strlen($record->option2) > 0) { ?> 			
+			<input type="radio" name="option" id="option1" value="<?php print $record->option1; ?>"><span id="rmsd_opt"><?php print $record->option1; ?></span><br />
+		<? } ?> 
+		
+		<? if(strlen($record->option2) > 0) { ?>
+			<input type="radio" name="option" id="option2" value="<?php print $record->option2; ?>"><span id="rmsd_opt"><?php print $record->option2; ?></span><br /><br />
+		<? } ?>
+		
+        <? if(
+			strlen($record->option1) > 0 &&
+			strlen($record->option2) == 0
+		) { ?>
+			<input type="submit" value="Continue" />
+		<? } else { ?> 
+			<input type="submit" value="Submit" />
+		<? } ?>
+		
+	</form>
+	
+	<script type="text/javascript">
+	function validate() {
+
+		<? if(
 				strlen($record->option1) > 0 &&
 				strlen($record->option2) == 0
-			) { ?>
-				<input type="submit" value="Continue" />
-			<? } else { ?> 
-				<input type="submit" value="Submit" />
-			<? } ?>
-			
-		</form>
+		) { ?>
+			location.href="<?php print $record->redirect1; ?>";
+		<? } else { ?>
 		
-		<script type="text/javascript">
-		function validate() {
-
-			<? if(
-					strlen($record->option1) > 0 &&
-					strlen($record->option2) == 0
-			) { ?>
+		    if(document.getElementById('option1').checked) {
 				location.href="<?php print $record->redirect1; ?>";
-			<? } else { ?>
+			}	
 			
-			    if(document.getElementById('option1').checked) {
-					location.href="<?php print $record->redirect1; ?>";
-				}	
-				
-				if(document.getElementById('option2').checked) {
-		     		location.href="<?php print $record->redirect2; ?>";
-				}
+			if(document.getElementById('option2').checked) {
+	     		location.href="<?php print $record->redirect2; ?>";
+			}
 
-			<? } ?>
-			
-			return false;
-			
-		}
-		</script>
-
-	<?
-	} else { 
-		// If no options exist, immediately go to redirect1
-		?>
-		<script type="text/javascript">
-		location.href="<?php print $record->redirect1; ?>";
-		</script>
-		<?
+		<? } ?>
+		
+		return false;
+		
 	}
-	
-	?>
+	</script>
+
 	</body>
 	</html>
 	<?
