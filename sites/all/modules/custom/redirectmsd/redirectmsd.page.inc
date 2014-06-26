@@ -36,7 +36,7 @@
 		return;
 	}
 	
-	if(strlen($record->option1) > 0 && strlen($record->option2) > 0) {
+	if(strlen($record->option1) > 0) {
 		// For most of the forms where there are options to be displayed to the user
 		?>
 		
@@ -50,15 +50,18 @@
 		    
 		<form action="#" name="myForm" onsubmit="return validate();">
             
-	            <? if($record->option1 != null) { ?> 			
+            <? if(strlen($record->option1) > 0 && strlen($record->option2) > 0) { ?> 			
 				<input type="radio" name="option" id="option1" value="<?php print $record->option1; ?>"><span id="rmsd_opt"><?php print $record->option1; ?></span><br />
 			<? } ?> 
 			
-			<? if($record->option2 != null) { ?>
+			<? if(strlen($record->option2) > 0) { ?>
 				<input type="radio" name="option" id="option2" value="<?php print $record->option2; ?>"><span id="rmsd_opt"><?php print $record->option2; ?></span><br /><br />
 			<? } ?>
 			
-	        <? if($record->option1 == null && $record->option2 == null) { ?>
+	        <? if(
+				strlen($record->option1) > 0 &&
+				strlen($record->option2) == 0
+			) { ?>
 				<input type="submit" value="Continue" />
 			<? } else { ?> 
 				<input type="submit" value="Submit" />
@@ -68,14 +71,23 @@
 		
 		<script type="text/javascript">
 		function validate() {
-			
-		    if(document.getElementById('option1').checked) {
+
+			<? if(
+					strlen($record->option1) > 0 &&
+					strlen($record->option2) == 0
+			) { ?>
 				location.href="<?php print $record->redirect1; ?>";
-			}	
+			<? } else { ?>
 			
-			if(document.getElementById('option2').checked) {
-	     		location.href="<?php print $record->redirect2; ?>";
-			}
+			    if(document.getElementById('option1').checked) {
+					location.href="<?php print $record->redirect1; ?>";
+				}	
+				
+				if(document.getElementById('option2').checked) {
+		     		location.href="<?php print $record->redirect2; ?>";
+				}
+
+			<? } ?>
 			
 			return false;
 			
