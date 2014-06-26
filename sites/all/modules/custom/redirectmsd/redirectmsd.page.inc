@@ -4,14 +4,25 @@
 	<head>
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="/sites/all/themes/msd2014/css/msd2014.css" media="all" />
 	</head>
 	
 	<body id="rmsd_lightbox">
 	
 	<style style="text/css">
+	html {
+	    background-color: #FFFFFF;
+	}
+	
 	body {
 		padding:0;
 		margin:0;
+		background-color: #FFFFFF;
+	}
+	
+	ul {
+		list-style-type:disc;
+		margin-left:40px;
 	}
 	
 	.top-level {
