@@ -10,14 +10,14 @@ if ($breadcrumb): ?>
 	</div>
 <?php endif; ?>
   
-  <?php if ($title): ?>
-      <h1><?php print $title; ?></h1>
-  <?php endif; ?>
-
-  <div>
-  	<?php print format_date($node->created, 'blog_post'); ?>
+  <div class='date-wrapper'>
+  	<?php print format_date($node->created, 'date_only'); ?>
   </div>
   
+  <?php if ($title): ?>
+      <h2 class='title'><?php print $title; ?></h2>
+  <?php endif; ?>
+
   <?php print render($content['body']); ?>
   
   <?php print render($content['field_blog_tags']); ?>
