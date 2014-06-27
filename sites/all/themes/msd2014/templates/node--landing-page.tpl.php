@@ -69,6 +69,7 @@ foreach($related_items as $key => $item) {
 	} else if(
 		$node->type == "page" ||
 		$node->type == "event" ||
+		$node->type == "news" ||
 		$node->type == "tabbed_page"
 
 	) {
@@ -99,6 +100,7 @@ foreach($related_items as $key => $item) {
 		} else if(
 			$node->type == "page" ||
 			$node->type == "event" ||
+			$node->type == "news" ||
 			$node->type == "tabbed_page"
 		) {
 			$item = field_get_items('node', $node, 'field_listing_image');
@@ -126,6 +128,7 @@ foreach($related_items as $key => $item) {
 	  	} else if(
 			$node->type == "page" ||
 			$node->type == "event" ||
+			$node->type == "news" ||
 			$node->type == "tabbed_page"
 		) {
 		  	$item = field_get_items('node', $node, 'body');
