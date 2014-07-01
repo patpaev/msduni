@@ -237,6 +237,9 @@ function msd2014_path_breadcrumbs_view_alter(&$breadcrumb, &$path_breadcrumb) {
 	
 }
 
+/**
+ * Implements hook_menu().
+ */
 function msd2014_form_node_form_alter(&$form, &$form_state, $form_id) {
 	
 	if(in_array($form_id, array("news_node_form", "event_node_form"))) {
@@ -246,6 +249,9 @@ function msd2014_form_node_form_alter(&$form, &$form_state, $form_id) {
    		
    		// Always display the summary when using this form
    		unset($form['body'][LANGUAGE_NONE][0]['summary']['#attached']);
+   		
+   		// Change the description
+   		$form['body'][LANGUAGE_NONE][0]['summary']['#description'] = "The summary will be used as the teaser text in news and events listings.";
    		
 	}
 	
