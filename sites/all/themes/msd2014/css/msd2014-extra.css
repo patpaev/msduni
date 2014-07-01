@@ -453,3 +453,8 @@ body.node-type-blog-post h2.title {
 	display: inline-block;
 	margin-top:0px;
 }
+
+div.views-field-field-submitted-by,
+div.field-name-field-submitted-by {
+	margin: 0px 0px 8px 0px;
+}

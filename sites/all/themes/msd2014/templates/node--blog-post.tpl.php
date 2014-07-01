@@ -18,6 +18,8 @@ if ($breadcrumb): ?>
       <h2 class='title'><?php print $title; ?></h2>
   <?php endif; ?>
 
+  <?php print render($content['field_submitted_by']); ?>
+  
   <?php print render($content['body']); ?>
   
   <?php print render($content['field_blog_tags']); ?>
