@@ -76,6 +76,8 @@ if ($breadcrumb): ?>
 	$block = module_invoke('sharethis_extras', 'block_view', 'sharethis_extras_block');
 	print render($block['content']);
 	?>
+	
+	<?php print render($page['rightcolumn']);  ?>
 
 </div>
 <div style="clear:both"></div>

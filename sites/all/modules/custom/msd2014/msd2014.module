@@ -1,4 +1,7 @@
 <?
+/**
+ * Implements hook_block_info().
+ */
 function msd2014_block_info() {
 	$blocks['footer_left_column'] = array(
 		'info' => t('Footer Left Column'),
@@ -9,9 +12,15 @@ function msd2014_block_info() {
 	$blocks['footer_right_column'] = array(
 		'info' => t('Footer Right Column'),
 	);
+	$blocks['blog_right_column'] = array(
+		'info' => t('Blog Right Column'),
+	);
 	return $blocks;
 }
 
+/**
+ * Implements hook_block_configure().
+ */
 function msd2014_block_configure($delta = '') {
 	
 	$form = array();
@@ -37,20 +46,34 @@ function msd2014_block_configure($delta = '') {
 			'#required' => TRUE,
 	        '#default_value' => variable_get('msd2014_footer_right_column', ""),
 		);
+	} else if ($delta == 'blog_right_column') {
+		$form['body'] = array(
+	        '#type' => 'text_format',
+	        '#title' => t('Block body'),
+			'#required' => TRUE,
+	        '#default_value' => variable_get('msd2014_blog_right_column', ""),
+		);
 	}
 	
 	return $form;
 	
 }
 
+/**
+ * Implements hook_block_view().
+ */
 function msd2014_block_view($delta = '') {
+	
 	$block = array();
+	
 	if($delta == "footer_left_column") {
 		$block['content'] = variable_get('msd2014_footer_left_column', "");
 	} else if($delta == "footer_center_column") {
 		$block['content'] = variable_get('msd2014_footer_center_column', "");
 	} else if($delta == "footer_right_column") {
 		$block['content'] = variable_get('msd2014_footer_right_column', "");
+	} else if($delta == "blog_right_column") {
+		$block['content'] = variable_get('msd2014_blog_right_column', "");
 	}
 	
 	// Apply full html filter to content, ensures aliases etc. and other installed
@@ -70,6 +93,9 @@ function msd2014_preprocess_block(&$variables) {
 	if($variables['block']->delta == 'footer_right_column') {
 		$variables['classes_array'][] = "footer_right_column";
 	}
+	if($variables['block']->delta == 'blog_right_column') {
+		$variables['classes_array'][] = "blog_right_column";
+	}
 }
 
 function msd2014_block_save($delta = '',$edit = array()) {
@@ -79,6 +105,8 @@ function msd2014_block_save($delta = '',$edit = array()) {
 		variable_set('msd2014_footer_center_column', $edit['body']["value"]);
 	} else if ($delta == 'footer_right_column') {
 		variable_set('msd2014_footer_right_column', $edit['body']["value"]);
+	} else if ($delta == 'blog_right_column') {
+		variable_set('msd2014_blog_right_column', $edit['body']["value"]);
 	}
 }
 
