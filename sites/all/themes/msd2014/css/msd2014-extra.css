@@ -372,8 +372,12 @@ a.icon:hover, a.icon:focus {
 	list-style-type: none;
 }
 
+.side-module h2 {
+	background-color:#3DAAC3;
+}
+
 .content-black-wrap .side-module h2 {
-	background-color:#6CC;
+	background-color:#3DAAC3;
 	font-family: "ff-din-web",sans-serif;
 	font-style: normal;
 	color:#FFF;
@@ -463,3 +467,9 @@ body.page-blog div.view-id-blog div.views-field-body img {
 	float: left;
 	margin: 0px 15px 0px 0px;
 }
+
+.upcoming-events-wrap li .spright {
+	padding-right: 30px;
+	width: 137px;
+}
+
