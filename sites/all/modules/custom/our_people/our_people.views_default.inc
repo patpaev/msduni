@@ -292,17 +292,6 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: User: Profile portrait image */
-  $handler->display->display_options['fields']['field_profile_portrait_image']['id'] = 'field_profile_portrait_image';
-  $handler->display->display_options['fields']['field_profile_portrait_image']['table'] = 'field_data_field_profile_portrait_image';
-  $handler->display->display_options['fields']['field_profile_portrait_image']['field'] = 'field_profile_portrait_image';
-  $handler->display->display_options['fields']['field_profile_portrait_image']['label'] = '';
-  $handler->display->display_options['fields']['field_profile_portrait_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_profile_portrait_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_profile_portrait_image']['settings'] = array(
-    'image_style' => 'profile_portrait_listing_image',
-    'image_link' => '',
-  );
   /* Field: User: Title */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
@@ -351,26 +340,11 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['label'] = '';
-  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_email']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['alter']['text'] = '[field_telephone]<br/>
+[field_email]';
   $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
-  /* Field: User: Building */
-  $handler->display->display_options['fields']['field_building']['id'] = 'field_building';
-  $handler->display->display_options['fields']['field_building']['table'] = 'field_data_field_building';
-  $handler->display->display_options['fields']['field_building']['field'] = 'field_building';
-  $handler->display->display_options['fields']['field_building']['label'] = '';
-  $handler->display->display_options['fields']['field_building']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_building']['element_label_colon'] = FALSE;
-  /* Field: User: Room */
-  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
-  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = 'Contact';
-  $handler->display->display_options['fields']['field_room']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_room']['alter']['text'] = '[field_telephone]<br/>
-[field_email]<br/>
-Room: [field_room], [field_building]';
-  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
