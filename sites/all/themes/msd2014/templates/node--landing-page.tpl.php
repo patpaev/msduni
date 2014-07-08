@@ -34,27 +34,40 @@
 
 <div style="clear:both"></div>
 
-<div class="programs-content-left">
-	<?
-  	$item = field_get_items('node', $node, 'body');
-  	$body = field_view_value('node', $node, 'body', $item[0]);
-  	echo render($body);
-  	?>
-</div>
-  
-<div class="programs-content-right">
-	<?
-  	$item = field_get_items('node', $node, 'field_right_column');
-  	$body = field_view_value('node', $node, 'field_right_column', $item[0]);
-  	echo render($body);
-  	?>
-</div>
-  
+<?
+$item_body = field_get_items('node', $node, 'body');
+$body = field_view_value('node', $node, 'body', $item_body[0]);
+
+$item_right_column = field_get_items('node', $node, 'field_right_column');
+$right_column = field_view_value('node', $node, 'field_right_column', $item_right_column[0]);
+?>
+
+<? if(strlen(trim($right_column["#markup"])) == 0) { ?>
+
+	<div class="programs-content-left full-width">
+		<? echo render($body); ?>
+	</div>
+
+<? } else { ?>
+
+	<div class="programs-content-left">
+		<? echo render($body); ?>
+	</div>
+	  
+	<div class="programs-content-right">
+		<? echo render($right_column); ?>
+	</div>
+
+<? } ?>
+
 <div style="clear:both"></div>
  
- <?
+<?
 // Load the related items
-$related_items = $content["field_related_items"]["#items"];
+$related_items = array();
+if(array_key_exists("field_related_items", $content)) {
+	$related_items = $content["field_related_items"]["#items"];
+}
 
 foreach($related_items as $key => $item) { 
 

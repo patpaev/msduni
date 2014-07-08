@@ -372,6 +372,10 @@ a.icon:hover, a.icon:focus {
 	list-style-type: none;
 }
 
+div.programs-content-left.full-width {
+	width:912px;
+}
+
 .side-module h2 {
 	background-color:#3DAAC3;
 }
