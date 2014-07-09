@@ -275,9 +275,11 @@ div.contextual-links-wrapper li a {
     font-family: arial,sans-serif;
 }
 
-div.view-id-news .item-list ul, .item-list ul a {
+div.view-id-news .item-list ul,
+.item-list ul a {
     color: #FFFFFF;
 }
+
 div.view-id-news .item-list ul {
     padding: 15px 0 0;
 }
@@ -477,3 +479,53 @@ body.page-blog div.view-id-blog div.views-field-body img {
 	width: 137px;
 }
 
+.programs-content-right div#block-views-events-calendar-calendar,
+.programs-content-right div#block-views-events-calendar-calendar div {
+     margin: 0px;
+}
+
+div#block-views-events-calendar-calendar {
+    height:205px;
+}
+
+.programs-content-right div#block-views-events-calendar-calendar .date-nav {
+	padding:0px;
+	margin-top:10px;
+}
+
+.view .date-nav-wrapper .item-list ul li {
+    margin:0px;
+}
+
+.view .date-nav-wrapper .item-list ul li.date-prev {
+    margin-left:5px;
+}
+
+.view .date-nav-wrapper .item-list ul li.date-next {
+    margin-right:5px;
+}
+
+.mini-day-on {
+    color: #3DAAC3;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.calendar-calendar table.mini td {
+    text-align:center;
+}
+
+.bt-content {
+	list-style-image: url(../images/blt-arrow.png);
+	list-style-position: inside;
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+.bt-content a {
+	color: #3DAAC3;
+}
+
+div.calendar_tooltips-title-value {
+	display:inline;
+}

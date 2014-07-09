@@ -43,6 +43,13 @@
 </div>
   
 <div class="programs-content-right">
+
+	<?php
+	$block = block_load('views', 'events_calendar-calendar');
+	$build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	print drupal_render($build);
+	?>
+
 	<?
   	$item = field_get_items('node', $node, 'field_right_column');
   	$body = field_view_value('node', $node, 'field_right_column', $item[0]);

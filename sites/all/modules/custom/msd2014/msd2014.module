@@ -285,3 +285,37 @@ function msd2014_form_node_form_alter(&$form, &$form_state, $form_id) {
 	
 }
 
+/**
+ * Implement hook_init
+ */
+function msd2014_init() {
+	global $user;
+	
+	if($user->uid > 0) {
+		drupal_add_js(array('is_logged_in' => "1"), 'setting');
+	} else {
+		drupal_add_js(array('is_logged_in' => "0"), 'setting');
+	}
+	
+}
+
+/**
+ * Implements hook_define_beautytips_styles().
+ */
+function msd2014_define_beautytips_styles() {
+	
+	$styles['msd2014'] = array(
+		'fill' => '#FFF',
+		'padding' => 8,
+		'strokeStyle' => '#3DAAC3',
+		'cornerRadius' => 0,
+		'cssStyles' => array(
+			'fontFamily' => '"lucida grande",tahoma,verdana,arial,sans-serif',
+			'fontSize' => '11px',
+		),
+	);
+	
+	return $styles;
+	
+}
+
