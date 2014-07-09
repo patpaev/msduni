@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Home Features Display feature.
+ */
+
+include_once 'home_features_display.features.inc';

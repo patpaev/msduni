@@ -77,6 +77,15 @@ div.module-wrap h2 {
     text-transform: uppercase;
 }
 
+.module-wrap:hover h2 a {
+	color:#3DAAC3;
+	cursor:pointer;
+}
+
+.module-wrap h2 a {
+	color:#FFFFFF;
+}
+
 div.sharethis-wrapper {
 	height:35px;
 }
