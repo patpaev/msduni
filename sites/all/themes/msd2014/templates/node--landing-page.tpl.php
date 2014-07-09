@@ -42,13 +42,16 @@ $item_right_column = field_get_items('node', $node, 'field_right_column');
 $right_column = field_view_value('node', $node, 'field_right_column', $item_right_column[0]);
 ?>
 
-<? if(strlen(trim($right_column["#markup"])) == 0) { ?>
+<? if(
+	strlen(trim($body["#markup"])) > 0 &&
+	strlen(trim($right_column["#markup"])) == 0
+) { ?>
 
 	<div class="programs-content-left full-width">
 		<? echo render($body); ?>
 	</div>
 
-<? } else { ?>
+<? } else if(strlen(trim($body["#markup"])) > 0) { ?>
 
 	<div class="programs-content-left">
 		<? echo render($body); ?>
