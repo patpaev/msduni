@@ -69,10 +69,10 @@ function msd2014_preprocess_node(&$vars) {
 	if(request_path() == "past-events") {
 		$vars['theme_hook_suggestions'][] = 'node__past_events_list';
 	}
-	if(request_path() == "wunderlich-events") {
+	if(request_path() == "wunderlich-757") {
 		$vars['theme_hook_suggestions'][] = 'node__wunderlich_events_list';
 	}
-	if(request_path() == "757-swanston-events") {
+	if(request_path() == "757-swanston-street-building") {
 		$vars['theme_hook_suggestions'][] = 'node__757_swanston_events_list';
 	}
 }
