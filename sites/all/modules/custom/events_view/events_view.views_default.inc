@@ -71,7 +71,7 @@ function events_view_views_default_views() {
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'spright';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Sort criterion: Content: Dates (field_dates) */
+  /* Sort criterion: Content: Dates -  start date (field_dates) */
   $handler->display->display_options['sorts']['field_dates_value']['id'] = 'field_dates_value';
   $handler->display->display_options['sorts']['field_dates_value']['table'] = 'field_data_field_dates';
   $handler->display->display_options['sorts']['field_dates_value']['field'] = 'field_dates_value';
@@ -168,7 +168,7 @@ function events_view_views_default_views() {
   $handler->display->display_options['fields']['field_dates']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dates']['settings'] = array(
     'format_type' => 'events_listing',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -196,7 +196,7 @@ function events_view_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Dates (field_dates) */
+  /* Sort criterion: Content: Dates -  start date (field_dates) */
   $handler->display->display_options['sorts']['field_dates_value']['id'] = 'field_dates_value';
   $handler->display->display_options['sorts']['field_dates_value']['table'] = 'field_data_field_dates';
   $handler->display->display_options['sorts']['field_dates_value']['field'] = 'field_dates_value';
@@ -226,8 +226,8 @@ function events_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_event_tags_tid']['vocabulary'] = 'event_tags';
 
-  /* Display: Past Events Full Listing */
-  $handler = $view->new_display('block', 'Past Events Full Listing', 'past_events');
+  /* Display: Events by tag Full Listing */
+  $handler = $view->new_display('block', 'Events by tag Full Listing', 'events_by_tag');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
@@ -276,7 +276,7 @@ function events_view_views_default_views() {
   $handler->display->display_options['fields']['field_dates']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dates']['settings'] = array(
     'format_type' => 'events_listing',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -304,11 +304,21 @@ function events_view_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read More';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Dates (field_dates) */
+  /* Sort criterion: Content: Dates -  start date (field_dates) */
   $handler->display->display_options['sorts']['field_dates_value']['id'] = 'field_dates_value';
   $handler->display->display_options['sorts']['field_dates_value']['table'] = 'field_data_field_dates';
   $handler->display->display_options['sorts']['field_dates_value']['field'] = 'field_dates_value';
   $handler->display->display_options['sorts']['field_dates_value']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Event tags (field_event_tags) */
+  $handler->display->display_options['arguments']['field_event_tags_tid']['id'] = 'field_event_tags_tid';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['table'] = 'field_data_field_event_tags';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['field'] = 'field_event_tags_tid';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_event_tags_tid']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -325,14 +335,6 @@ function events_view_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Event tags (field_event_tags) */
-  $handler->display->display_options['filters']['field_event_tags_tid']['id'] = 'field_event_tags_tid';
-  $handler->display->display_options['filters']['field_event_tags_tid']['table'] = 'field_data_field_event_tags';
-  $handler->display->display_options['filters']['field_event_tags_tid']['field'] = 'field_event_tags_tid';
-  $handler->display->display_options['filters']['field_event_tags_tid']['value'] = array(
-    0 => '1',
-  );
-  $handler->display->display_options['filters']['field_event_tags_tid']['vocabulary'] = 'event_tags';
   $export['events'] = $view;
 
   return $export;
