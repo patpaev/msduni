@@ -538,3 +538,11 @@ div#block-views-events-calendar-calendar {
 div.calendar_tooltips-title-value {
 	display:inline;
 }
+
+.social-media-wrap li a.linkedin {
+	background-image: url(../images/sm-linkedin.png);
+	background-position: left center;
+	background-color: #1F1F1F;
+	background-repeat: no-repeat;
+	margin-left:15px;
+}	

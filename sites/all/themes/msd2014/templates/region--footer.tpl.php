@@ -5,7 +5,7 @@
 		  <li><a href="http://www.facebook.com/msdunimelb" class="facebook">Like us on Facebook</a></li>
 		  <li><a href="http://www.twitter.com/msdsocial" class="twitter">Follow us on Twitter</a></li>
 		  <li><a href="http://www.youtube.com/user/ABPUnimelb" class="youtube">Watch MSD TV on Youtube</a></li>
-		  <li><a href="http://pinterest.com/msdsocial/" class="pinterest">Pin us on Pinterest</a></li>
+		  <li><a href="http://www.linkedin.com/groups/ABP-UoM-4706402?gid=4706402&trk=nmp_rec_act_group_photo" class="linkedin">Join us on Linked in</a></li>
 		  </ul>
 	  </div>
   </div>
