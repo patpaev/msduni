@@ -546,3 +546,7 @@ div.calendar_tooltips-title-value {
 	background-repeat: no-repeat;
 	margin-left:15px;
 }	
+
+div.footer-links-wrap div.footer_center_column div.content li:last-child {
+    border-bottom: none;
+}
