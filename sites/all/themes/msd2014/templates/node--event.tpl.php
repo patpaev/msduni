@@ -39,16 +39,8 @@ if ($breadcrumb): ?>
   <?php if ($title): ?>
       <h1><?php print $title; ?></h1>
   <?php endif; ?>
-
-  <p>
-  <? 
-  $item = field_get_items('node', $node, 'field_dates');
-  $date = field_view_value('node', $node, 'field_dates', $item[0]);
-  echo render($date);
-  ?>
-  </p>
   
-  <?php print render($content['body']); ?>
+  <?php print render($content); ?>
   
 </div>
 
