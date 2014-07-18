@@ -76,6 +76,8 @@ if ($breadcrumb): ?>
   
   <?php print render($user_profile["field_related_web_pages"]); ?>
   
+  <?php print render($user_profile["field_featured_media_releases"]); ?>
+  
   <?php if(array_key_exists("field_find_an_expert", $user_profile)) { ?>
   	<br/>
     For more details visit their <a href='<? print render($user_profile["field_find_an_expert"]); ?>' target='_blank'>Find An Expert profile</a>
