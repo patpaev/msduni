@@ -550,3 +550,7 @@ div.calendar_tooltips-title-value {
 div.footer-links-wrap div.footer_center_column div.content li:last-child {
     border-bottom: none;
 }
+
+body.node-type-event div.field-name-body {
+    margin-top:6px;
+}
