@@ -411,8 +411,29 @@ div.programs-content-left.full-width {
 }
 
 div.footer_right_column div.content h2,
-div.footer_right_column div.content h2 a {
+div.footer_right_column div.content h2 a,
+div.footer_subscribe_enews div.content h2 {
 	color: #3DAAC3;
+}
+
+
+div.footer_right_column div.content h2,
+div.footer_subscribe_enews div.content h2 {
+	margin-right:0px;
+}
+
+
+.single-clmn.right-column .box {
+	padding: 10px 10px 10px 12px;
+	min-height:0;
+}
+
+.single-clmn.right-column .box {
+    margin-top: 26px;
+}
+
+.single-clmn.right-column .box.footer-enews-subscribe {
+    margin-top: 12px;
 }
 
 div.footer_left_column h2 a,

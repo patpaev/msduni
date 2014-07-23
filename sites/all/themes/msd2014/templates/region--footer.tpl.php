@@ -50,10 +50,17 @@
     
     </div>
     
-    <div class="single-clmn">
+    <div class="single-clmn right-column">
     <div class="box">
 	    <?php
 	    $block = block_load('msd2014', 'footer_right_column');
+	    $build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	    print drupal_render($build);
+	    ?> 
+	</div>
+	<div class="box footer-enews-subscribe">
+	    <?php
+	    $block = block_load('msd2014', 'footer_subscribe_enews');
 	    $build = _block_get_renderable_array(_block_render_blocks(array($block)));
 	    print drupal_render($build);
 	    ?> 

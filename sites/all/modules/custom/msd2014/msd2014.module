@@ -9,6 +9,9 @@ function msd2014_block_info() {
 	$blocks['footer_site_ownership'] = array(
 		'info' => t('Footer Site Ownership'),
 	);
+	$blocks['footer_subscribe_enews'] = array(
+		'info' => t('Footer Subscribe e-news'),
+	);
 	$blocks['footer_center_column'] = array(
 		'info' => t('Footer Center Column'),
 	);
@@ -41,6 +44,13 @@ function msd2014_block_configure($delta = '') {
 	        '#title' => t('Block body'),
 			'#required' => TRUE,
 	        '#default_value' => variable_get('msd2014_footer_site_ownership', ""),
+		);
+	} else if ($delta == 'footer_subscribe_enews') {
+		$form['body'] = array(
+			'#type' => 'text_format',
+			'#title' => t('Block body'),
+			'#required' => TRUE,
+			'#default_value' => variable_get('msd2014_footer_subscribe_enews', ""),
 		);
 	} else if ($delta == 'footer_center_column') {
 		$form['body'] = array(
@@ -80,6 +90,8 @@ function msd2014_block_view($delta = '') {
 		$block['content'] = variable_get('msd2014_footer_left_column', "");
 	} else if($delta == "footer_site_ownership") {
 		$block['content'] = variable_get('msd2014_footer_site_ownership', "");
+	} else if($delta == "footer_subscribe_enews") {
+		$block['content'] = variable_get('msd2014_footer_subscribe_enews', "");
 	} else if($delta == "footer_center_column") {
 		$block['content'] = variable_get('msd2014_footer_center_column', "");
 	} else if($delta == "footer_right_column") {
@@ -102,6 +114,9 @@ function msd2014_preprocess_block(&$variables) {
 	if($variables['block']->delta == 'footer_site_ownership') {
 		$variables['classes_array'][] = "footer_site_ownership";
 	}
+	if($variables['block']->delta == 'footer_subscribe_enews') {
+		$variables['classes_array'][] = "footer_subscribe_enews";
+	}
 	if($variables['block']->delta == 'footer_center_column') {
 		$variables['classes_array'][] = "footer_center_column";
 	}
@@ -118,6 +133,8 @@ function msd2014_block_save($delta = '',$edit = array()) {
 		variable_set('msd2014_footer_left_column', $edit['body']["value"]);
 	} else if ($delta == 'footer_site_ownership') {
 		variable_set('msd2014_footer_site_ownership', $edit['body']["value"]);
+	} else if ($delta == 'footer_subscribe_enews') {
+		variable_set('msd2014_footer_subscribe_enews', $edit['body']["value"]);
 	} else if ($delta == 'footer_center_column') {
 		variable_set('msd2014_footer_center_column', $edit['body']["value"]);
 	} else if ($delta == 'footer_right_column') {
