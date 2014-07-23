@@ -113,8 +113,8 @@ $news_items = array();
  <? } ?>
  
 <?php
-// Find the "Wunderlich" term
-$term = taxonomy_get_term_by_name("Wunderlich", "event_tags");
+// Find the "Exhibition at Wunderlich" term
+$term = taxonomy_get_term_by_name("Exhibition at Wunderlich", "event_tags");
 $values = array_values($term);
 $term = array_shift($values);
 

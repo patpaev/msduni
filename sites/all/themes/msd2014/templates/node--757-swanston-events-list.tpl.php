@@ -113,8 +113,8 @@ $news_items = array();
  <? } ?>
  
 <?php
-// Find the "757 Swanston Street" term
-$term = taxonomy_get_term_by_name("757 Swanston Street", "event_tags");
+// Find the "Exhibition at 757 Swanston Street" term
+$term = taxonomy_get_term_by_name("Exhibition at 757 Swanston Street", "event_tags");
 $values = array_values($term);
 $term = array_shift($values);
 
