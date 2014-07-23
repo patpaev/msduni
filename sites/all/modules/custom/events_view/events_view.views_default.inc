@@ -108,6 +108,7 @@ function events_view_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Event tags (field_event_tags) */
   $handler->display->display_options['filters']['field_event_tags_tid']['id'] = 'field_event_tags_tid';
   $handler->display->display_options['filters']['field_event_tags_tid']['table'] = 'field_data_field_event_tags';
@@ -116,7 +117,15 @@ function events_view_views_default_views() {
   $handler->display->display_options['filters']['field_event_tags_tid']['value'] = array(
     0 => '1',
   );
+  $handler->display->display_options['filters']['field_event_tags_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_event_tags_tid']['vocabulary'] = 'event_tags';
+  /* Filter criterion: Content: Dates - end date (field_dates:value2) */
+  $handler->display->display_options['filters']['field_dates_value2']['id'] = 'field_dates_value2';
+  $handler->display->display_options['filters']['field_dates_value2']['table'] = 'field_data_field_dates';
+  $handler->display->display_options['filters']['field_dates_value2']['field'] = 'field_dates_value2';
+  $handler->display->display_options['filters']['field_dates_value2']['operator'] = '>';
+  $handler->display->display_options['filters']['field_dates_value2']['group'] = 1;
+  $handler->display->display_options['filters']['field_dates_value2']['default_date'] = 'NOW';
 
   /* Display: Upcoming Events Full Listing */
   $handler = $view->new_display('block', 'Upcoming Events Full Listing', 'upcoming_events');
@@ -225,6 +234,16 @@ function events_view_views_default_views() {
     0 => '1',
   );
   $handler->display->display_options['filters']['field_event_tags_tid']['vocabulary'] = 'event_tags';
+  /* Filter criterion: Content: Dates - end date (field_dates:value2) */
+  $handler->display->display_options['filters']['field_dates_value2']['id'] = 'field_dates_value2';
+  $handler->display->display_options['filters']['field_dates_value2']['table'] = 'field_data_field_dates';
+  $handler->display->display_options['filters']['field_dates_value2']['field'] = 'field_dates_value2';
+  $handler->display->display_options['filters']['field_dates_value2']['operator'] = '>';
+  $handler->display->display_options['filters']['field_dates_value2']['expose']['operator_id'] = 'field_dates_value2_op';
+  $handler->display->display_options['filters']['field_dates_value2']['expose']['label'] = 'Dates - end date (field_dates:value2)';
+  $handler->display->display_options['filters']['field_dates_value2']['expose']['operator'] = 'field_dates_value2_op';
+  $handler->display->display_options['filters']['field_dates_value2']['expose']['identifier'] = 'field_dates_value2';
+  $handler->display->display_options['filters']['field_dates_value2']['default_date'] = 'NOW';
 
   /* Display: Events by tag Full Listing */
   $handler = $view->new_display('block', 'Events by tag Full Listing', 'events_by_tag');
