@@ -6,6 +6,9 @@ function msd2014_block_info() {
 	$blocks['footer_left_column'] = array(
 		'info' => t('Footer Left Column'),
 	);
+	$blocks['footer_site_ownership'] = array(
+		'info' => t('Footer Site Ownership'),
+	);
 	$blocks['footer_center_column'] = array(
 		'info' => t('Footer Center Column'),
 	);
@@ -31,6 +34,13 @@ function msd2014_block_configure($delta = '') {
 	        '#title' => t('Block body'),
 			'#required' => TRUE,
 	        '#default_value' => variable_get('msd2014_footer_left_column', ""),
+		);
+	} else if ($delta == 'footer_site_ownership') {
+		$form['body'] = array(
+	        '#type' => 'text_format',
+	        '#title' => t('Block body'),
+			'#required' => TRUE,
+	        '#default_value' => variable_get('msd2014_footer_site_ownership', ""),
 		);
 	} else if ($delta == 'footer_center_column') {
 		$form['body'] = array(
@@ -68,6 +78,8 @@ function msd2014_block_view($delta = '') {
 	
 	if($delta == "footer_left_column") {
 		$block['content'] = variable_get('msd2014_footer_left_column', "");
+	} else if($delta == "footer_site_ownership") {
+		$block['content'] = variable_get('msd2014_footer_site_ownership', "");
 	} else if($delta == "footer_center_column") {
 		$block['content'] = variable_get('msd2014_footer_center_column', "");
 	} else if($delta == "footer_right_column") {
@@ -87,6 +99,9 @@ function msd2014_preprocess_block(&$variables) {
 	if($variables['block']->delta == 'footer_left_column') {
 		$variables['classes_array'][] = "footer_left_column";
 	}
+	if($variables['block']->delta == 'footer_site_ownership') {
+		$variables['classes_array'][] = "footer_site_ownership";
+	}
 	if($variables['block']->delta == 'footer_center_column') {
 		$variables['classes_array'][] = "footer_center_column";
 	}
@@ -101,6 +116,8 @@ function msd2014_preprocess_block(&$variables) {
 function msd2014_block_save($delta = '',$edit = array()) {
 	if ($delta == 'footer_left_column') {
 		variable_set('msd2014_footer_left_column', $edit['body']["value"]);
+	} else if ($delta == 'footer_site_ownership') {
+		variable_set('msd2014_footer_site_ownership', $edit['body']["value"]);
 	} else if ($delta == 'footer_center_column') {
 		variable_set('msd2014_footer_center_column', $edit['body']["value"]);
 	} else if ($delta == 'footer_right_column') {

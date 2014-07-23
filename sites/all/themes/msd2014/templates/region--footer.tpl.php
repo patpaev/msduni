@@ -24,8 +24,11 @@
 	    </div>
 	      
 	    <div class="fine-txt">
-	    	Authoriser: Executive Manager, Faculty of Architecture, Building and Planning<br>
-	    	Maintainer: Web Officer, Faculty of Architecture, Building and Planning
+    	  <?php
+	      $block = block_load('msd2014', 'footer_site_ownership');
+	      $build = _block_get_renderable_array(_block_render_blocks(array($block)));
+	      print drupal_render($build);
+	      ?>
 	    </div>
      
     </div>

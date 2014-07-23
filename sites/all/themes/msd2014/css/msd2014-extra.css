@@ -385,7 +385,7 @@ a.icon:hover, a.icon:focus {
 
 .content-left-wrap ol li, .programs-content-left ol li, .ui-widget-content ol li, .side-module ol li {
   	list-style-type: decimal;
-	list-style-position: inside;
+	list-style-position: outside;
 	list-style-image:none;
 }
 
@@ -431,6 +431,10 @@ div.news-promoted-header {
 div.content-right-wrap.news {
     margin-bottom: 10px;
     margin-top: 60px;
+}
+
+body.node-type-page div.content-right-wrap {
+	margin-top:110px;
 }
 
 /*
@@ -559,50 +563,4 @@ div.footer-links-wrap div.footer_center_column div.content li:last-child {
 
 body.node-type-event div.field-name-body {
     margin-top:6px;
-}
-
-div#enews-subscribe {
-	padding: 0px 22px 0px 20px;
-	border-top: 1px solid #000000;
-}
-
-div#enews-subscribe h4 {
-	color: #FFFFFF;
-}
-
-div#enews-subscribe table tr,
-div#enews-subscribe table th {
-	border: none;
-}
-
-div#enews-subscribe table td {
-	padding:0px;
-}
-
-div#enews-subscribe form {
-    margin: 0px;
-    overflow: visible;
-}
-
-div#enews-subscribe form label,
-div#enews-subscribe form p {
-	font-family: "HelveticaNeueLT-Light", sans-serif;
-	color: #B2B2B2;
-	font-weight: normal;
-	font-size: 12px;
-	margin-right:5px;
-}
-
-div#enews-subscribe form input[type=text] {
-	width:100%;
-	padding:2px;
-}
-
-div#enews-subscribe input[type="submit"] {
-    background-color: #3DAAC3;
-    background-image: -moz-linear-gradient(center top , #3DAAC3, #164682);
-    border: 0 none;
-    border-radius: 0px;
-    margin: 2px 10px 12px 0px;
-    padding: 4px 18px 3px 18px;
 }
