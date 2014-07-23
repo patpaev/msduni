@@ -34,7 +34,7 @@ jQuery(function($){
 
   <div class="wrapper-main">
   
-  <div class="main-header"><a href="/">
+  <div class="main-header"><a href="http://www.unimelb.edu.au">
   <img src="/<? echo path_to_theme(); ?>/images/msd-logo.png" width="440" height="110" alt="msd logo" /></a>
   
     <div class="navigation">
