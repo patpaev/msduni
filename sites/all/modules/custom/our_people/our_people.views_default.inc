@@ -345,6 +345,15 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['field_email']['alter']['text'] = '[field_telephone]<br/>
 [field_email]';
   $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User: Staff Team (field_staff_team) */
+  $handler->display->display_options['arguments']['field_staff_team_tid']['id'] = 'field_staff_team_tid';
+  $handler->display->display_options['arguments']['field_staff_team_tid']['table'] = 'field_data_field_staff_team';
+  $handler->display->display_options['arguments']['field_staff_team_tid']['field'] = 'field_staff_team_tid';
+  $handler->display->display_options['arguments']['field_staff_team_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_staff_team_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_staff_team_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_staff_team_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
