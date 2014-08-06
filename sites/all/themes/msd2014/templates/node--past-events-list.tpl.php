@@ -113,12 +113,7 @@ $news_items = array();
  <? } ?>
  
 <?php
-// Find the "Archived" term
-$term = taxonomy_get_term_by_name("Archived", "event_tags");
-$values = array_values($term);
-$term = array_shift($values);
-
-print views_embed_view("events", "events_by_tag", $term->tid);
+print views_embed_view("events", "past_events");
 ?>
  
   <div style="clear:both"></div>
