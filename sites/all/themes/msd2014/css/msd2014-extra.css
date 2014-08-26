@@ -529,6 +529,10 @@ body.page-blog div.view-id-blog div.views-field-body img {
      margin: 0px;
 }
 
+div.programs-content-right div#block-views-events-calendar-calendar {
+	padding-top:23px;
+}
+
 div#block-views-events-calendar-calendar {
     height:205px;
 }
