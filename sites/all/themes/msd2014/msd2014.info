@@ -4,9 +4,6 @@ package = Unimelb
 core = 7.x
 engine = phptemplate
 
-stylesheets[all][] = css/common-custom.css
-stylesheets[all][] = css/custom.css
-
 regions[byline]			= Site or Page Byline
 regions[banner]    		= Home Page Banner
 regions[content]        = Content
