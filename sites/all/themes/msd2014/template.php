@@ -19,17 +19,7 @@ function msd2014_preprocess_html(&$vars) {
     
     drupal_add_js(path_to_theme() . '/js/navigation.js');
     drupal_add_js(path_to_theme() . '/js/newsbanner.js');
-    
-    switch (theme_get_setting('unimelb_banner_type')) {
-        case 'newsbanner':
-            drupal_add_js(path_to_theme() . '/js/newsbanner.js');
-            break;
-        case 'homebanner':
-            drupal_add_js(path_to_theme() . '/js/homebanner.js');
-            drupal_add_css(path_to_theme() . '/css/homebanner.css');
-            break;
-    }
-
+	
     $background = theme_get_setting('background');
     $background_class = !empty($background) ? $background : "blue";
 
