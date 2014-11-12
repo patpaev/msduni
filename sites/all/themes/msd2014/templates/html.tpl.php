@@ -96,23 +96,24 @@ $site_name = variable_get('site_name', '');
 	<meta name="DC.Date" content="DATE">
 	<meta name="DC.Date.Modified" content="DATE">
 <!-- End meta data to be autofilled -->
+	
+	<meta content="width=device-width; initial-scale=0.9;" name="viewport">
 
-
-
-	<meta content="width=device-width; initial-scale=1.0;" name="viewport">
-
-  <?php print $styles; ?>
-  <?php print $scripts; ?>
-  
-<script type="text/javascript" src="//use.typekit.net/iws4gen.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	
+	<?php print $styles; ?>
+	<?php print $scripts; ?>
+	
+	<script type="text/javascript" src="//use.typekit.net/iws4gen.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	  
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
 
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
+  
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>

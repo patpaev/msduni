@@ -137,7 +137,6 @@ div.sharethis-wrapper {
 }
 
 div.text-bottom-item {
-    height: 44px;
     overflow: hidden;
 }
 
@@ -158,6 +157,7 @@ div.text-bottom-item {
 div.read-more-wrapper {
     bottom: 25px;
     position: absolute;
+    width:100%;
 }
 
 #cssmenu a,
@@ -593,6 +593,10 @@ div.footer-links-wrap div.footer_center_column div.content li:last-child {
 
 body.node-type-event div.field-name-body {
     margin-top:6px;
+}
+
+.banner img {
+	height:auto !important; 
 }
 
 /***** Drupal Overrides *****/

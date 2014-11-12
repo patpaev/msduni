@@ -802,7 +802,7 @@ a#ui-id-1.ui-tabs-anchor, a#ui-id-2.ui-tabs-anchor, a#ui-id-3.ui-tabs-anchor {
 	
 	
 
-html.wf-ffdinweb-n6-active div#tabs.ui-tabs ul.ui-tabs-nav li  {
+html.wf-ffdinweb-n6-active body.headingblock div.wrapper-main div.content-black-wrap div#tabs.ui-tabs ul.ui-tabs-nav li  {
 	padding:0px;
 	margin:0px;
 	border: none;
@@ -814,7 +814,7 @@ html.wf-ffdinweb-n6-active div#tabs.ui-tabs ul.ui-tabs-nav li  {
 
 	
 
-html.wf-ffdinweb-n6-active div#tabs.ui-tabs ul.ui-tabs-nav {
+html.wf-ffdinweb-n6-active body.headingblock div.wrapper-main div.content-black-wrap div#tabs.ui-tabs ul.ui-tabs-nav {
 	
 	background-color:#000 !important;
 	

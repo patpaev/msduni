@@ -46,6 +46,12 @@ jQuery(function($){
     <div style="clear:both"></div>
   </div>
   
+   <div id="mobile-toggle" style="display:none"> 
+  <a href="#" id="toggle-menu">
+    <img id="changer" src="/sites/all/themes/msd2014/images/mob-toggle.png" width="85" height="85" onclick="changeImage(this)" />  
+  </a>
+  </div>
+  
   	<?php if ($logged_in) : ?>		
      	<?php print $messages; ?>
 	<?php endif; ?>

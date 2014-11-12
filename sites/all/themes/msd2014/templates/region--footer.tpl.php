@@ -1,5 +1,5 @@
 
-  <div style="background-color:#1F1F1F">
+  <div class="blk" style="background-color:#1F1F1F">
 	  <div class="social-media-wrap">
 		  <ul>
 		  <li><a href="http://www.facebook.com/msdunimelb" class="facebook">Like us on Facebook</a></li>
@@ -73,4 +73,6 @@
   
   <div style="clear:both; height:50px"></div> 
   </div>
-    
+
+  <a href="#" class="scrollToTop"></a>
+  

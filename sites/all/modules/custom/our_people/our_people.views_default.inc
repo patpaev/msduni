@@ -22,6 +22,7 @@ function our_people_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 't-wrapper';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -29,106 +30,10 @@ function our_people_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = array(
-    'uid' => 'uid',
-    'field_profile_portrait_image' => 'field_profile_portrait_image',
-    'field_title' => 'field_title',
-    'field_first_name' => 'field_first_name',
-    'field_last_name' => 'field_last_name',
-    'field_position_title' => 'field_position_title',
-    'field_research_direction' => 'field_research_direction',
-    'field_discipline' => 'field_discipline',
-    'field_telephone' => 'field_telephone',
-    'field_email' => 'field_email',
-    'field_building' => 'field_building',
-    'field_room' => 'field_room',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'uid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_profile_portrait_image' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_first_name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_last_name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_position_title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_research_direction' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_discipline' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_telephone' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_email' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_building' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_room' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Field: User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
@@ -143,6 +48,8 @@ function our_people_views_default_views() {
   $handler->display->display_options['fields']['field_profile_portrait_image']['field'] = 'field_profile_portrait_image';
   $handler->display->display_options['fields']['field_profile_portrait_image']['label'] = '';
   $handler->display->display_options['fields']['field_profile_portrait_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_profile_portrait_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_profile_portrait_image']['element_wrapper_class'] = 't-r1-r2-c1';
   $handler->display->display_options['fields']['field_profile_portrait_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_profile_portrait_image']['settings'] = array(
     'image_style' => 'profile_portrait_listing_image',
@@ -166,19 +73,23 @@ function our_people_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
-  $handler->display->display_options['fields']['field_last_name']['label'] = 'Name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
   $handler->display->display_options['fields']['field_last_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_last_name']['alter']['text'] = '[field_title] [field_first_name] [field_last_name]';
   $handler->display->display_options['fields']['field_last_name']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_last_name']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_last_name']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_last_name']['element_wrapper_class'] = 't-r1-c2';
   /* Field: User: Position Title */
   $handler->display->display_options['fields']['field_position_title']['id'] = 'field_position_title';
   $handler->display->display_options['fields']['field_position_title']['table'] = 'field_data_field_position_title';
   $handler->display->display_options['fields']['field_position_title']['field'] = 'field_position_title';
-  $handler->display->display_options['fields']['field_position_title']['label'] = 'Title';
+  $handler->display->display_options['fields']['field_position_title']['label'] = '';
   $handler->display->display_options['fields']['field_position_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position_title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_position_title']['element_wrapper_class'] = 't-r1-c3';
   /* Field: User: Research Direction */
   $handler->display->display_options['fields']['field_research_direction']['id'] = 'field_research_direction';
   $handler->display->display_options['fields']['field_research_direction']['table'] = 'field_data_field_research_direction';
@@ -191,7 +102,10 @@ function our_people_views_default_views() {
   $handler->display->display_options['fields']['field_discipline']['id'] = 'field_discipline';
   $handler->display->display_options['fields']['field_discipline']['table'] = 'field_data_field_discipline';
   $handler->display->display_options['fields']['field_discipline']['field'] = 'field_discipline';
+  $handler->display->display_options['fields']['field_discipline']['label'] = '';
   $handler->display->display_options['fields']['field_discipline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_discipline']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_discipline']['element_wrapper_class'] = 't-r1-c4';
   $handler->display->display_options['fields']['field_discipline']['delta_offset'] = '0';
   /* Field: User: Telephone */
   $handler->display->display_options['fields']['field_telephone']['id'] = 'field_telephone';
@@ -218,12 +132,14 @@ function our_people_views_default_views() {
   $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
   $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
   $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_room']['label'] = '';
   $handler->display->display_options['fields']['field_room']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_room']['alter']['text'] = '[field_telephone]<br/>
 [field_email]<br/>
 Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_room']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_room']['element_wrapper_class'] = 't-r1-c5';
   /* Sort criterion: User: Last Name (field_last_name) */
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
@@ -262,6 +178,17 @@ Room: [field_room], [field_building]';
 
   /* Display: Academic Staff */
   $handler = $view->new_display('block', 'Academic Staff', 'academic_staff');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_text_custom']['content'] = '  <div class="t-heading-c1 "></div>
+  <div class="t-heading-c2-c3">Name</div>
+  <div class="t-heading-c2-c3">Title</div>
+  <div class="t-heading-c4">Discipline</div>
+  <div class="t-heading-c5">Contact</div>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Research Direction (field_research_direction) */
   $handler->display->display_options['arguments']['field_research_direction_tid']['id'] = 'field_research_direction_tid';
@@ -282,6 +209,16 @@ Room: [field_room], [field_building]';
 
   /* Display: Professional Staff */
   $handler = $view->new_display('block', 'Professional Staff', 'professional_staff');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_text_custom']['content'] = '  <div class="t-heading-c2-c3">Name</div>
+  <div class="t-heading-c2-c3">Title</div>
+  <div class="t-heading-c4">Discipline</div>
+  <div class="t-heading-c5">Contact</div>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -309,23 +246,29 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
-  $handler->display->display_options['fields']['field_last_name']['label'] = 'Name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
   $handler->display->display_options['fields']['field_last_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_last_name']['alter']['text'] = '[field_title] [field_first_name] [field_last_name]';
   $handler->display->display_options['fields']['field_last_name']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_last_name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_last_name']['element_class'] = 't-r1-c2';
   $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
   /* Field: User: Position Title */
   $handler->display->display_options['fields']['field_position_title']['id'] = 'field_position_title';
   $handler->display->display_options['fields']['field_position_title']['table'] = 'field_data_field_position_title';
   $handler->display->display_options['fields']['field_position_title']['field'] = 'field_position_title';
-  $handler->display->display_options['fields']['field_position_title']['label'] = 'Role';
+  $handler->display->display_options['fields']['field_position_title']['label'] = '';
+  $handler->display->display_options['fields']['field_position_title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_position_title']['element_class'] = 't-r1-c3';
   $handler->display->display_options['fields']['field_position_title']['element_label_colon'] = FALSE;
   /* Field: User: Staff Team */
   $handler->display->display_options['fields']['field_staff_team']['id'] = 'field_staff_team';
   $handler->display->display_options['fields']['field_staff_team']['table'] = 'field_data_field_staff_team';
   $handler->display->display_options['fields']['field_staff_team']['field'] = 'field_staff_team';
-  $handler->display->display_options['fields']['field_staff_team']['label'] = 'Team';
+  $handler->display->display_options['fields']['field_staff_team']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_team']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_staff_team']['element_class'] = 't-r1-c4';
   $handler->display->display_options['fields']['field_staff_team']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_team']['type'] = 'taxonomy_term_reference_plain';
   /* Field: User: Telephone */
@@ -339,10 +282,12 @@ Room: [field_room], [field_building]';
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
   $handler->display->display_options['fields']['field_email']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_email']['alter']['text'] = '[field_telephone]<br/>
 [field_email]';
+  $handler->display->display_options['fields']['field_email']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_email']['element_class'] = 't-r1-c5';
   $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Staff Team (field_staff_team) */

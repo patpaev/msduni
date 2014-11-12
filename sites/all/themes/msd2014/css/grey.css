@@ -1,0 +1,96 @@
+/* Page */
+pre, ul, ol, li {
+	border: 0;
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+.demo-container {
+    width: 480px;
+    z-index: 100;
+}
+
+.demo-container h4 {
+	font-size: 14px;
+	margin: 0 0 5px 0;
+}
+.clear {
+	clear: both;
+}
+.dcjq-count {
+	float: right;
+	display:none;
+}
+
+/* Page End */
+
+.grey .accordion {
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+.grey .accordion, .grey .accordion li {
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none;
+}
+.grey .accordion a {
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+	background-color: #D8D8D8;
+	font-weight: normal;
+	text-decoration: none;
+	display: block;
+	color: #191919;
+	border-bottom: 1px solid #ababab;
+	position: relative;
+	text-transform: uppercase;
+}
+.grey .accordion a.dcjq-parent, .grey .accordion a.dcjq-parent:hover {
+	/*
+	background: #D7D4D4 url(images/bg_grey.png) repeat-x 0 -1px;
+	*/
+}
+.grey .accordion a.dcjq-parent.active {
+}
+.grey .accordion a .dcjq-icon {
+	position: absolute;
+	top: 50%;
+	right: 18px;
+	width: 34px;
+	margin-top: -17px;
+	height: 34px;
+	background: url(/sites/all/themes/msd2014/images/arrow_grey_right.png) no-repeat 0 center;
+}
+.grey .accordion a.dcjq-parent.active .dcjq-icon {
+	background: url(/sites/all/themes/msd2014/images/arrow_grey_down.png) no-repeat 0 center;
+}
+.grey .accordion a:hover {
+	/*
+	background: #fff;
+	*/
+	color: #3daac3;
+}
+.grey .accordion a:active {
+}
+
+.grey.demo-container ul#accordion-2.accordion li.dcjq-parent-li ul li a,
+.grey.demo-container ul#accordion-2.accordion li.dcjq-parent-li ul li.dcjq-parent-li a.dcjq-parent {
+	background-color:#CDCDCD;
+	text-transform:none;
+}
+
+.grey.demo-container ul#accordion-2.accordion li.dcjq-parent-li ul li.dcjq-parent-li ul li.dcjq-parent-li a.dcjq-parent {
+	background-color:#C1C1C1;
+	text-transform:none;
+	
+}
+
+.grey.demo-container ul#accordion-2.accordion li.dcjq-parent-li ul li.dcjq-parent-li ul li a {
+	background-color: #C1C1C1;
+	text-transform:none;
+}
