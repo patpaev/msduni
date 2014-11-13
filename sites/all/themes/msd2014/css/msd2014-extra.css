@@ -132,6 +132,13 @@ div.sharethis-wrapper {
     padding: 0px !important;
 }
 
+blockquote a {
+    clear: none;
+    float: none;
+    margin: 0px;
+    position: static;
+}
+
 .programs-content-right p {
     margin-bottom: 0px;
 }
