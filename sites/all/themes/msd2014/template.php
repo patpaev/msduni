@@ -14,8 +14,12 @@ function msd2014_preprocess_html(&$vars) {
     drupal_add_css(path_to_theme() . '/css/supersized.core.css');
     drupal_add_css(path_to_theme() . '/css/jquery-ui.css');
     
-    drupal_add_css(path_to_theme() . '/css/mobile.css');
-    drupal_add_css(path_to_theme() . '/css/grey.css');
+    drupal_add_css(path_to_theme() . '/css/desktop.css');
+    
+    if(@$_GET['mobiletest'] == "1") {
+    	drupal_add_css(path_to_theme() . '/css/mobile.css');
+    	drupal_add_css(path_to_theme() . '/css/grey.css');
+    }
     
     drupal_add_js('http://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
     drupal_add_js(path_to_theme() . '/js/supersized.core.3.2.1.min.js');
@@ -27,7 +31,10 @@ function msd2014_preprocess_html(&$vars) {
     
     drupal_add_js(path_to_theme() . '/js/jquery.hoverIntent.minified.js');
     drupal_add_js(path_to_theme() . '/js/jquery.dcjqaccordion.2.7.min.js');
-    drupal_add_js(path_to_theme() . '/js/mobile.js');
+    
+    if(@$_GET['mobiletest'] == "1") {
+    	drupal_add_js(path_to_theme() . '/js/mobile.js');
+    }
     
     $background = theme_get_setting('background');
     $background_class = !empty($background) ? $background : "blue";
