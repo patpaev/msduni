@@ -11,7 +11,7 @@
   </div>
   
   
-  <div style="background-color:#292929">
+  <div class="blk" style="background-color:#292929">
   <div class="footer-links-wrap">
     <div class="double-clmn">
     
@@ -50,7 +50,7 @@
     
     </div>
     
-    <div class="single-clmn right-column">
+    <div class="single-clmn single-clmn-wide right-column">
     <div class="box">
 	    <?php
 	    $block = block_load('msd2014', 'footer_right_column');
