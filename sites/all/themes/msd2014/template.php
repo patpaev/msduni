@@ -4,34 +4,35 @@
  * Implements hook_preprocess_html
  */
 function msd2014_preprocess_html(&$vars) {
-	
-    drupal_add_css('http://brand.unimelb.edu.au/web-templates/1-1-0/css/complete.css', 'external');
-    drupal_add_css("http://brand.unimelb.edu.au/global-header/css/style.css", 'external');
-    
+
+    drupal_add_css('https://brand.unimelb.edu.au/web-templates/1-1-0/css/complete.css', 'external');
+    drupal_add_css("https://brand.unimelb.edu.au/global-header/css/style.css", 'external');
+
     drupal_add_css(path_to_theme() . '/css/msd2014.css');
     drupal_add_css(path_to_theme() . '/css/nav-style.css');
     drupal_add_css(path_to_theme() . '/css/msd2014-extra.css');
     drupal_add_css(path_to_theme() . '/css/supersized.core.css');
     drupal_add_css(path_to_theme() . '/css/jquery-ui.css');
-    
+
     drupal_add_css(path_to_theme() . '/css/desktop.css');
-    
+
     drupal_add_css(path_to_theme() . '/css/mobile.css');
     drupal_add_css(path_to_theme() . '/css/grey.css');
-    
-    drupal_add_js('http://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
+
+    drupal_add_js('https://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
     drupal_add_js(path_to_theme() . '/js/supersized.core.3.2.1.min.js');
     drupal_add_js(path_to_theme() . '/js/jquery-ui.js');
     drupal_add_js(path_to_theme() . '/js/jquery.matchHeight-min.js');
-    
+
     drupal_add_js(path_to_theme() . '/js/navigation.js');
     drupal_add_js(path_to_theme() . '/js/newsbanner.js');
-    
+
     drupal_add_js(path_to_theme() . '/js/jquery.hoverIntent.minified.js');
     drupal_add_js(path_to_theme() . '/js/jquery.dcjqaccordion.2.7.min.js');
-    
+
     drupal_add_js(path_to_theme() . '/js/mobile.js');
-    
+    drupal_add_js(path_to_theme() . '/js/custom.js');
+
     $background = theme_get_setting('background');
     $background_class = !empty($background) ? $background : "blue";
 
@@ -131,26 +132,26 @@ function msd2014_preprocess_page(&$vars, $hook) {
     $vars['header_menu'] = theme_get_setting('header_menu') == 'none' ? null : _unimelb_menu_tree('header', theme_get_setting('header_menu'), theme_get_setting('header_menu_max_depth'));
 
     /* Set up navigation menu */
-    // Only retrieve the navigation menu if it's to be displayed on this page   
+    // Only retrieve the navigation menu if it's to be displayed on this page
     $navigation_visibility = theme_get_setting('navigation_menu_visibility');
     $navigation_pages = theme_get_setting('navigation_menu_pages');
     $navigation_menu_on = theme_get_setting('navigation_menu') == 'none' ? false : true;
 
     if ($navigation_menu_on) {
         if ($navigation_visibility == 1 && empty($navigation_pages)) {
-            // If the menu is set to display only on certain pages AND there are 
+            // If the menu is set to display only on certain pages AND there are
             // none entered
             $page_match = FALSE;
         } else {
-            // If the menu is set to display exclusive or inclusive of pages and 
+            // If the menu is set to display exclusive or inclusive of pages and
             // there are pages set
             if ($navigation_pages) {
-                // If there are pages set, this case could be either inclusive or 
+                // If there are pages set, this case could be either inclusive or
                 // exclusive
                 $pages = drupal_strtolower($navigation_pages);
                 $path = drupal_strtolower(drupal_get_path_alias($_GET['q']));
                 $page_match = drupal_match_path($path, $pages);
-                
+
                 // Something for if clean URLs is on or off ???
                 if ($path != $_GET['q']) {
                     $page_match = $page_match || drupal_match_path($_GET['q'], $pages);
@@ -158,7 +159,7 @@ function msd2014_preprocess_page(&$vars, $hook) {
 
                 $page_match = !($navigation_visibility xor $page_match);
             } else {
-                // There are no pages set, this is only possible for inclusive at 
+                // There are no pages set, this is only possible for inclusive at
                 // this point, display everything
                 $page_match = TRUE;
             }
@@ -174,11 +175,11 @@ function msd2014_preprocess_page(&$vars, $hook) {
     } else {
         $vars['asideIsFirst'] = false;
     }
-    
-    if (isset($vars['node']->type)) { 
-    	$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type; 
+
+    if (isset($vars['node']->type)) {
+    	$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
     }
-    
+
     // For pages which aren't a node (except for the front page),
     // use a page template with a white wrap.
 	if (
@@ -189,14 +190,14 @@ function msd2014_preprocess_page(&$vars, $hook) {
 			// Custom page template for the user profile page
 			// TODO: Can we improve how we detect this case?
 			$vars['theme_hook_suggestions'][] = 'page__user_profile';
-		} else { 
+		} else {
 			$vars['theme_hook_suggestions'][] = 'page__white_wrap';
 		}
     }
-    
+
     // Get the entire main menu tree
     $main_menu_tree = menu_tree_all_data('main-menu');
-    
+
     // Add the rendered output to the $main_menu_expanded variable
     $vars['main_menu_expanded'] = menu_tree_output($main_menu_tree);
 }
@@ -220,10 +221,10 @@ function _unimelb_menu_tree($region, $menu_name, $max_depth = null) {
         if ($max_depth == 0) {
             $max_depth = null;
         }
-        
-        $tree = menu_tree_page_data($menu_name, $max_depth);        
+
+        $tree = menu_tree_page_data($menu_name, $max_depth);
         $menu_output[$region] = menu_tree_output($tree);
     }
-    
+
     return $menu_output[$region];
 }
