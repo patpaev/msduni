@@ -94,7 +94,7 @@ div.sharethis-wrapper {
 .st_twitter_custom,
 .st_print_custom,
 .st_email_custom,
-.st_sharethis_custom 
+.st_sharethis_custom
 {
 	padding:0px 28px 28px 0;
 }
@@ -169,7 +169,7 @@ div.read-more-wrapper {
 
 #cssmenu a,
 #cssmenu span {
-	font-size: 1.28em;
+	font-size: 1.25em;
 }
 
 .programs-content-left, .programs-content-right, .news-promoted-header {
@@ -202,7 +202,7 @@ h2, h3, h4, .pullquote, .content-black-wrap h2 {
 
 #cssmenu a,
 #cssmenu span {
-	padding-left:58px;
+	padding-left: 30px;
 }
 
 #cssmenu span {
@@ -329,7 +329,7 @@ div.view-our-people table {
      width: 100%;
 }
 
-div.view-our-people th.views-field-field-profile-portrait-image, 
+div.view-our-people th.views-field-field-profile-portrait-image,
 div.view-our-people td.views-field-field-profile-portrait-image {
      padding: 0px;
      width: 100px;
@@ -339,7 +339,7 @@ div.view-our-people th {
      padding: 0px;
 }
 
-div.view-our-people th, 
+div.view-our-people th,
 div.view-our-people td {
      padding: 3px 0px 3px 4px;
 }
@@ -414,7 +414,7 @@ div.programs-content-left.full-width {
 	font-size:1.1em;
 	line-height:1.1em;
 	padding-top:16px;
-	padding-bottom:16px;	
+	padding-bottom:16px;
 }
 
 div.footer_right_column div.content h2,
@@ -592,7 +592,7 @@ div.calendar_tooltips-title-value {
 	background-color: #1F1F1F;
 	background-repeat: no-repeat;
 	margin-left:15px;
-}	
+}
 
 div.footer-links-wrap div.footer_center_column div.content li:last-child {
     border-bottom: none;
@@ -603,7 +603,7 @@ body.node-type-event div.field-name-body {
 }
 
 .banner img {
-	height:auto !important; 
+	height:auto !important;
 }
 
 /***** Drupal Overrides *****/
