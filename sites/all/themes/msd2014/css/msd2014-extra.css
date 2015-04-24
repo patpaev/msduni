@@ -641,3 +641,48 @@ ul li.leaf {
     text-decoration: underline;
 }
 
+
+/* 4th Tab */
+.ui-tabs .ui-4-tabs li {
+  display: table-cell;
+  float: none;
+}
+
+.ui-tabs .ui-4-tabs .ui-tabs-anchor span {
+  background-position: 205px center!important;
+  border-bottom: 0;
+}
+
+.ui-tabs .ui-4-tabs .ui-tabs-anchor img {
+  width: 239px;
+  height: 183px;
+}
+
+a#ui-id-1.ui-tabs-anchor span{
+  border-bottom-width: 0;
+}
+
+.ui-tabs-active a span {
+  border-bottom-width: 0!important;
+}
+
+a#ui-id-4.ui-tabs-anchor {
+  padding:0px;
+  margin:0px;
+  border: none;
+  background-color:#000;
+  line-height:0px;
+}
+
+a#ui-id-4.ui-tabs-anchor span {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 25px;
+  background-color: #999999;
+  background-image: url(../images/tab-down-arrow-white.png);
+  background-repeat: no-repeat;
+  background-position: 270px center;
+  color: #FFF;
+}
+

@@ -82,9 +82,9 @@ html, body, ul {
 	
 	
 img {
-	border:0px;
-
-
+	border:0;
+	max-width: 100%;
+	height: auto;
 	}
 
 a {
@@ -102,8 +102,7 @@ a:hover {
 
 
 #footernav {
-	top:0em;
-	
+	top:0;
 	}
 
 
@@ -122,7 +121,7 @@ a:hover {
 }
 .main-header {
 	padding: 30px;
-	padding-bottom:0px;
+	padding-bottom:0;
 	height:226;
 }
 .bg-pattern-rpt {
