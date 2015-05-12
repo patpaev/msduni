@@ -706,6 +706,8 @@ a#ui-id-4.ui-tabs-anchor span {
     display: block;
   }
 
+  .tab-content-wrapper > tbody,
+  .tab-content-wrapper > tbody > tr,
   .tab-content-wrapper > tbody > tr > td {
     display: block;
     width: 100%;
@@ -713,7 +715,8 @@ a#ui-id-4.ui-tabs-anchor span {
 
   .tab-content-wrapper .tabbed-content-right-wrap,
   .tab-content-wrapper table,
-  .tab-content-wrapper tbody
+  .tab-content-wrapper tbody,
+  .tabbed-content-left-wrap table
   {
     width: 100%;
   }
@@ -723,6 +726,6 @@ a#ui-id-4.ui-tabs-anchor span {
   .ui-4-tabs a#ui-id-4.ui-tabs-anchor,
   .ui-4-tabs .ui-tabs-anchor img, 
   .ui-4-tabs .ui-tabs-active img {
-    width: 120px!important;
+    width: 118px!important;
   }
 }
