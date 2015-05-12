@@ -643,17 +643,17 @@ ul li.leaf {
 
 
 /* 4th Tab */
-.ui-tabs .ui-4-tabs li {
+.content .ui-tabs .ui-4-tabs li {
   display: table-cell;
   float: none;
 }
 
-.ui-tabs .ui-4-tabs .ui-tabs-anchor span {
+.content .ui-tabs .ui-4-tabs .ui-tabs-anchor span {
   background-position: 205px center!important;
   border-bottom: 0;
 }
 
-.ui-tabs .ui-4-tabs .ui-tabs-anchor img {
+.content .ui-tabs .ui-4-tabs .ui-tabs-anchor img {
   width: 239px;
   height: 183px;
 }
@@ -662,7 +662,7 @@ a#ui-id-1.ui-tabs-anchor span{
   border-bottom-width: 0;
 }
 
-.ui-tabs-active a span {
+.content .ui-tabs-active a span {
   border-bottom-width: 0!important;
 }
 
@@ -686,3 +686,15 @@ a#ui-id-4.ui-tabs-anchor span {
   color: #FFF;
 }
 
+.content .ui-widget-content {
+  background: transparent!important;
+}
+
+.content .ui-widget-header.ui-tabs-nav {
+  background: transparent!important;
+}
+
+
+.content .ui-tabs-panel.ui-widget-content {
+  background: white!important;
+}
