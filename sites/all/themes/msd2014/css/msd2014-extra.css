@@ -698,3 +698,31 @@ a#ui-id-4.ui-tabs-anchor span {
 .content .ui-tabs-panel.ui-widget-content {
   background: white!important;
 }
+
+
+/* 12 May Mobile Tabs */
+@media only all and (max-width: 640px) {
+  .tab-content-wrapper {
+    display: block;
+  }
+
+  .tab-content-wrapper > tbody > tr > td {
+    display: block;
+    width: 100%;
+  }
+
+  .tab-content-wrapper .tabbed-content-right-wrap,
+  .tab-content-wrapper table,
+  .tab-content-wrapper tbody
+  {
+    width: 100%;
+  }
+  .ui-4-tabs a#ui-id-1.ui-tabs-anchor, 
+  .ui-4-tabs a#ui-id-2.ui-tabs-anchor, 
+  .ui-4-tabs a#ui-id-3.ui-tabs-anchor,
+  .ui-4-tabs a#ui-id-4.ui-tabs-anchor,
+  .ui-4-tabs .ui-tabs-anchor img, 
+  .ui-4-tabs .ui-tabs-active img {
+    width: 120px!important;
+  }
+}
