@@ -1,0 +1,21 @@
+* {
+  box-sizing: inherit;
+}
+
+body {
+  overflow: initial;
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    font-size: 81%;
+  }
+}
+
+.uomcontent {
+    background-color: transparent;
+}
+
+p {
+  margin-bottom: 1em;
+}
