@@ -8,9 +8,6 @@ function msd2014_preprocess_html(&$vars) {
     drupal_add_css('https://brand.unimelb.edu.au/web-templates/1-1-0/css/complete.css', 'external');
     drupal_add_css("https://brand.unimelb.edu.au/global-header/css/style.css", 'external');
 
-    drupal_add_css('https://uom-design-system.s3.amazonaws.com/v1.0/uom.css', 'external');
-    drupal_add_css(path_to_theme() . '/css/uomtemplates-patch.css');
-
     drupal_add_css(path_to_theme() . '/css/msd2014.css');
     drupal_add_css(path_to_theme() . '/css/nav-style.css');
     drupal_add_css(path_to_theme() . '/css/msd2014-extra.css');
@@ -22,6 +19,9 @@ function msd2014_preprocess_html(&$vars) {
     drupal_add_css(path_to_theme() . '/css/grey.css');
     drupal_add_css(path_to_theme() . '/css/forms.css');
     
+    drupal_add_css('https://uom-design-system.s3.amazonaws.com/v1.0/uom.css', 'external');
+    drupal_add_css(path_to_theme() . '/css/uomtemplates-patch.css');
+
 
     drupal_add_js('https://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
     drupal_add_js(path_to_theme() . '/js/supersized.core.3.2.1.min.js');

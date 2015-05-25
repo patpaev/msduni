@@ -1,4 +1,7 @@
 * {
+  -moz-box-sizing: inherit;
+  -o-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
