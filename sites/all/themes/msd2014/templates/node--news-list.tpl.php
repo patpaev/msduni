@@ -38,19 +38,46 @@
 <div style="clear:both"></div>
 
 <? 
-$item = field_get_items('node', $node, 'body'); 
-if(is_array($item)) { ?>
+  
+$body_item = field_get_items('node', $node, 'body'); 
+$right_column_item = field_get_items('node', $node, 'field_right_column'); 
 
-	<div class="news-promoted-header">
+if(is_array($body_item) && is_array($right_column_item)) {
+  $half = 'half';
+  } else {
+    $half = '';
+}
+
+
+$item = field_get_items('node', $node, 'body'); 
+if(is_array($body_item)) { ?>
+
+	<div class="news-promoted-header <?= $half ?>">
 		<?
-	  	$body = field_view_value('node', $node, 'body', $item[0]);
+	  	$body = field_view_value('node', $node, 'body', $body_item[0]);
 	  	echo render($body);
 	  	?>
 	</div>
+	
+<? } ?>
+
+<? 
+
+if(is_array($right_column_item)) { ?>
+
+	<div class="news-promoted-header <?= $half ?>">
+		<?
+	  	$right_column = field_view_value('node', $node, 'field_right_column', $right_column_item[0]);
+	  	echo render($right_column);
+	  	?>
+	</div>
+	
+<? } ?>
+
 	  
 	<div style="clear:both"></div>
 
-<? } ?>
+
 
 <?php
 $block = block_load('views', 'news-block_1');
@@ -65,6 +92,7 @@ print drupal_render($build);
 <script type="text/javascript">
 jQuery(function($) {
     $('.programs-content-left, .programs-content-right').matchHeight();
+    $('.news-promoted-header').matchHeight();
     $('.programs-module').matchHeight();
     $('.programs-module h2').matchHeight();
 });

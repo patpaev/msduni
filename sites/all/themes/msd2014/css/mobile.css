@@ -21,7 +21,6 @@ body {
 
 div {
 	border:solid 0px #FF0004;
-	
 }
 
 .demo-container {
@@ -29,7 +28,6 @@ div {
 }
 
 #footernav-social,
-
 .navigation {
 	display:none !important;
 }

@@ -22,3 +22,7 @@ body {
 p {
   margin-bottom: 1em;
 }
+
+html, body, ul {
+  font-family: "HelveticaNeueLT-Light", sans-serif;
+}

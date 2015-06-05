@@ -105,14 +105,19 @@ foreach($related_items as $key => $item) {
 		<?
 		if($node->type == "landing_page_item") {	
 			$item = field_get_items('node', $node, 'field_image');
-			$image = field_view_value('node', $node, 'field_image', $item[0],
-				array(
-					'type' => 'image',
-					'settings' => array(
-						'image_style' => 'landing_page_item_image'
+
+			if ($item == NULL) {
+				$image = NULL;
+			} else {
+				$image = field_view_value('node', $node, 'field_image', $item[0],	
+					array(
+						'type' => 'image',
+						'settings' => array(
+							'image_style' => 'landing_page_item_image'
+						)
 					)
-				)
-			);
+				);
+			}
 		} else if(
 			$node->type == "page" ||
 			$node->type == "event" ||
@@ -131,7 +136,7 @@ foreach($related_items as $key => $item) {
 		}
 		?>
 		
-		<a href='<? echo $url; ?>'><? print render($image); ?></a>
+		<? if($image): ?> <a href='<? echo $url; ?>'><? print render($image); endif; ?></a>
 		
 		<h2><a href='<? echo $url; ?>'><? echo strtoupper($node->title); ?></a></h2>
 		

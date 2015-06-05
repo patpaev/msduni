@@ -453,12 +453,16 @@ div.footer_center_column h2 a {
 	color: #B2B2B2;
 }
 
-div.news-promoted-header {
+.news-promoted-header {
 	background-color:#E5E5E5;
 	width:912px;
 	float:left;
 	margin-left:1px;
 	padding:40px 25px;
+}
+
+.news-promoted-header.half {
+  width: 430.5px;
 }
 
 div.content-right-wrap.news {
