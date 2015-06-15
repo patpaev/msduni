@@ -34,8 +34,13 @@ jQuery(function($){
 
   <div class="wrapper-main">
   
-  <div class="main-header"><a href="http://www.unimelb.edu.au">
-  <img src="/<? echo path_to_theme(); ?>/images/msd-logo.png" width="440" height="110" alt="msd logo" /></a>
+  <div class="main-header">
+    <a href="/">
+      <svg width="528" height="150" viewBox="0 0 528 150" aria-labelledby="aria-uom-title" role="img">
+        <title id="aria-uom-title">The Melbourne School of Design co-branded with the University of Melbourne Logo</title>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<? echo path_to_theme(); ?>/images/msd-full-co-brand.svg" src="<? echo path_to_theme(); ?>/images/msd-full-co-brand.png" width="528" height="150" alt="Melbourne School of Design" preserveAspectRatio="xMaxYMin meet"></image>
+      </svg>
+    </a>
   
     <div class="navigation">
 	    <div id='cssmenu'>
