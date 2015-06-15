@@ -125,7 +125,7 @@ $site_name = variable_get('site_name', '');
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	  
 </head>
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
+<body class="<?php print $classes; ?>" <?php print $attributes;?> style="overflow: visible;">
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5554VT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
