@@ -38,7 +38,7 @@ jQuery(function($){
     <a href="/">
       <svg width="528" height="150" viewBox="0 0 528 150" aria-labelledby="aria-uom-title" role="img">
         <title id="aria-uom-title">The Melbourne School of Design co-branded with the University of Melbourne Logo</title>
-        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<? echo path_to_theme(); ?>/images/msd-full-co-brand.svg" src="<? echo path_to_theme(); ?>/images/msd-full-co-brand.png" width="528" height="150" alt="Melbourne School of Design" preserveAspectRatio="xMaxYMin meet"></image>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/<? echo path_to_theme(); ?>/images/msd-full-co-brand-opt-comp.svg" src="<? echo path_to_theme(); ?>/images/msd-full-co-brand.png" width="528" height="150" alt="Melbourne School of Design" preserveAspectRatio="xMaxYMin meet"></image>
       </svg>
     </a>
       
