@@ -1,3 +1,21 @@
+<?php
+// page preprocessing
+$item_listing_image = field_get_items('node', $node, 'field_listing_image');
+$field_listing_image = $item_listing_image[0]['uri'];
+$field_listing_image_url = file_create_url($field_listing_image);
+?>
+
+<!-- Facebook OG Tags -->
+<?php if ( node_type_get_name($node) == "News" ): ?>
+
+	<meta property="og:type"               content="article" />
+	<meta property="og:title"              content="<?php print drupal_get_title() ?>" />
+	<meta property="og:image"              content="<?php print $field_listing_image_url ?>" />
+
+<?php else: ?>
+	<meta property="og:type"              content="website" />
+<?php endif; ?>
+
 <div class="content-white-wrap"><!--white wrap start-->
 
 <?
