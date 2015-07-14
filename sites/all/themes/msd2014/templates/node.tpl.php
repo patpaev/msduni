@@ -5,16 +5,18 @@ $field_listing_image = $item_listing_image[0]['uri'];
 $field_listing_image_url = file_create_url($field_listing_image);
 ?>
 
-<!-- Facebook OG Tags -->
-<?php if ( node_type_get_name($node) == "News" ): ?>
-
-	<meta property="og:type"               content="article" />
-	<meta property="og:title"              content="<?php print drupal_get_title() ?>" />
-	<meta property="og:image"              content="<?php print $field_listing_image_url ?>" />
-
-<?php else: ?>
-	<meta property="og:type"              content="website" />
-<?php endif; ?>
+<?php if ( node_type_get_name($node) == "News" ): 
+    $inline_script = ''
+    .'<meta property="og:type"               content="article" /> '
+    .'<meta property="og:title"              content="'. drupal_get_title() .'" />'
+    .'<meta property="og:image"              content="'. $field_listing_image_url .'" />';
+    $element = array(
+      '#type' => 'markup',
+      '#markup' => $inline_script,
+    );
+    drupal_add_html_head($element, 'fb ogs');
+    endif;
+?>
 
 <div class="content-white-wrap"><!--white wrap start-->
 
