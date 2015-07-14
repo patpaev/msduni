@@ -49,8 +49,6 @@
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
-  <!-- FB OG -->
-  <meta property="og:site_name" content="Melbourne School of Design" />
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>

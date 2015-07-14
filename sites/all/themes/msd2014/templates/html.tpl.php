@@ -97,6 +97,9 @@ $site_name = variable_get('site_name', '');
 	<meta name="DC.Date.Modified" content="DATE">
 <!-- End meta data to be autofilled -->
 
+<!-- FB OG Tags -->
+<meta property="og:site_name" content="Melbourne School of Design" />
+
 <!-- favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
