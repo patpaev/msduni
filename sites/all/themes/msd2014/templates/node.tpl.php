@@ -3,13 +3,19 @@
 $item_listing_image = field_get_items('node', $node, 'field_listing_image');
 $field_listing_image = $item_listing_image[0]['uri'];
 $field_listing_image_url = file_create_url($field_listing_image);
+
+$item_images = field_get_items('node', $node, 'field_images');
+$field_images = $item_images[0]['uri'];
+$field_images_url = file_create_url($field_images);
+
 ?>
 
 <?php if ( node_type_get_name($node) == "News" ): 
+		$field_images ? $main_image = $field_images_url : $main_image = $field_listing_image_url;
     $inline_script = ''
     .'<meta property="og:type"               content="article" /> '
     .'<meta property="og:title"              content="'. drupal_get_title() .'" />'
-    .'<meta property="og:image"              content="'. $field_listing_image_url .'" />';
+    .'<meta property="og:image"              content="'. $main_image .'" />';
     $element = array(
       '#type' => 'markup',
       '#markup' => $inline_script,
@@ -17,6 +23,8 @@ $field_listing_image_url = file_create_url($field_listing_image);
     drupal_add_html_head($element, 'fb ogs');
     endif;
 ?>
+
+
 
 <div class="content-white-wrap"><!--white wrap start-->
 
