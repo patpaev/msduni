@@ -18,32 +18,6 @@ $field_listing_image_url = file_create_url($field_listing_image);
 
 <div class="content-white-wrap"><!--white wrap start-->
 
-<?
-if (isset($node) && is_object($node)) {
-
-	$node = node_load($node->nid);
-		
-	$item = field_get_items('node', $node, 'field_image');
-	
-	if(is_array($item)) {
-	
-		$image = field_view_value('node', $node, 'field_image', $item[0], 
-			array(
-		        'type' => 'image',
-		        'settings' => array(
-		          //'image_style' => ''
-		        )
-			)
-		);
-?>
-		<div class="content-banner">
-	  		<? print render($image); ?>
-	  	</div>  
-<? 	
-	}
-} 
-?>
-
 <div class="content-left-wrap">
 
 <?php 
