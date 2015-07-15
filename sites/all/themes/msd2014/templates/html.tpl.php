@@ -67,6 +67,7 @@ $site_name = variable_get('site_name', '');
 <title><?php print $site_name . ' | ' . $page_title; ?></title>  
 
 <!-- SEO relevant meta data to describe content of page -->
+	<meta name="DC.Title" content="<?php print trim($site_name . ' | ' . $page_title); ?>">
 	<meta name="keywords" content="<?php if(variable_get('unimelb_settings_meta-keywords')) { print variable_get('unimelb_settings_meta-keywords') . ', ' . $page_title . ', ' . $site_name; } ?>">
 	<meta name="description" content="<?php print $site_name . ': ' . $page_title; if($is_front && variable_get('unimelb_settings_ht-right')) { print ' - ' . variable_get('unimelb_settings_ht-right'); } ?>">
 	<meta name="DC.Description" content="<?php print $site_name . ': ' . $page_title; if($is_front && variable_get('unimelb_settings_ht-right')) { print ' - ' . variable_get('unimelb_settings_ht-right'); } ?>">
@@ -91,12 +92,7 @@ $site_name = variable_get('site_name', '');
 	<meta name="DC.Identifier" content="http://www.unimelb.edu.au/">
 <!-- End static meta data -->
 
-<!-- Meta data to be autofilled -->
-	<meta name="DC.Date" content="DATE">
-	<meta name="DC.Date.Modified" content="DATE">
-<!-- End meta data to be autofilled -->
-
-<!-- FB OG Tags -->
+<!-- FB OG Tags... more inserted from node template -->
 <meta property="og:site_name" content="Melbourne School of Design" />
 
 <!-- favicons -->
