@@ -67,7 +67,6 @@ $site_name = variable_get('site_name', '');
 <title><?php print $site_name . ' | ' . $page_title; ?></title>  
 
 <!-- SEO relevant meta data to describe content of page -->
-	<meta name="DC.Title" content="<?php print $site_name . ' | ' . $page_title; ?>">
 	<meta name="keywords" content="<?php if(variable_get('unimelb_settings_meta-keywords')) { print variable_get('unimelb_settings_meta-keywords') . ', ' . $page_title . ', ' . $site_name; } ?>">
 	<meta name="description" content="<?php print $site_name . ': ' . $page_title; if($is_front && variable_get('unimelb_settings_ht-right')) { print ' - ' . variable_get('unimelb_settings_ht-right'); } ?>">
 	<meta name="DC.Description" content="<?php print $site_name . ': ' . $page_title; if($is_front && variable_get('unimelb_settings_ht-right')) { print ' - ' . variable_get('unimelb_settings_ht-right'); } ?>">

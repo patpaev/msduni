@@ -22,10 +22,13 @@ $field_images_url = file_create_url($field_images);
     $summary = preg_replace('/"/', "'", $summary);
 
     $inline_script = ''
-    .'<meta property="og:type"               content="article" /> '
-    .'<meta property="og:title"              content="'. drupal_get_title() .'" />'
-    .'<meta property="og:image"              content="'. $main_image .'" />'
-    .'<meta property="og:description"        content="'. $summary .'" />';
+    .'<meta property="og:type"                   content="article" /> '
+    .'<meta property="og:author"                   content="Melbourne School of Design, University of Melbourne" /> '
+    .'<meta property="og:article:publisher"      content="https://www.facebook.com/msdsocial" />'
+    .'<meta property="og:article:published_time" content="' . format_date($node->created, 'article') . '" />'
+    .'<meta property="og:title"                  content="'. drupal_get_title() .'" />'
+    .'<meta property="og:image"                  content="'. $main_image .'" />'
+    .'<meta property="og:description"            content="'. $summary .'" />';
     $element = array(
       '#type' => 'markup',
       '#markup' => $inline_script,
