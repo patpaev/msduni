@@ -60,9 +60,17 @@ Disallow: /?q=user/login/
 Disallow: /?q=user/logout/
 
 User-agent: facebookexternalhit/1.1
-Allow: /
+Disallow:
+Crawl-delay: 0
+
+User-agent: facebookexternalhit
+Disallow:
 Crawl-delay: 0
 
 User-agent: Facebot
-Allow: /
+Disallow:
+Crawl-delay: 0
+
+User-agent: Twitterbot
+Disallow:
 Crawl-delay: 0

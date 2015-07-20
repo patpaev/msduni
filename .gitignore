@@ -8,3 +8,5 @@ sites/*/private
 # Ignore enormous backup files
 backup/
 .DS_Store
+
+ebooks/

@@ -27,7 +27,12 @@ $field_images_url = file_create_url($field_images);
     // .'<meta property="og:article:published_time" content="' . format_date($node->created, 'article') . '" />'
     .'<meta property="og:title"                  content="'. drupal_get_title() .'" />'
     .'<meta property="og:image"                  content="'. $main_image .'" />'
-    .'<meta property="og:description"            content="'. trim($summary) .'" />';
+    .'<meta property="og:description"            content="'. trim($summary) .'" />'
+    .'<meta name="twitter:card"                  content="summary" />'
+    .'<meta name="twitter:site"                  content="@msdsocial" />'
+    .'<meta name="twitter:creator"               content="@msdsocial" />'
+    
+    .'';
     $element = array(
       '#type' => 'markup',
       '#markup' => $inline_script,
