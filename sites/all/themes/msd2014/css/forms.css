@@ -1,6 +1,12 @@
 .webform-client-form {
   padding: 0 3%;
 }
+
+.content .webform-client-form p {
+  text-align: left;
+  font-weight: 400;
+}
+
 .webform-client-form fieldset {  
   background: white; 
   border: none;
