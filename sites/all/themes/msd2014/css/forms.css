@@ -1,3 +1,7 @@
+.content form label, .content form p {
+  text-align: left;
+}
+
 .webform-client-form {
   padding: 0 3%;
 }
