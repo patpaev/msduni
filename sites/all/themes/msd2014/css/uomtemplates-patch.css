@@ -19,6 +19,24 @@ body {
     background-color: transparent;
 }
 
+.uomcontent .button {
+  background-image: none;
+}
+
+.uomcontent .button:after {
+  color: currentColor;
+}
+
+.uomcontent .with-arrow:after {
+  color: currentColor;
+}
+
+.content .uomcontent .button:hover {
+  text-decoration: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
 p {
   margin-bottom: 1em;
 }
