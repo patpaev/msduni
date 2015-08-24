@@ -733,3 +733,38 @@ a#ui-id-4.ui-tabs-anchor span {
     width: 118px!important;
   }
 }
+
+.content-left-wrap blockquote ul li {
+  list-style-image: none;
+  padding-left: 1.1em;
+}
+
+/* MSD Brand-style tables */
+
+.msd-table tr {
+  border: none;
+}
+
+.msd-table thead th, .msd-table thead td {
+  background-color: #000;
+  color: #fff;
+  font-family: "ff-din-web",sans-serif;
+  font-size: 13px;
+}
+
+.msd-table th, .msd-table td {
+  border: 1px solid #fff;
+}
+
+.msd-table tbody td {
+  padding: 6px 8px;
+  font-size: 11px;
+}
+
+.msd-table tbody tr:nth-child(even) td {
+  background-color: #DCDDDF;
+}
+
+.msd-table tbody tr:nth-child(odd) td {
+  background-color: #F1F1F1;
+}
