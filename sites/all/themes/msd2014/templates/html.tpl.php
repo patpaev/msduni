@@ -112,9 +112,8 @@ $site_name = variable_get('site_name', '');
 <meta name="msapplication-TileColor" content="#00457c">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	
-	<meta content="width=device-width; initial-scale=0.9;" name="viewport">
-
-	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta content="width=device-width, initial-scale=0.9" name="viewport">
+	<meta name="viewport" content="width=device-width">
 	
 	<?php print $styles; ?>
 	<?php print $scripts; ?>
