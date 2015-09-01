@@ -91,11 +91,20 @@ function home_features_display_views_default_views() {
   $handler->display->display_options['fields']['field_image']['alter']['path'] = '[field_link]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'home_feature_item_image',
     'image_link' => '',
   );
+  /* Field: Content: MP4 */
+  $handler->display->display_options['fields']['field_mp4']['id'] = 'field_mp4';
+  $handler->display->display_options['fields']['field_mp4']['table'] = 'field_data_field_mp4';
+  $handler->display->display_options['fields']['field_mp4']['field'] = 'field_mp4';
+  $handler->display->display_options['fields']['field_mp4']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_mp4']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_mp4']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_mp4']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
