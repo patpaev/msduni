@@ -33,6 +33,13 @@ jQuery(function($) {
       links = $('ol a', newsbanner);
   
   var resizeBanners = function() {
+    $('#newsbanner').css('font-size', '213%').css('height', '320px');
+    banners.css('height', '320px');
+    wrapper.css('height', '320px');
+    return
+
+    // don't need all of the calcs below because we have a fixed banner height
+
     var bannerHeight = $('#newsbanner .banner img:visible').height();
     // The dimensions for all of the banner sub-elements are defined in ems,
     // so we can resize everything in scale by setting the font-size property
@@ -68,10 +75,10 @@ jQuery(function($) {
     // add .selected to the current li, and remove it from all others
     $(this).closest("li").addClass('selected').siblings().removeClass('selected');
     // show the corresponding relevant banner image, stop all previous animations
-    $("#newsbanner img").stop();
-    $("#newsbanner img:visible").fadeOut(800, function() {
+    $("#newsbanner .banner").stop();
+    $("#newsbanner .banner:visible").fadeOut(800, function() {
     	// will be called when the element finishes fading out
-    	$("#newsbanner img:eq("+index+")").css("opacity", "").fadeIn(1000);
+    	$("#newsbanner .banner:eq("+index+")").css("opacity", "").fadeIn(1000);
     });
     // show the corresponding bottom text item, stop all previous animations
     $("div.text-bottom-item").stop();
