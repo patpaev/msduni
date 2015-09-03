@@ -29,7 +29,7 @@ function msd2014_preprocess_html(&$vars) {
     drupal_add_js(path_to_theme() . '/js/jquery.matchHeight-min.js');
 
     drupal_add_js(path_to_theme() . '/js/navigation.js');
-    drupal_add_js(path_to_theme() . '/js/newsbanner.js');
+    drupal_add_js(path_to_theme() . "/js/newsbanner.js");
 
     drupal_add_js(path_to_theme() . '/js/jquery.hoverIntent.minified.js');
     drupal_add_js(path_to_theme() . '/js/jquery.dcjqaccordion.2.7.min.js');
