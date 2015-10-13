@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Implements hook_preprocess_html
  */
@@ -22,6 +21,7 @@ function msd2014_preprocess_html(&$vars) {
     drupal_add_css('https://uom-design-system.s3.amazonaws.com/v1.0/uom.css', 'external');
     drupal_add_css(path_to_theme() . '/css/uomtemplates-patch.css');
 
+    drupal_add_css('https://scann3d.s3.amazonaws.com/propertyfiles/featherlight.min.css', 'external');
 
     drupal_add_js('https://brand.unimelb.edu.au/global-header/js/injection.js', 'external');
     drupal_add_js(path_to_theme() . '/js/supersized.core.3.2.1.min.js');

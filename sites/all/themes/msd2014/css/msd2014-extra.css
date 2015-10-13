@@ -378,7 +378,7 @@ a.icon:hover, a.icon:focus {
     background: none;
 }
 
-.content-right-wrap a {
+.content-right-wrap a:not(.button) {
 	padding: 0px !important;
 	background:none !important;
 }
@@ -767,4 +767,34 @@ a#ui-id-4.ui-tabs-anchor span {
 
 .msd-table tbody tr:nth-child(odd) td {
   background-color: #F1F1F1;
+}
+
+/* Scanned - 3D Integration */
+.programs-module h2 {
+  text-transform: uppercase;
+}
+
+.programs-module .dollhouse {
+  display: block;
+  height: 225px;
+  margin-bottom: 7px;
+  overflow: hidden;
+  width: 239px;
+}
+
+.programs-module .dollhouse iframe {
+  height: 240px;
+  margin-bottom: 0;
+  margin-left: -6%;
+  margin-right: auto;
+  margin-top: 0;
+  width: 112%;
+}
+
+.featherlight.modal iframe {
+  height: 90%;
+  max-height: 720px;
+  max-width: 1200px;
+  padding-top: 5%;
+  width: 90%;
 }
