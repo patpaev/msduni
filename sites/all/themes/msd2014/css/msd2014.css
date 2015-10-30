@@ -493,9 +493,9 @@ a.bpause:hover {
 
 @media screen and (min-width: 769px) {
   .social-media-wrap li a:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
-    transform: scale(1.1);
+    -ms-transform: scale(1.08); /* IE 9 */
+    -webkit-transform: scale(1.08); /* Chrome, Safari, Opera */
+    transform: scale(1.08);
   }
 }
 
