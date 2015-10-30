@@ -431,50 +431,139 @@ a.bpause:hover {
 }
 
 .content-left-wrap a {
-  color:#444;
-  text-decoration:underline;
+  color: #444;
+  text-decoration: underline;
+}
 
-  }
 .content-left-wrap a:hover {
-  color:#3DAAC3;
-  text-decoration:underline;
-
-  }
-
+  color: #3DAAC3;
+  text-decoration: underline;
+}
 
 .social-media-wrap {
   background-color: #1F1F1F;
   width: 964px;
   margin-right: auto;
   margin-left: auto;
-  height:67px;
+  overflow: auto;
 }
 
+.social-media-wrap ul {
+  overflow: auto;
+}
 
-.social-media-wrap li {
-  width:25%;
-  float:left;
-  line-height:67px;
-  list-style:none;
-  
+.social-media-wrap .social-medias li {
+  box-sizing: border-box;
+  float: left;
+  line-height: 67px;
+  list-style: none;  
+  width: 20%;
+}
+
+.social-media-wrap .social-medias li a {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-position: 10px center;
+  background-color: #1F1F1F;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  box-sizing: border-box;
+  display: block;
+  color: #B2B2B2;
+  line-height: 44px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 12px;
+  padding-left: 41px;
+  padding-top: 5px;
+  transition: all 300ms;
+} 
+
+.social-media-wrap li a:hover {
+  color: #FFF;
+}
+
+@media screen and (max-width: 769px) {
+  .social-media-wrap .social-medias li a {
+    font-size: 12px;
   }
+}
 
-.social-media-wrap li a {
-  display:block;
-  color:#B2B2B2;
-  line-height:67px;
-  padding-left: 36px;
-  
-  } 
+@media screen and (min-width: 769px) {
+  .social-media-wrap li a:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+    transform: scale(1.1);
+  }
+}
 
+.social-media-wrap li a.facebook {
+  background-image: url(../images/facebook.png);
+  background-image: url(../images/facebook.svg);
+}
 
+.social-media-wrap li a.facebook:hover {
+  background-color: #3B5998;
+}
+
+.social-media-wrap li a.twitter {
+  background-image: url(../images/twitter.png);
+  background-image: url(../images/twitter.svg);
+}
+
+.social-media-wrap li a.twitter:hover {
+  background-color: #55ACEE;
+}
+
+.social-media-wrap li a.youtube {
+  background-image: url(../images/youtube.png);
+  background-image: url(../images/youtube.svg);
+}
+
+.social-media-wrap li a.youtube:hover {
+  background-color: #CD201F;
+}
+
+.social-media-wrap li a.linkedin {
+  background-image: url(../images/linkedin.png);
+  background-image: url(../images/linkedin.svg);
+}
+
+.social-media-wrap li a.linkedin:hover {
+  background-color: #0077B5;
+}
+
+.social-media-wrap li a.instagram {
+  background-image: url(../images/instagram.png);
+  background-image: url(../images/instagram.svg);
+}
+
+.social-media-wrap li a.instagram:hover {
+  background-color: #125688;
+}
+
+.social-media-wrap li a.pinterest {
+  background-image: url(../images/sm-pinterest.png);
+} 
 
 .module-wrap:hover h2 {
   color:#3DAAC3;
-  cursor:pointer;
-  
-  
-  }
+  cursor:pointer;  
+}
+
+.social-media-wrap .hashtag li {
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  font-weight: bold;
+  font-family: "helvetica-nue",sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+}
+}
+
 .module-wrap:hover img, .module-wrap:hover video {
    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
   filter: gray; /* IE6-9 */
@@ -489,31 +578,6 @@ a:hover {
   cursor:pointer;
 }
 
-.social-media-wrap li a:hover {
-  color:#FFF;
-}
-
-.social-media-wrap li a.facebook {
-  background-image: url(../images/sm-facebook.png);
-  background-position: left center;
-  background-color: #1F1F1F;
-  background-repeat: no-repeat;
-}
-
-.social-media-wrap li a.twitter {
-  background-image: url(../images/sm-twitter.png);
-  background-position: left center;
-  background-color: #1F1F1F;
-  background-repeat: no-repeat;
-} 
-
-.social-media-wrap li a.youtube {
-  background-image: url(../images/sm-youtube.png);
-  background-position: left center;
-  background-color: #1F1F1F;
-  background-repeat: no-repeat;
-}
-    
 .double-clmn {
   width: 480px;
   float: left;
@@ -545,14 +609,6 @@ a:hover {
 #backtotop {
   display: none;
 }
-
-.social-media-wrap li a.pinterest {
-  background-image: url(../images/sm-pinterest.png);
-  background-position: left center;
-  background-color: #1F1F1F;
-  background-repeat: no-repeat;
-  margin-left: 15px;
-} 
 
 .footer-links-wrap {
   background-color: #292929;
