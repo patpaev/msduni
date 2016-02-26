@@ -790,3 +790,8 @@ a#ui-id-4.ui-tabs-anchor span {
   padding-top: 5%;
   width: 90%;
 }
+
+body .uomcontent .button:hover,
+body .uomcontent .button-small:hover {
+  text-decoration: none;
+}
