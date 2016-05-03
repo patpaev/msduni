@@ -4,16 +4,16 @@
 
 <div class="content-left-wrap">
 
-  <?php 
+  <?php
   $breadcrumb = drupal_get_breadcrumb();
   if ($breadcrumb): ?>
     <div class="thecrumb">
       <div id="breadcrumb"><?php print theme('breadcrumb', array('breadcrumb'=>$breadcrumb)); ?></div>
     </div>
   <?php endif; ?>
-    
+
     <h1><? echo($title); ?></h1>
-  
+
     <blockquote>
     <?
     $item = field_get_items('node', $node, 'field_header');
@@ -54,7 +54,7 @@ $right_column = field_view_value('node', $node, 'field_right_column', $item_righ
   <div class="programs-content-left">
     <? echo render($body); ?>
   </div>
-    
+
   <div class="programs-content-right">
     <? echo render($right_column); ?>
   </div>
@@ -62,7 +62,7 @@ $right_column = field_view_value('node', $node, 'field_right_column', $item_righ
 <? } ?>
 
 <div style="clear:both"></div>
- 
+
 <?
 // if the page is the MSD building page, we want to put some special "related items" in there.
 if ($node->nid == 451):
@@ -156,16 +156,16 @@ if(array_key_exists("field_related_items", $content)) {
   $related_items = $content["field_related_items"]["#items"];
 }
 
-foreach($related_items as $key => $item) { 
+foreach($related_items as $key => $item) {
 
   $node = $item["entity"];
-  
+
   if($node->type == "landing_page_item") {
-    
+
     $item = field_get_items('node', $node, 'field_link');
     $link = field_view_value('node', $node, 'field_link', $item[0]);
     $url = $link["#element"]["url"];
-    
+
   } else if(
     $node->type == "page" ||
     $node->type == "event" ||
@@ -173,7 +173,7 @@ foreach($related_items as $key => $item) {
     $node->type == "tabbed_page"
 
   ) {
-    
+
     $url = url('node/' . $node->nid, array('absolute' => TRUE));
     $options = array(
       'attributes' => array(
@@ -181,19 +181,19 @@ foreach($related_items as $key => $item) {
       ),
     );
     $link = l("Read More", $url, $options);
-    
-  } 
+
+  }
   ?>
   <div class="programs-module">
-    
+
     <?
-    if($node->type == "landing_page_item") {  
+    if($node->type == "landing_page_item") {
       $item = field_get_items('node', $node, 'field_image');
 
       if ($item == NULL) {
         $image = NULL;
       } else {
-        $image = field_view_value('node', $node, 'field_image', $item[0], 
+        $image = field_view_value('node', $node, 'field_image', $item[0],
           array(
             'type' => 'image',
             'settings' => array(
@@ -219,12 +219,67 @@ foreach($related_items as $key => $item) {
       );
     }
     ?>
-    
+
     <? if($image): ?> <a href='<? echo $url; ?>'><? print render($image); endif; ?></a>
-    
+
     <h2><a href='<? echo $url; ?>'><? echo strtoupper($node->title); ?></a></h2>
-    
-      <p>
+
+    <? if($node->type == 'event'): ?>
+      <p><strong> <?
+        $item = field_get_items( 'node', $node, 'field_dates' );
+        $start = $item[0]['value'];
+        $end = $item[0]['value2'];
+        $UTC = new DateTimeZone( 'UTC' );
+        $user_timezone = drupal_get_user_timezone();
+        $start_time = new DateTime( $start, $UTC );
+        $start_time->setTimezone( new DateTimeZone($user_timezone) );
+        $end_time = new DateTime( $end, $UTC );
+        $end_time->setTimezone( new DateTimeZone($user_timezone) );
+
+        if ( $start_time->format('Y') == $end_time->format('Y')  ) {
+
+          if ( $start_time->format('m') == $end_time->format('m')  ) {
+
+              if ( $start_time->format('d') == $end_time->format('d')  ) {
+
+                if ( $start_time->format('i') == $end_time->format('i') && $start_time->format('H') == $end_time->format('H') ) {
+
+                  echo ( $start_time->format('g:ia, ') );
+
+                } else {
+                  echo ( $start_time->format('g:ia') );
+                  echo ( ' to ' );
+                  echo ( $end_time->format('g:ia, ') );
+                }
+
+                echo ( $start_time->format('l j ') );
+
+              } else {
+                echo ( $start_time->format('g:ia, l j') );
+                echo ( ' to ' );
+                echo ( $end_time->format('g:ia, l j ') );
+              }
+
+            echo ( $start_time->format('F ') );
+
+          } else {
+            echo ( $start_time->format('g:ia, l j F') );
+            echo ( ' to ' );
+            echo ( $end_time->format('g:ia, l j F ') );
+          }
+
+          echo ( $start_time->format('Y') );
+
+        } else {
+          echo ( $start_time->format('g:ia, l j F Y') );
+          echo ( ' to ' );
+          echo ( $end_time->format('g:ia, l j F Y') );
+        }
+        ?>
+      </strong></p>
+    <? endif; ?>
+
+    <p>
     <?
     if($node->type == "landing_page_item") {
         $item = field_get_items('node', $node, 'body');
@@ -242,17 +297,17 @@ foreach($related_items as $key => $item) {
       }
       ?>
       </p>
-        
+
     <div class='read-more-wrapper'>
         <? echo render($link); ?>
     </div>
-      
+
     </div>
-    
+
  <? } ?>
- 
+
   <div style="clear:both"></div>
-  
+
 </div>
 
 <script type="text/javascript">
