@@ -795,3 +795,7 @@ body .uomcontent .button:hover,
 body .uomcontent .button-small:hover {
   text-decoration: none;
 }
+
+li p {
+  display: inline-block; 
+}
