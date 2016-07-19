@@ -536,15 +536,14 @@ a.bpause:hover {
 }
 
 .social-media-wrap li a.instagram {
-  background-image: url(../images/instagram-new.png);
-  background-image: url(../images/instagram-new.svg);
-  background-size: 24px;
+  background: url(../images/instagram-new.png) 8px center no-repeat / 28px, transparent;
+  background: url(../images/instagram-new.svg) 8px center no-repeat / 28px, transparent;
 }
 
 .social-media-wrap li a.instagram:hover {
   background-color: #d83578;
-  background: url(../images/instagram-new.png) 10px center no-repeat / 24px, -webkit-radial-gradient(0 100%, #f47d3f 10%,#e518a1 70%,#a545b9 100%);
-  background: url(../images/instagram-new.svg) 10px center no-repeat / 24px, -webkit-radial-gradient(0 100%, #f47d3f 10%,#e518a1 70%,#a545b9 100%);
+  background: url(../images/instagram-new.png) 8px center no-repeat / 28px, -webkit-radial-gradient(0 100%, #f47d3f 10%,#e518a1 70%,#a545b9 100%);
+  background: url(../images/instagram-new.svg) 8px center no-repeat / 28px, -webkit-radial-gradient(0 100%, #f47d3f 10%,#e518a1 70%,#a545b9 100%);
 }
 
 .social-media-wrap li a.pinterest {
