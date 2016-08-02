@@ -49,7 +49,7 @@ $right_column = field_view_value('node', $node, 'field_right_column', $item_righ
     <? echo render($body); ?>
   </div>
 
-<? } else if(strlen(trim($body["#markup"])) > 0) { ?>
+<? } else if(strlen(trim($body["#markup"])) > 0): ?>
 
   <div class="programs-content-left">
     <? echo render($body); ?>
@@ -59,7 +59,7 @@ $right_column = field_view_value('node', $node, 'field_right_column', $item_righ
     <? echo render($right_column); ?>
   </div>
 
-<? } ?>
+<? endif; ?>
 
 <div style="clear:both"></div>
 
@@ -156,7 +156,7 @@ if(array_key_exists("field_related_items", $content)) {
   $related_items = $content["field_related_items"]["#items"];
 }
 
-foreach($related_items as $key => $item) {
+foreach($related_items as $key => $item):
 
   $node = $item["entity"];
 
@@ -304,7 +304,7 @@ foreach($related_items as $key => $item) {
 
     </div>
 
- <? } ?>
+<? endforeach; ?>
 
   <div style="clear:both"></div>
 

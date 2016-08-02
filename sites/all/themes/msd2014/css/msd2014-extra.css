@@ -695,6 +695,14 @@ a#ui-id-4.ui-tabs-anchor span {
   background: white!important;
 }
 
+.content #tabs [role="tabpanel"].with-related-items {
+  background: #000!important;
+  padding: 0!important;
+}
+
+.content #tabs [role="tabpanel"].with-related-items .programs-module a {
+  text-decoration: none;
+}
 
 /* 12 May Mobile Tabs */
 @media only all and (max-width: 640px) {
