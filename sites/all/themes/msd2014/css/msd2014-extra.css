@@ -700,6 +700,10 @@ a#ui-id-4.ui-tabs-anchor span {
   padding: 0!important;
 }
 
+.content #tabs [role="tabpanel"].with-related-items .tabs {
+  margin-top: -40px;
+}
+
 .content #tabs [role="tabpanel"].with-related-items .programs-module a {
   text-decoration: none;
 }
