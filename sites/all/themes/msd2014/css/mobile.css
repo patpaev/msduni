@@ -570,47 +570,52 @@ div#footernav div.wrapper {
 	height:auto;
 }
 
-.ui-tabs .ui-tabs-nav li.ui-tabs-active {
-    width: 158px !important;
+.content .ui-tabs .ui-tabs-anchor {
+  width: 158px;
 }
 
-a#ui-id-1.ui-tabs-anchor, a#ui-id-2.ui-tabs-anchor, a#ui-id-3.ui-tabs-anchor {
-    width: 158px !important;
-}
-
-.ui-tabs-anchor img,
-.ui-tabs-active img {
-
-    width: 158px !important;
-	height:auto !important;
-}
-
-.ui-tabs-anchor span,
-.ui-tabs-anchor span {
-    height: 60px !important;
-    line-height: 22px !important;
-	padding:10px !important;
-	height: 60px !important;
-    text-transform: none !important;
-    white-space: normal !important;
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor span {
+  height: 60px;
+  line-height: 2;
+  padding: 10px;
+  text-transform: none !important;
+  white-space: normal !important;
 }
 
 .ui-tabs-anchor span {
-    border-bottom: 0px solid #000 !important;
+  border-bottom: 0px solid #000 ;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 1px solid #000000 !important;
+  border: 1px solid #000000;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
-    width: 158px !important;
+  width: 158px;
 	border: 1px solid #FFFFFF !important;
 }
 
 
 #tabs.ui-tabs.ui-widget.ui-widget-content.ui-corner-all ul.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all li.ui-state-default.ui-corner-top {
 	padding-left:0 !important;
+}
+
+.content .ui-tabs .ui-2-tabs li {
+  width: 50%;
+}
+
+.content .ui-tabs .ui-2-tabs a.ui-tabs-anchor {
+  width: 100%;
+}
+
+.content .ui-tabs .ui-2-tabs li img {
+  float: none;
+  margin-right: 0;
+  width: 100%;
+}
+
+.content .ui-tabs .ui-2-tabs li span {
+  line-height: 2;
 }
 
 /* Tab Custom Style overides */

@@ -27,13 +27,12 @@
 <?
 // Load the subpage nodes, limit to maximum of 3 subpages.
 $subpage_items = $content["field_subpages"]["#items"];
-$num_tabs = sizeof($subpage_items);
-$tab_class = '';
 
-if($num_tabs > 3) {
+if(sizeof($subpage_items) > 3) {
 	$subpage_items = array_slice($subpage_items, 0, 4);	
-	$tab_class = 'ui-4-tabs';
 }
+
+$tab_class = 'ui-'.(string)sizeof($subpage_items).'-tabs';
 
 ?>
 

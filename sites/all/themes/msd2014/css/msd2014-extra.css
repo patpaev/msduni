@@ -637,6 +637,21 @@ ul li.leaf {
     text-decoration: underline;
 }
 
+/* Just 2 tabs */
+.content .ui-tabs .ui-2-tabs li {
+  box-sizing: border-box;
+  width: 50%;
+}
+.content .ui-tabs .ui-2-tabs li img {
+  float: left;
+  margin-right: 12px;
+  width: 25%;
+}
+.content .ui-tabs .ui-2-tabs li span {
+  background-position: 448px center;
+  height: 92px;  
+  line-height: 7;
+}
 
 /* 4th Tab */
 .content .ui-tabs .ui-4-tabs li {
@@ -654,15 +669,11 @@ ul li.leaf {
   height: 183px;
 }
 
-a#ui-id-1.ui-tabs-anchor span{
-  border-bottom-width: 0;
-}
-
 .content .ui-tabs-active a span {
   border-bottom-width: 0!important;
 }
 
-a#ui-id-4.ui-tabs-anchor {
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
   padding:0px;
   margin:0px;
   border: none;
@@ -670,7 +681,7 @@ a#ui-id-4.ui-tabs-anchor {
   line-height:0px;
 }
 
-a#ui-id-4.ui-tabs-anchor span {
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor span {
   display: block;
   height: 54px;
   line-height: 54px;
@@ -728,10 +739,7 @@ a#ui-id-4.ui-tabs-anchor span {
   {
     width: 100%;
   }
-  .ui-4-tabs a#ui-id-1.ui-tabs-anchor, 
-  .ui-4-tabs a#ui-id-2.ui-tabs-anchor, 
-  .ui-4-tabs a#ui-id-3.ui-tabs-anchor,
-  .ui-4-tabs a#ui-id-4.ui-tabs-anchor,
+  .ui-4-tabs .ui-tabs-anchor,
   .ui-4-tabs .ui-tabs-anchor img, 
   .ui-4-tabs .ui-tabs-active img {
     width: 118px!important;

@@ -1147,7 +1147,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
   
   
   
-a#ui-id-1.ui-tabs-anchor span {
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor span {
   display: block;
   height: 54px;
   line-height: 54px;
@@ -1160,74 +1160,35 @@ a#ui-id-1.ui-tabs-anchor span {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: #000;
-  } 
+} 
   
-  
-a#ui-id-2.ui-tabs-anchor span {
-  display:block;
-  height:54px;
-  line-height:54px;
-  padding-left:25px;
-  background-color:#999999;
-  background-image: url(../images/tab-down-arrow-white.png);
-  background-repeat: no-repeat;
-  background-position: 270px center;
-  color:#FFF;
-  
-  
-  } 
-  
-
-a#ui-id-3.ui-tabs-anchor span {
-  display:block;
-  height:54px;
-  line-height:54px;
-  padding-left:25px;
-  background-color:#999999;
-  background-image: url(../images/tab-down-arrow-white.png);
-  background-repeat: no-repeat;
-  background-position: 270px center;
-  color:#FFF;
-  
-  } 
-
-
-.ui-tabs-active a span {
-  
+.ui-tabs-active a span {  
   color:#000 !important;
   background-image: url(../images/tab-down-arrow-black.png) !important;
   background-color:#D9D9D9 !important;
   border-bottom-width: 2px !important;
   border-bottom-style: solid !important;
   border-bottom-color: #FFF !important;
-  
-  
-  }
+}
   
 
 
 .ui-tabs-active img {
-  
   filter: none; /* Firefox 10+, Firefox on Android */
   filter: none; /* IE6-9 */
-
   -webkit-filter: grayscale(0%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
   opacity:1;
   transition: all 0.5s ease 0s;
-  
   }
 
 
 .ui-tabs-nav li:hover img {
-  
   filter: none; /* Firefox 10+, Firefox on Android */
   filter: none; /* IE6-9 */
-
   -webkit-filter: grayscale(0%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
   opacity:1;
   transition: all 0.5s ease 0s;
-  
-  }
+}
 
 .backtop a {
   display: block;
