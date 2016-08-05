@@ -665,8 +665,9 @@ ul li.leaf {
 }
 
 .content .ui-tabs .ui-4-tabs .ui-tabs-anchor img {
+  height: auto;
   width: 239px;
-  height: 183px;
+
 }
 
 .content .ui-tabs-active a span {
