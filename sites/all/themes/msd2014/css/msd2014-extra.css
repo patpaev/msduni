@@ -649,8 +649,9 @@ ul li.leaf {
 }
 .content .ui-tabs .ui-2-tabs li span {
   background-position: 448px center;
-  height: 92px;  
-  line-height: 7;
+  font-size: 16px;
+  height: 92px; 
+  line-height: 6;
 }
 
 /* 4th Tab */
