@@ -65,8 +65,29 @@ $right_column = field_view_value('node', $node, 'field_right_column', $item_righ
 
 <?
 // if the page is the MSD building page, we want to put some special "related items" in there.
-if ($node->nid == 451):
+if ($node->nid == 1522):
 ?>
+
+  <div class="programs-module">
+    <a class="dollhouse" href="#" data-featherlight="#msdshowcase">
+      <iframe id="scann3d-player-vid" src="https://api.scann3d.com.au/players/scann3d/msdshowcase/?noplayer&nosplash" frameborder="0" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+    </a>
+    <h2>
+      <a href="#" data-featherlight="#msdshowcase">
+        Walk through MSDx in 3D
+      </a>
+    </h2>
+    <p></p>
+    <p>Jump up to level 2 to find most of the student work.</p>
+    <p>Step inside to experience student work in 3D</p>
+    <p></p>
+    <div class="read-more-wrapper">
+      <a href="#" class="proj-more" data-featherlight="#msdx">
+        Step inside
+      </a>
+    </div>
+  </div>
+
   <div class="programs-module">
     <a class="dollhouse" href="#" data-featherlight="#japaneseroom">
       <iframe id="scann3d-player-vid" src="https://api.scann3d.com.au/players/scann3d/japaneseroom/?noplayer&nosplash" frameborder="0" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
@@ -124,29 +145,22 @@ if ($node->nid == 451):
     </div>
   </div>
 
-  <div class="programs-module">
-    <a class="dollhouse" href="#" data-featherlight="#msdshowcase">
-      <iframe id="scann3d-player-vid" src="https://api.scann3d.com.au/players/scann3d/msdshowcase/?noplayer&nosplash" frameborder="0" allowfullscreen="" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
-    </a>
-    <h2>
-      <a href="#" data-featherlight="#msdshowcase">
-        Walk through the Student Showcase in 3D
-      </a>
-    </h2>
-    <p></p>
-    <p>Step inside to experience student work in 3D</p>
-    <p></p>
-    <div class="read-more-wrapper">
-      <a href="#" class="proj-more" data-featherlight="#msdshowcase">
-        Step inside
-      </a>
-    </div>
-  </div>
-
   <div id="japaneseroom" class="featherlight modal"><iframe src="https://api.scann3d.com.au/players/scann3d/japaneseroom/?autoplay"></iframe></div>
   <div id="msdlecture" class="featherlight modal"><iframe src="https://api.scann3d.com.au/players/scann3d/msdlecture/?autoplay"></iframe></div>
   <div id="msdlibrary" class="featherlight modal"><iframe src="https://api.scann3d.com.au/players/scann3d/msdlibrary/?autoplay"></iframe></div>
-  <div id="msdshowcase" class="featherlight modal"><iframe src="https://api.scann3d.com.au/players/scann3d/msdshowcase/?autoplay"></iframe></div>
+  <div id="msdx" class="featherlight modal"><iframe src="https://www.scann3d.com.au/view/v2/scann3d/msdx"></iframe></div>
+
+<script type="text/javascript">
+jQuery(function($) {
+    $('.programs-content-left, .programs-content-right').matchHeight();
+    $('.programs-module').matchHeight();
+    $('.programs-module h2').matchHeight();
+});
+</script>
+
+<script src="//code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="https://scann3d.s3.amazonaws.com/propertyfiles/featherlight.min.js"></script>
+
 <? endif; ?>
 
 <?
@@ -318,5 +332,3 @@ jQuery(function($) {
 });
 </script>
 
-<script src="//code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="https://scann3d.s3.amazonaws.com/propertyfiles/featherlight.min.js"></script>

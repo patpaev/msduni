@@ -542,6 +542,15 @@ a.bpause:hover {
   background-color: #0077B5;
 }
 
+.social-media-wrap li a.pinterest {
+  background-image: url(../images/pinterest.png);
+  background-image: url(../images/pinterest.svg);
+}
+
+.social-media-wrap li a.pinterest:hover {
+  background-color: #bd081c;
+}
+
 .social-media-wrap li a.instagram:before,
 .social-media-wrap li a.instagram:after {
   bottom: 0;
@@ -570,10 +579,6 @@ a.bpause:hover {
 .social-media-wrap li a.instagram:hover:before {
   background-image: -webkit-radial-gradient(0 100%,#f47d3f 10%,#e518a1 70%,#a545b9 100%);
 }
-
-.social-media-wrap li a.pinterest {
-  background-image: url(../images/sm-pinterest.png);
-} 
 
 .module-wrap:hover h2 {
   color:#3DAAC3;

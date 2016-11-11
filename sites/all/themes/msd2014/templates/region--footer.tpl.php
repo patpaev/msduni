@@ -6,7 +6,7 @@
         <li class="instagram"><a href="https://instagram.com/msdsocial/" class="instagram">Follow us on Instagram</a></li>
         <li class="twitter"><a href="https://twitter.com/msdsocial" class="twitter">Follow us on Twitter</a></li>
         <li class="youtube"><a href="https://www.youtube.com/user/ABPUnimelb" class="youtube">Watch us on Youtube</a></li>
-        <li class="linkedin"><a href="https://www.linkedin.com/grps/ABP-UoM-4706402/about?" class="linkedin">Join us on Linked in</a></li>
+        <li class="pintererst"><a href="https://au.pinterest.com/msdsocial/" class="pinterest">Pin us on Pinterest</a></li>
       </ul>
       <ul class="hashtag">
         <li>#msdsocial</li>
